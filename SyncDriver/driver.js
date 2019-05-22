@@ -77,11 +77,11 @@ for(let i=0;i<charArray.length;i++)
 
         for(let k=0;k<objectDatabase.length;k++)
         {
-            data = data + "\t{\n\t\tname : "  + "\'" + objectDatabase[k].name + "\',\n";
-            data = data + "\t\tdescription : " + "\'" + objectDatabase[k].description + "\',\n";
-            data = data + "\t\tgithub : " + "\'" + objectDatabase[k].github + "\',\n"; 
-            data = data + "\t\twebsite : " + "\'" + objectDatabase[k].website + "\',\n";
-            data = data + "\t\tdocs : " + "\'" + objectDatabase[k].docs + "\',\n";
+            data = data + "\t{\n\t\tname : "  + "\"" + objectDatabase[k].name + "\",\n";
+            data = data + "\t\tdescription : " + "\"" + objectDatabase[k].description + "\",\n";
+            data = data + "\t\tgithub : " + "\"" + objectDatabase[k].github + "\",\n"; 
+            data = data + "\t\twebsite : " + "\"" + objectDatabase[k].website + "\",\n";
+            data = data + "\t\tdocs : " + "\"" + objectDatabase[k].docs + "\",\n";
             data = data + "\t\tothers : []\n";
             data = data + "\t}";
 
