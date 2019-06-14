@@ -1,6 +1,5 @@
 let flag=false;                                                             // for input
 let root = document.getElementById('root');                                 // for refering body node
-var script1 = document.createElement('script');                             // sample script element
 var database = [];                                                          // working database
 
 /**
@@ -13,7 +12,15 @@ function getData()
     const key = document.getElementById('section-div-input').value;
     var firstValue = key.charAt(0).toUpperCase();
     
+    if(!isNaN(parseInt(firstValue)))
+    {
+        alert("we don't index libraries with numbers");
+        return;
+    }
+
     var filename = "scripts/" + firstValue + ".js";
+    
+    var script1 = document.createElement('script');                             // sample script element
     script1.setAttribute("src", filename);
 
     if (key.length == 1 && !flag)                   // add script node
@@ -23,7 +30,11 @@ function getData()
     }
     else if(key.length==0 && flag)                  // remove script node
     {
-        root.removeChild(script1);
+        try
+        {
+            root.removeChild(root.firstChild);
+        }
+        catch(err){}
         flag=false;
 
         eraseDataList();
@@ -190,7 +201,10 @@ function linkData(firstValue,key)
             case 'Z':
                 object = Zdata;
                 break;
+            default:
+                break;
         }
+        // console.log(object);
         if(object!=null)
         {
             if(database.length!=0)                                          // erase database

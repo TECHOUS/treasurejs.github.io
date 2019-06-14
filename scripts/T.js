@@ -81,7 +81,7 @@ var Tdata = [
 	},
 	{
 		name : "THISWAY JS",
-		description : ""this way" webgl/javascript demo",
+		description : "this way webgl/javascript demo",
 		github : "https://github.com/fernandojsg/thisway.js",
 		website : "http://fernandojsg.com/lab/thiswayjs/",
 		docs : "",

@@ -68,6 +68,9 @@
     text-decoration: none;
 }
 
+#found-data{
+    padding-bottom: 50px;
+}
 /* styling footer */
 footer{
     color: white;
