@@ -9,10 +9,21 @@
     <link rel="shortcut icon" href="images/ICO/icon.ico" type="image/x-icon" />
     <!-- GOOGLE FONT API -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body id="root">
     <script src="scripts/script.js"></script>
     <header>
+        <div id="toggle-div" onclick="handleNightMode()">
+            <span id="toggle-night">
+                <i class="fas fa-moon fa-2x"></i>
+            </span>
+            <span id="toggle-day">
+                <i class="fas fa-sun fa-2x"></i>
+            </span>
+        </div>
         <div id="header-div">
             <a href="https://github.com/TechOUs/Treasurejs-logo">
                 <img src="images/SVG/stamp-logo.svg" alt="treasure js logo"/>
@@ -51,13 +62,6 @@
         </div>
     </section>
     <footer>
-        <div id="footer-div">
-            <span>Night Mode: </span>
-            <label class="switch">
-                <input type="checkbox" id="toggleSwitch" onclick="handleNightMode()">
-                <span class="slider round"></span>
-            </label>
-        </div>
         <p>&copy; TechOUs 2019</p>
     </footer>
 </body>

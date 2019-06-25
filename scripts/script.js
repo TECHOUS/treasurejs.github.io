@@ -3,6 +3,7 @@ let root = document.getElementById('root');                                 // f
 var database = [];                                                          // working database
 const darkBackground = "#121212";
 const lightBlack  = "#292b2c";
+let nightModeButton = false;
 
 /**
  * This function will be called when key is pressed
@@ -330,22 +331,41 @@ function addToDOM()
             root.appendChild(div);
         }
     }
-    handleNightMode();
-}
 
-/**
- * it will handle night mode of the application
- **/
-function handleNightMode()
-{
-    let toggleSwitch = document.getElementById('toggleSwitch');
-    if(toggleSwitch.checked)
+    if(nightModeButton == true)
     {
         switchNightMode();
     }
     else
     {
         switchLightMode();
+    }
+}
+
+/**
+ * This function will change the toggle icon on click
+ **/
+function handleNightMode()
+{
+    if(nightModeButton==true)                                              // night mode
+    {
+        nightModeButton = false;
+        let night = document.getElementById('toggle-night');
+        night.style.display = "block";
+        document.getElementById('toggle-day').style.display = "none";
+        document.getElementById('toggle-div').style.backgroundColor = "#ccc";
+        document.getElementById('toggle-div').style.color = "black";
+        switchLightMode();
+    }
+    else if(nightModeButton == false)
+    {
+        nightModeButton = true;
+        document.getElementById('toggle-night').style.display = "none";
+        let day = document.getElementById('toggle-day');
+        day.style.display = "block";
+        document.getElementById('toggle-div').style.backgroundColor = "rgb(139, 139, 255)";
+        document.getElementById('toggle-div').style.color = "white";
+        switchNightMode();
     }
 }
 
