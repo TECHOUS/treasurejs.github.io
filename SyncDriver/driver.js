@@ -1,24 +1,23 @@
 var fs = require('fs');
 
-
 let charArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 for(let i=0;i<charArray.length;i++)
 {
     let objectDatabase = [];
-    let readFileName = 'Treasure-js/etc/'+charArray[i]+".md";
+    let readFileName = 'Treasure-js/etc/'+charArray[i]+".md";       // reading files path
 
-    fs.readFile(readFileName,function(err,buf){
+    fs.readFile(readFileName,function(err,buf){                     // reading markdown files
         if(err)
         {
             console.log(err);
         }
-        let str             = buf.toString();
-        let arr             = str.split('\n');
+        let readedFile      = buf.toString();
+        let arr             = readedFile.split('\n');
         let object          = null;
 
-        // THIS IS MARKDOWN PARSER
-        for(let j=0;j<arr.length;j++)
+        // MARKDOWN PARSING
+        for(let j=0;j<arr.length;j++)                               // parsing markdown and create objects
         {
             // console.log(arr[i]);
             if(arr[j].search("## :rocket:")!=-1)
@@ -48,31 +47,40 @@ for(let i=0;i<charArray.length;i++)
             else if(arr[j].search("WEBSITE")!=-1)
             {
                 let website = arr[j].split("WEBSITE")[1];
-                if(website.search("DOCS")!=-1)
-                {
-                    website = website.split("DOCS")[1]
-                }
-                // console.log(website);
                 object.website = website.substring(2,website.length-1);
             }
-            else if(arr[j].search("DOCS")!=-1)
+            else if(arr[j].search("DEVDOCS")==-1 && arr[j].search("DOCS")!=-1)
             {
                 let docs = arr[j].split("DOCS")[1];
                 // console.log(docs);
                 object.docs = docs.substring(2,docs.length-1);
             }
-            else
+            else if(arr[j].indexOf("*")!=-1)
             {
+                let pair = {
+                    name: "",
+                    link: ""
+                }
+                let parse = arr[j].split(/([()])/);
+                let first  = parse[0].replace('* [','').replace(']','');
+                pair.name = first;
+                pair.link = parse[2];
+                object.other.push(pair);
+            }
+            else                                                            // writing description
+            {
+                // console.log(arr[j]);
                 let array = arr[j].split("## :rocket:");
+                // console.log(array);
                 if(array.length==1 && array[0]!='' && array[0].search("#")==-1)
                 {
-                    // console.log(array);
+                    array[0] = array[0].replace(/"/g, "'");
                     object.description = array[0];
                 }
             }
         }
 
-        // console.log(objectDatabase);
+        // writing js files
         var data = "var " + charArray[i] + "data = [\n";
 
         for(let k=0;k<objectDatabase.length;k++)
@@ -82,7 +90,31 @@ for(let i=0;i<charArray.length;i++)
             data = data + "\t\tgithub : " + "\"" + objectDatabase[k].github + "\",\n"; 
             data = data + "\t\twebsite : " + "\"" + objectDatabase[k].website + "\",\n";
             data = data + "\t\tdocs : " + "\"" + objectDatabase[k].docs + "\",\n";
-            data = data + "\t\tothers : []\n";
+            
+            if(objectDatabase[k].other.length==0)
+            {
+                data = data + "\t\tothers : []\n";
+            }
+            else
+            {
+                let result = "[\n";
+                for(let i=0;i<objectDatabase[k].other.length;i++)
+                {
+                    result = result + "\t\t\t{\n";
+                    result = result + "\t\t\t\tname: " + "\"" + objectDatabase[k].other[i].name + "\",\n";
+                    result = result + "\t\t\t\tlink: " + "\"" + objectDatabase[k].other[i].link + "\"\n";
+                    result = result + "\t\t\t}";
+                    if(i != objectDatabase[k].other.length-1)
+                    {
+                        result = result+","
+                    }
+                    result = result+"\n";
+                }
+                result = result + "\t\t]";
+
+                data = data + "\t\tothers : " + result + "\n";
+            }
+            
             data = data + "\t}";
 
             if(k!=objectDatabase.length-1)
@@ -97,7 +129,7 @@ for(let i=0;i<charArray.length;i++)
 
         let writeFileName = "../scripts/" + charArray[i] +".js";
 
-        fs.writeFile(writeFileName,data,(err)=>{
+        fs.writeFile(writeFileName,data,(err)=>{                    // writing A.js ... files
             if(err)
             {
                 console.log(err);

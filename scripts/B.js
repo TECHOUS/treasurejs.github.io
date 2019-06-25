@@ -1,18 +1,72 @@
 var Bdata = [
 	{
 		name : "BABEL JS",
-		description : "* [Compile GraphQL AST at build-time with babel-plugin-macros.](https://github.com/evenchange4/graphql.macro)",
+		description : "Babel is a compiler for writing next generation JavaScript",
 		github : "https://github.com/babel/babel",
 		website : "https://babeljs.io/",
 		docs : "https://babeljs.io/docs/en/",
-		others : []
+		others : [
+			{
+				name: "Webpack plugin",
+				link: "https://github.com/babel/babel-loader"
+			},
+			{
+				name: "Compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime.",
+				link: "https://github.com/sokra/rawact"
+			},
+			{
+				name: "Pre-evaluate code at build-time",
+				link: "https://github.com/kentcdodds/babel-plugin-preval"
+			},
+			{
+				name: "Super-fast alternative for babel written in rust",
+				link: "https://github.com/swc-project/swc"
+			},
+			{
+				name: "Add the opportunity to import modules by the root path",
+				link: "https://github.com/entwicklerstube/babel-plugin-root-import"
+			},
+			{
+				name: "Allows you to build simple compile-time libraries",
+				link: "https://github.com/kentcdodds/babel-plugin-macros"
+			},
+			{
+				name: "Babel Macro for graphql-tag",
+				link: "https://github.com/leoasis/graphql-tag.macro"
+			},
+			{
+				name: "Compile GraphQL AST at build-time with babel-plugin-macros.",
+				link: "https://github.com/evenchange4/graphql.macro"
+			}
+		]
 	},
 	{
 		name : "BACKBONE JS",
-		description : "* [LEARN BACKBONE JS](https://in.udacity.com/course/learn-backbonejs--ud990)",
+		description : "Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.",
 		github : "https://github.com/jashkenas/backbone",
 		website : "http://backbonejs.org/",
-		docs : "https://devdocs.io/backbone/",
+		docs : "http://backbonejs.org/docs/backbone.html",
+		others : [
+			{
+				name: "Backbone JS",
+				link: "https://www.javatpoint.com/backbonejs-tutorial"
+			},
+			{
+				name: "LEARN BACKBONE JS",
+				link: "https://in.udacity.com/course/learn-backbonejs--ud990"
+			},
+			{
+				name: "DEVDOCS",
+				link: "https://devdocs.io/backbone/"
+			}
+		]
+	},
+	{
+		name : "BACKSTOP JS",
+		description : "Catch CSS curve balls.",
+		github : "https://github.com/garris/BackstopJS",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{
@@ -35,7 +89,7 @@ var Bdata = [
 		name : "BLUEBIRD JS",
 		description : "Bluebird is a full featured promise library with unmatched performance.",
 		github : "https://github.com/petkaantonov/bluebird",
-		website : "http://bluebirdjs.com/docs/getting-started.html",
+		website : "OCS](http://bluebirdjs.com/docs/getting-started.html",
 		docs : "",
 		others : []
 	},
@@ -49,11 +103,36 @@ var Bdata = [
 	},
 	{
 		name : "BOOTSTRAP",
-		description : "* [BootstrapVue provides one of the most comprehensive implementations of Bootstrap 4 components and grid system for Vue.js and with extensive and automated WAI-ARIA accessibility markup.](https://github.com/bootstrap-vue/bootstrap-vue)",
+		description : "Build responsive, mobile-first projects on the web with the world's most popular front-end component library.",
 		github : "https://github.com/twbs/bootstrap",
 		website : "https://getbootstrap.com/",
 		docs : ".1](https://getbootstrap.com/docs/4.1/layout/overview/",
-		others : []
+		others : [
+			{
+				name: "VERSION3 - W3 SCHOOLS",
+				link: "https://www.w3schools.com/bootstrap/default.asp"
+			},
+			{
+				name: "VERSION4 - W3 SCHOOLS",
+				link: "https://www.w3schools.com/bootstrap4/default.asp"
+			},
+			{
+				name: "Introduction to Bootstrap",
+				link: "https://www.edx.org/course/introduction-to-bootstrap-a-tutorial-1"
+			},
+			{
+				name: "BootStrap - GFG",
+				link: "https://www.geeksforgeeks.org/beginning-bootstrap-part-1/"
+			},
+			{
+				name: "Bootstrap Tutorial",
+				link: "https://www.javatpoint.com/bootstrap-tutorial"
+			},
+			{
+				name: "BootstrapVue provides one of the most comprehensive implementations of Bootstrap 4 components and grid system for Vue.js and with extensive and automated WAI-ARIA accessibility markup.",
+				link: "https://github.com/bootstrap-vue/bootstrap-vue"
+			}
+		]
 	},
 	{
 		name : "BOOTSTRAP VUE JS",

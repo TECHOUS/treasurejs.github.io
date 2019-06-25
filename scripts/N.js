@@ -10,18 +10,23 @@ var Ndata = [
 	{
 		name : "NATURAL",
 		description : "general natural language facilities for node",
-		github : "OCS](https://github.com/NaturalNode/natural",
+		github : "https://github.com/NaturalNode/natural",
 		website : "",
 		docs : "",
 		others : []
 	},
 	{
 		name : "NERV JS",
-		description : "* [INFO](https://github.com/NervJS/nerv/wiki/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%BF%98%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA-React-like-%E6%A1%86%E6%9E%B6%EF%BC%9F)",
+		description : "A blazing fast React alternative, compatible with IE8 and React 16",
 		github : "https://github.com/NervJS/nerv",
 		website : "https://nerv.aotu.io/",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "INFO",
+				link: "https://github.com/NervJS/nerv/wiki/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%BF%98%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA-React-like-%E6%A1%86%E6%9E%B6%EF%BC%9F"
+			}
+		]
 	},
 	{
 		name : "NEST JS",
@@ -49,11 +54,32 @@ var Ndata = [
 	},
 	{
 		name : "NEXT JS",
-		description : "* [CLI for easily creating Next.js apps in one command](https://github.com/themodernjavascript/create-next-app-cli)",
+		description : "The React Framework",
 		github : "https://github.com/zeit/next.js",
 		website : "https://nextjs.org/",
 		docs : "https://nextjs.org/docs/",
-		others : []
+		others : [
+			{
+				name: "NEXT APP",
+				link: "https://github.com/segmentio/create-next-app"
+			},
+			{
+				name: "Redux wrapper for Next.js",
+				link: "https://github.com/kirill-konshin/next-redux-wrapper"
+			},
+			{
+				name: "NEXT PLUGINS",
+				link: "https://github.com/zeit/next-plugins"
+			},
+			{
+				name: "nextjs starter project",
+				link: "https://github.com/me-io/nextjs-starter"
+			},
+			{
+				name: "CLI for easily creating Next.js apps in one command",
+				link: "https://github.com/themodernjavascript/create-next-app-cli"
+			}
+		]
 	},
 	{
 		name : "NOCK",
@@ -73,11 +99,40 @@ var Ndata = [
 	},
 	{
 		name : "NPM",
-		description : "* [Runs a load test on the selected URL. Easy to extend minimally for your own ends](https://github.com/alexfernandez/loadtest)",
+		description : "![image](/logo/npm.jpg)",
 		github : "",
 		website : "https://www.npmjs.com/",
 		docs : "https://devdocs.io/npm/",
-		others : []
+		others : [
+			{
+				name: "Short id generator. Url-friendly. Non-predictable. Cluster-compatible",
+				link: "https://github.com/dylang/shortid"
+			},
+			{
+				name: "Oracle Database Driver",
+				link: "https://github.com/oracle/node-oracledb"
+			},
+			{
+				name: "A central repository for Flow library definitions",
+				link: "https://github.com/flow-typed/flow-typed"
+			},
+			{
+				name: "Find newer versions of package dependencies than what your package.json or bower.json allows",
+				link: "https://github.com/tjunnone/npm-check-updates"
+			},
+			{
+				name: "GREENLET",
+				link: "https://github.com/developit/greenlet"
+			},
+			{
+				name: "AUTOSSH",
+				link: "https://github.com/samueleaton/autossh"
+			},
+			{
+				name: "Runs a load test on the selected URL. Easy to extend minimally for your own ends",
+				link: "https://github.com/alexfernandez/loadtest"
+			}
+		]
 	},
 	{
 		name : "NOW BUILDERS",

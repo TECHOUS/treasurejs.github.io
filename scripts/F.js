@@ -26,7 +26,7 @@ var Fdata = [
 	{
 		name : "FASTEST-VALIDATOR",
 		description : "The fastest JS validator library for NodeJS",
-		github : "OCS](https://github.com/icebob/fastest-validator",
+		github : "https://github.com/icebob/fastest-validator",
 		website : "",
 		docs : "",
 		others : []
@@ -51,8 +51,8 @@ var Fdata = [
 		name : "FBT",
 		description : "FBT is a framework for internationalizing user interfaces. It is designed to be not only powerful and flexible, but also simple and intuitive. Getting grammatically correct translated texts in dynamic applications is hard.",
 		github : "https://github.com/facebookincubator/fbt",
-		website : "https://facebookincubator.github.io/fbt/",
-		docs : "",
+		website : "",
+		docs : "https://facebookincubator.github.io/fbt/",
 		others : []
 	},
 	{
@@ -91,8 +91,8 @@ var Fdata = [
 		name : "FLATPICKR JS",
 		description : "lightweight, powerful javascript datetimepicker with no dependencies",
 		github : "https://github.com/flatpickr/flatpickr",
-		website : "https://flatpickr.js.org/",
-		docs : "",
+		website : "",
+		docs : "https://flatpickr.js.org/",
 		others : []
 	},
 	{
@@ -132,6 +132,14 @@ var Fdata = [
 		description : "",
 		github : "https://github.com/mariusbrataas/flowpoints_ml",
 		website : "https://mariusbrataas.github.io/flowpoints_ml/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "FORG JS",
+		description : "ForgJs is a javascript lightweight object validator.",
+		github : "https://github.com/oussamahamdaoui/forgJs",
+		website : "https://oussamahamdaoui.github.io/forgjs-examples/",
 		docs : "",
 		others : []
 	},

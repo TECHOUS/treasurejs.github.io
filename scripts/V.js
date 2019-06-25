@@ -10,18 +10,43 @@ var Vdata = [
 	{
 		name : "VIA JS",
 		description : "Write JS code that runs in a different context. E.g. use the DOM in a Web Worker",
-		github : "OCS](https://github.com/AshleyScirra/via.js",
+		github : "https://github.com/AshleyScirra/via.js",
 		website : "",
 		docs : "",
 		others : []
 	},
 	{
 		name : "VIS JS",
-		description : "  * [DATASET](http://visjs.org/docs/data/)",
+		description : "A dynamic, browser based visualization library. The library is designed to be easy to use, to handle large amounts of dynamic data, and to enable manipulation of and interaction with the data.",
 		github : "https://github.com/almende/vis",
 		website : "http://visjs.org/",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "MODULES",
+				link: "http://visjs.org/#modules"
+			},
+			{
+				name: "NETWORK",
+				link: "http://visjs.org/docs/network/"
+			},
+			{
+				name: "TIMELINE",
+				link: "http://visjs.org/docs/timeline/"
+			},
+			{
+				name: "GRAPH 2D",
+				link: "http://visjs.org/docs/graph2d/"
+			},
+			{
+				name: "GRAPH 3D",
+				link: "http://visjs.org/docs/graph3d/"
+			},
+			{
+				name: "DATASET",
+				link: "http://visjs.org/docs/data/"
+			}
+		]
 	},
 	{
 		name : "VIVID JS",

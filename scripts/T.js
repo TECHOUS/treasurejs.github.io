@@ -33,16 +33,37 @@ var Tdata = [
 	},
 	{
 		name : "TENSORFLOW JS",
-		description : "* [Pretrained models for TensorFlow.js](https://github.com/tensorflow/tfjs-models)",
+		description : "A JavaScript library for training and deploying ML models in the browser and on Node.js",
 		github : "https://github.com/tensorflow/tfjs",
 		website : "https://js.tensorflow.org/",
 		docs : "https://js.tensorflow.org/api/0.14.1/",
-		others : []
+		others : [
+			{
+				name: "examples",
+				link: "https://github.com/tensorflow/tfjs-examples"
+			},
+			{
+				name: "Tensorflow.js Explained",
+				link: "https://github.com/llSourcell/tensorflow.js_explained"
+			},
+			{
+				name: "Tensorflow in 7 minutes",
+				link: "https://medium.freecodecamp.org/get-to-know-tensorflow-js-in-7-minutes-afcd0dfd3d2f"
+			},
+			{
+				name: "TensorFlow.js Cheetsheet",
+				link: "https://towardsdatascience.com/50-tensorflow-js-api-explained-in-5-minutes-tensorflow-js-cheetsheet-4f8c7f9cc8b2"
+			},
+			{
+				name: "Pretrained models for TensorFlow.js",
+				link: "https://github.com/tensorflow/tfjs-models"
+			}
+		]
 	},
 	{
 		name : "TERMYNAL",
 		description : "Lightweight and modern terminal animations using async/await",
-		github : "OCS](https://github.com/ines/termynal",
+		github : "https://github.com/ines/termynal",
 		website : "",
 		docs : "",
 		others : []
@@ -50,7 +71,7 @@ var Tdata = [
 	{
 		name : "TERSER JS",
 		description : "JavaScript parser, mangler, optimizer and beautifier toolkit for ES6+",
-		github : "OCS](https://github.com/terser-js/terser",
+		github : "https://github.com/terser-js/terser",
 		website : "",
 		docs : "",
 		others : []
@@ -81,7 +102,7 @@ var Tdata = [
 	},
 	{
 		name : "THISWAY JS",
-		description : "this way webgl/javascript demo",
+		description : "'this way' webgl/javascript demo",
 		github : "https://github.com/fernandojsg/thisway.js",
 		website : "http://fernandojsg.com/lab/thiswayjs/",
 		docs : "",
@@ -89,11 +110,16 @@ var Tdata = [
 	},
 	{
 		name : "THREE JS",
-		description : "* [React-fiber renderer for THREE.js](https://github.com/drcmda/react-three-fiber)",
+		description : "JavaScript 3D library.",
 		github : "https://github.com/mrdoob/three.js/",
 		website : "https://threejs.org/",
 		docs : "https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene",
-		others : []
+		others : [
+			{
+				name: "React-fiber renderer for THREE.js",
+				link: "https://github.com/drcmda/react-three-fiber"
+			}
+		]
 	},
 	{
 		name : "TINYMCE",
@@ -140,6 +166,14 @@ var Tdata = [
 		description : "Render tweet into beautiful markdown",
 		github : "https://github.com/silentroach/tweet.md",
 		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "TYPED JS",
+		description : "A JavaScript Typing Animation Library",
+		github : "https://github.com/mattboldt/typed.js/",
+		website : "https://mattboldt.com/demos/typed-js/",
 		docs : "",
 		others : []
 	}

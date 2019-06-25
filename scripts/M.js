@@ -1,10 +1,18 @@
 var Mdata = [
 	{
+		name : "MARGARITA",
+		description : "Mobile and Web application implementing Kiwi.com Tequila API",
+		github : "https://github.com/kiwicom/margarita",
+		website : "https://margarita.kiwi.com/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "MAILGUN JS",
 		description : "A simple Node.js helper module for Mailgun API.",
 		github : "https://github.com/bojand/mailgun-js",
-		website : "http://bojand.github.io/mailgun-js/#/",
-		docs : "",
+		website : "",
+		docs : "http://bojand.github.io/mailgun-js/#/",
 		others : []
 	},
 	{
@@ -21,6 +29,14 @@ var Mdata = [
 		github : "https://github.com/mapbox/mapbox-gl-js",
 		website : "https://www.mapbox.com/",
 		docs : "https://www.mapbox.com/mapbox-gl-js/api/",
+		others : []
+	},
+	{
+		name : "MAPS API FOR JAVASCRIPT EXAMPLES",
+		description : "Self-contained examples for Maps API for JavaScript v3.",
+		github : "https://github.com/heremaps/maps-api-for-javascript-examples",
+		website : "",
+		docs : "https://developer.here.com/documentation/maps/topics/overview.html",
 		others : []
 	},
 	{
@@ -59,8 +75,8 @@ var Mdata = [
 		name : "MDX DECK",
 		description : "MDX-based presentation decks",
 		github : "https://github.com/jxnblk/mdx-deck",
-		website : "https://jxnblk.com/mdx-deck",
-		docs : "",
+		website : "",
+		docs : "https://jxnblk.com/mdx-deck",
 		others : []
 	},
 	{
@@ -112,11 +128,19 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MICROBUNDLE",
+		description : "Zero-configuration bundler for tiny modules.",
+		github : "https://github.com/developit/microbundle",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "MIGHTY INPUT",
 		description : "Text input for modern web",
 		github : "https://github.com/rumkin/mighty-input",
-		website : "https://mighty-input.now.sh/",
-		docs : "",
+		website : "",
+		docs : "https://mighty-input.now.sh/",
 		others : []
 	},
 	{
@@ -131,8 +155,8 @@ var Mdata = [
 		name : "MITHRIL JS",
 		description : "A Javascript Framework for Building Brilliant Applications",
 		github : "https://github.com/MithrilJS/mithril.js",
-		website : "https://mithril.js.org/",
-		docs : "",
+		website : "",
+		docs : "https://mithril.js.org/",
 		others : []
 	},
 	{
@@ -153,11 +177,16 @@ var Mdata = [
 	},
 	{
 		name : "MOBX JS",
-		description : "* [Vue bindings for MobX](https://github.com/mobxjs/mobx-vue)",
+		description : "MobX is proudly sponsored by Mendix, Coinbase, Canva, Facebook Open Source, Algolia, Guilded and many individual sponsors",
 		github : "https://github.com/mobxjs/mobx",
 		website : "https://mobx.js.org/",
 		docs : "https://mobx.js.org/refguide/api.html",
-		others : []
+		others : [
+			{
+				name: "Vue bindings for MobX",
+				link: "https://github.com/mobxjs/mobx-vue"
+			}
+		]
 	},
 	{
 		name : "MOCHA JS",
@@ -165,6 +194,14 @@ var Mdata = [
 		github : "https://github.com/mochajs/mocha",
 		website : "https://mochajs.org/",
 		docs : "https://devdocs.io/mocha/",
+		others : []
+	},
+	{
+		name : "MOCKY",
+		description : "Generate custom HTTP responses, the simpler way to test your Web Services",
+		github : "https://github.com/julien-lafont/Mocky",
+		website : "https://www.mocky.io/",
+		docs : "",
 		others : []
 	},
 	{

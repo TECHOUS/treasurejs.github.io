@@ -4,8 +4,13 @@ var Rdata = [
 		description : "Practical functional Javascript",
 		github : "https://github.com/ramda/ramda/",
 		website : "https://ramdajs.com",
-		docs : "https://devdocs.io/ramda/",
-		others : []
+		docs : "https://ramdajs.com/docs/",
+		others : [
+			{
+				name: "DEVDOCS",
+				link: "https://devdocs.io/ramda/"
+			}
+		]
 	},
 	{
 		name : "RAPHAEL JS",
@@ -35,22 +40,71 @@ var Rdata = [
 		name : "REACH UI",
 		description : "The Accessible Foundation for React Apps and Design Systems.",
 		github : "https://github.com/reach/reach-ui",
-		website : "https://ui.reach.tech/",
-		docs : "",
+		website : "",
+		docs : "https://ui.reach.tech/",
 		others : []
 	},
 	{
 		name : "REDUX",
-		description : "RxJS middleware for action side effects in Redux using Epics",
+		description : "RxJS middleware for action side effects in Redux using 'Epics'",
 		github : "https://github.com/redux-observable/redux-observable",
 		website : "https://redux-observable.js.org/",
-		docs : "https://devdocs.io/redux/",
-		others : []
+		docs : "https://redux.js.org/introduction/getting-started",
+		others : [
+			{
+				name: "Official React bindings for Redux",
+				link: "https://github.com/reduxjs/react-redux"
+			},
+			{
+				name: "DEVDOCS",
+				link: "https://devdocs.io/redux/"
+			},
+			{
+				name: "DevTools extension",
+				link: "https://github.com/zalmoxisus/redux-devtools-extension"
+			},
+			{
+				name: "higher order reducer to add undo/redo functionality to redux state containers",
+				link: "https://github.com/omnidan/redux-undo"
+			},
+			{
+				name: "An alternative side effect model for Redux apps",
+				link: "https://github.com/redux-saga/redux-saga"
+			},
+			{
+				name: "CONNECTED REACT REDUX",
+				link: "https://github.com/supasate/connected-react-router"
+			},
+			{
+				name: "React Router and Redux",
+				link: "https://www.edx.org/course/react-router-and-redux-1"
+			},
+			{
+				name: "Enables simple, yet robust handling of async action creators in Redux",
+				link: "https://github.com/pburtchaell/redux-promise-middleware"
+			},
+			{
+				name: "Thunk middleware for Redux",
+				link: "https://github.com/reduxjs/redux-thunk"
+			},
+			{
+				name: "Predictable state container for JavaScript apps",
+				link: "https://github.com/reduxjs/redux"
+			},
+			{
+				name: "Logger for Redux",
+				link: "https://github.com/LogRocket/redux-logger"
+			},
+			{
+				name: "A Redux binding for React Router v4",
+				link: "https://github.com/supasate/connected-react-router"
+			}
+		]
 	},
 	{
 		name : "READABILITY JS",
 		description : "A standalone version of the readability lib",
-		github : "OCS](https://github.com/mozilla/readability",
+		github : "https://github.com/mozilla/readability",
 		website : "",
 		docs : "",
 		others : []
@@ -105,18 +159,23 @@ var Rdata = [
 	},
 	{
 		name : "REQTHINKDB JS",
-		description : "* [API](https://rethinkdb.com/api/javascript/)",
+		description : "An advanced Node.js driver for RebirthDB with a connection pool, support for streams etc.",
 		github : "https://github.com/rethinkdb/rethinkdb-js",
 		website : "https://rethinkdb.com/",
 		docs : "https://devdocs.io/rethinkdb~javascript/",
-		others : []
+		others : [
+			{
+				name: "API",
+				link: "https://rethinkdb.com/api/javascript/"
+			}
+		]
 	},
 	{
 		name : "REAVIZ",
 		description : "REAVIZ is a modular chart component library that leverages React natively for rendering the components while using D3js under the hood for calculations. The library provides an easy way to get started creating charts without sacrificing customization ability.",
 		github : "https://github.com/jask-oss/reaviz",
-		website : "https://jask-oss.github.io/reaviz/?path=/story/charts-area-single-series--simple",
-		docs : "",
+		website : "",
+		docs : "https://jask-oss.github.io/reaviz/?path=/story/charts-area-single-series--simple",
 		others : []
 	},
 	{
@@ -131,14 +190,14 @@ var Rdata = [
 		name : "REST JS",
 		description : "GitHub REST API client for JavaScript",
 		github : "GitHub REST API client for JavaScript",
-		website : "https://octokit.github.io/rest.js/",
-		docs : "",
+		website : "",
+		docs : "https://octokit.github.io/rest.js/",
 		others : []
 	},
 	{
 		name : "REVEAL JS",
 		description : "The HTML Presentation Framework",
-		github : "OCS](https://github.com/hakimel/reveal.js",
+		github : "https://github.com/hakimel/reveal.js",
 		website : "https://revealjs.com/",
 		docs : "",
 		others : []
@@ -149,6 +208,14 @@ var Rdata = [
 		github : "https://github.com/riot/riot",
 		website : "https://riot.js.org/",
 		docs : "https://riot.js.org/guide/",
+		others : []
+	},
+	{
+		name : "RIVEN",
+		description : "Riven is a bare minimum flow-based programming framework (eg: math & conditional). Nodes have 2 ways of communicating with each other, one is a send/receive pattern, the other, a request/answer pattern. Despite its minimal toolset, it can be expanded into a complete web framework.",
+		github : "https://github.com/XXIIVV/Riven",
+		website : "https://wiki.xxiivv.com/#riven",
+		docs : "",
 		others : []
 	},
 	{
@@ -163,8 +230,8 @@ var Rdata = [
 		name : "ROLLUP JS",
 		description : "Next-generation ES module bundler",
 		github : "https://github.com/rollup/rollup",
-		website : "https://rollupjs.org/guide/en",
-		docs : "",
+		website : "",
+		docs : "https://rollupjs.org/guide/en",
 		others : []
 	},
 	{

@@ -32,6 +32,14 @@ var Pdata = [
 		others : []
 	},
 	{
+		name : "PAKO",
+		description : "high speed zlib port to javascript, works in browser & node.js",
+		github : "https://github.com/nodeca/pako",
+		website : "http://nodeca.github.io/pako/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "PAPAPARSE",
 		description : "Fast and powerful CSV (delimited text) parser that gracefully handles large files and malformed input",
 		github : "https://github.com/mholt/PapaParse",
@@ -41,10 +49,10 @@ var Pdata = [
 	},
 	{
 		name : "PARTICLES JS",
-		description : "* [TUTORIAL](https://www.youtube.com/watch?v=qK3cgD09Qf0)",
-		github : "OCS](https://github.com/VincentGarreau/particles.js",
+		description : "A lightweight JavaScript library for creating particles",
+		github : "https://github.com/VincentGarreau/particles.js",
 		website : "https://vincentgarreau.com/particles.js/",
-		docs : "",
+		docs : "https://www.youtube.com/watch?v=qK3cgD09Qf0",
 		others : []
 	},
 	{
@@ -57,9 +65,22 @@ var Pdata = [
 	},
 	{
 		name : "PERFLINK",
-		description : "* [A list of standard object serializers for the Pino logger](https://github.com/pinojs/pino-std-serializers)",
+		description : ":evergreen_tree: super fast, all natural json logger :evergreen_tree:",
 		github : "https://github.com/pinojs/pino",
-		website : "http://getpino.io/#/",
+		website : "https://perf.link/",
+		docs : "http://getpino.io/#/",
+		others : [
+			{
+				name: "A list of standard object serializers for the Pino logger",
+				link: "https://github.com/pinojs/pino-std-serializers"
+			}
+		]
+	},
+	{
+		name : "PLATFORM JS",
+		description : "A platform detection library.",
+		github : "https://github.com/bestiejs/platform.js",
+		website : "",
 		docs : "",
 		others : []
 	},
@@ -73,7 +94,7 @@ var Pdata = [
 	},
 	{
 		name : "PLOP JS",
-		description : "Plop is what I like to call a micro-generator framework. Now, I call it that because it is a small tool that gives you a simple way to generate code or any other type of flat text files in a consistent way. You see, we all create structures and patterns in our code (routes, controllers, components, helpers, etc). These patterns change and improve over time so when you need to create a NEW insert-name-of-pattern-here, it's not always easy to locate the files in your codebase that represent the current best practice. That's where plop saves you. With plop, you have your best practice method of creating any given pattern in CODE. Code that can easily be run from the terminal by typing plop. Not only does this save you from hunting around in your codebase for the right files to copy, but it also turns the right way into the easiest way to make new files.",
+		description : "Plop is what I like to call a 'micro-generator framework.' Now, I call it that because it is a small tool that gives you a simple way to generate code or any other type of flat text files in a consistent way. You see, we all create structures and patterns in our code (routes, controllers, components, helpers, etc). These patterns change and improve over time so when you need to create a NEW insert-name-of-pattern-here, it's not always easy to locate the files in your codebase that represent the current 'best practice.' That's where plop saves you. With plop, you have your 'best practice' method of creating any given pattern in CODE. Code that can easily be run from the terminal by typing plop. Not only does this save you from hunting around in your codebase for the right files to copy, but it also turns 'the right way' into 'the easiest way' to make new files.",
 		github : "https://github.com/amwmedia/plop",
 		website : "https://plopjs.com/",
 		docs : "https://plopjs.com/documentation/",
@@ -113,11 +134,16 @@ var Pdata = [
 	},
 	{
 		name : "PUG JS",
-		description : "* [OVERVIEW](https://devdocs.io/pug/)",
+		description : "Pug – robust, elegant, feature rich template engine for Node.js",
 		github : "https://github.com/pugjs/pug",
-		website : "https://pugjs.org/api/getting-started.html",
-		docs : "",
-		others : []
+		website : "",
+		docs : "https://pugjs.org/api/getting-started.html",
+		others : [
+			{
+				name: "OVERVIEW",
+				link: "https://devdocs.io/pug/"
+			}
+		]
 	},
 	{
 		name : "POI JS",
@@ -141,6 +167,14 @@ var Pdata = [
 		github : "https://github.com/postcss/postcss",
 		website : "https://postcss.org/",
 		docs : "https://github.com/postcss/postcss/tree/master/docs",
+		others : []
+	},
+	{
+		name : "PROTOBUF JS",
+		description : "Protocol Buffers for JavaScript (& TypeScript).",
+		github : "https://github.com/protobufjs/protobuf.js",
+		website : "",
+		docs : "",
 		others : []
 	}
 ]

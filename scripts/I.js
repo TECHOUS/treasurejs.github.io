@@ -34,7 +34,7 @@ var Idata = [
 	{
 		name : "IMMORTAL DB",
 		description : "A relentless key-value store for the browser.",
-		github : "OCS](https://github.com/gruns/ImmortalDB",
+		github : "https://github.com/gruns/ImmortalDB",
 		website : "",
 		docs : "",
 		others : []
@@ -57,11 +57,16 @@ var Idata = [
 	},
 	{
 		name : "INK",
-		description : "* [Utilities for testing Ink apps](https://github.com/vadimdemedes/ink-testing-library)",
+		description : "React for interactive command-line apps",
 		github : "https://github.com/vadimdemedes/ink",
 		website : "",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "Utilities for testing Ink apps",
+				link: "https://github.com/vadimdemedes/ink-testing-library"
+			}
+		]
 	},
 	{
 		name : "INQUIRER JS",
