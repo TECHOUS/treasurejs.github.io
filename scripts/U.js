@@ -1,6 +1,6 @@
 var Udata = [
 	{
-		name : "μ",
+		name : "u",
 		description : "μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL",
 		github : "https://github.com/ananthakumaran/u",
 		website : "",

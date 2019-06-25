@@ -7,6 +7,8 @@
     <title>Treasure JS</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="shortcut icon" href="images/ICO/icon.ico" type="image/x-icon" />
+    <!-- GOOGLE FONT API -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body id="root">
     <script src="scripts/script.js"></script>
@@ -22,9 +24,11 @@
     </header>
     <section>
         <div id="section-div">
-            <input type="text" placeholder="search the treasure" id="section-div-input" onkeyup="getData()"/>
+            <input type="text" placeholder="Search Treasures" id="section-div-input" onkeyup="getData()"/>
         </div>
-        <br/><br/>
+        <br/>
+        <hr id="horizontal-rule"/>
+        <br/>
         <div id="found-data">
 
             <!-- JUST FOR MAKING DOM IN JS AND FOR STYLING-->
@@ -32,7 +36,12 @@
                 <h2>ACTIONS TOOLKIT</h2>
                 <p>A toolkit for building GitHub Actions in Node.js</p>
                 
-                <ul>
+                <ul id="basicList">
+                    <li><a href="https://github.com/JasonEtco/actions-toolkit">GITHUB</a></li>
+                    <li><a href="https://aframe.io/">WEBSITE</a></li>
+                    <li><a href="https://aframe.io/docs/0.8.0/introduction/">DOCS</a></li>
+                </ul>
+                <ul id="advList">
                     <li><a href="https://github.com/JasonEtco/actions-toolkit">GITHUB</a></li>
                     <li><a href="https://aframe.io/">WEBSITE</a></li>
                     <li><a href="https://aframe.io/docs/0.8.0/introduction/">DOCS</a></li>
