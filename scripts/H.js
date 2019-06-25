@@ -8,12 +8,29 @@ var Hdata = [
 		others : []
 	},
 	{
+		name : "HANDSONTABLE",
+		description : "Handsontable - JavaScript/HTML5 Data Grid Component with Spreadsheet Look & Feel. Available for React, Vue and Angular.",
+		github : "https://github.com/handsontable/handsontable",
+		website : "https://handsontable.com/",
+		docs : "https://handsontable.com/docs/7.1.0/tutorial-introduction.html",
+		others : []
+	},
+	{
 		name : "HAPI JS",
-		description : "* [JSON.parse() drop-in replacement with prototype poisoning protection](https://github.com/hapijs/bourne)",
+		description : "hapi is a simple to use configuration-centric framework with built-in support for input validation, caching, authentication, and other essential facilities for building web and services applications. hapi enables developers to focus on writing reusable application logic in a highly modular and prescriptive approach.",
 		github : "https://github.com/hapijs/hapi",
 		website : "https://hapijs.com/",
 		docs : "https://hapijs.com/tutorials",
-		others : []
+		others : [
+			{
+				name: "General purpose crypto utilities",
+				link: "https://github.com/hapijs/cryptiles"
+			},
+			{
+				name: "JSON.parse",
+				link: ""
+			}
+		]
 	},
 	{
 		name : "HASURA GRAPHQL ENGINE",
@@ -49,11 +66,16 @@ var Hdata = [
 	},
 	{
 		name : "HIGHLIGHT JS",
-		description : "* [USAGE](https://highlightjs.org/usage/)",
+		description : "Javascript syntax highlighter",
 		github : "https://github.com/highlightjs/highlight.js",
 		website : "https://highlightjs.org/",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "USAGE",
+				link: "https://highlightjs.org/usage/"
+			}
+		]
 	},
 	{
 		name : "HLS JS",
@@ -93,6 +115,14 @@ var Hdata = [
 		github : "https://github.com/jorgebucaran/hyperapp",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "HYPER",
+		description : "A terminal built on web technologies",
+		github : "https://github.com/zeit/hyper",
+		website : "",
+		docs : "https://hyper.is/",
 		others : []
 	}
 ]

@@ -1,11 +1,32 @@
 var Ddata = [
 	{
 		name : "D3 JS",
-		description : "* [Interactive and colorful art graph theory tutorials made using d3.js zap](https://github.com/mrpandey/d3graphTheory)",
+		description : "D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.",
 		github : "https://github.com/d3/d3",
 		website : "https://d3js.org/",
 		docs : "https://github.com/d3/d3/wiki",
-		others : []
+		others : [
+			{
+				name: "D3 JS 5",
+				link: "https://devdocs.io/d3~5/"
+			},
+			{
+				name: "D3 JS 4",
+				link: "https://devdocs.io/d3~4/"
+			},
+			{
+				name: "D3 JS 3",
+				link: "https://devdocs.io/d3~3/"
+			},
+			{
+				name: "DATA VISUALIZATION",
+				link: "https://in.udacity.com/course/data-visualization-and-d3js--ud507"
+			},
+			{
+				name: "Interactive and colorful art graph theory tutorials made using d3.js zap",
+				link: "https://github.com/mrpandey/d3graphTheory"
+			}
+		]
 	},
 	{
 		name : "DAILY HACK",
@@ -18,7 +39,7 @@ var Ddata = [
 	{
 		name : "DAY JS",
 		description : "Day.js 2KB immutable date library alternative to Moment.js with the same modern API",
-		github : "OCS](https://github.com/iamkun/dayjs",
+		github : "https://github.com/iamkun/dayjs",
 		website : "",
 		docs : "",
 		others : []
@@ -29,6 +50,14 @@ var Ddata = [
 		github : "https://github.com/danger/danger-js",
 		website : "https://danger.systems/js/",
 		docs : "https://danger.systems/js/usage.html",
+		others : []
+	},
+	{
+		name : "DARKMODE JS",
+		description : "Add a dark-mode / night-mode to your website in a few seconds",
+		github : "https://github.com/sandoche/Darkmode.js",
+		website : "https://darkmodejs.learn.uno/",
+		docs : "",
 		others : []
 	},
 	{
@@ -65,11 +94,16 @@ var Ddata = [
 	},
 	{
 		name : "DISCORD JS",
-		description : "* [The open source Discord bot that solves all of your problems](https://github.com/SwitchbladeBot/switchblade)",
+		description : "A powerful JavaScript library for interacting with the Discord API",
 		github : "https://github.com/discordjs/discord.js",
 		website : "https://discord.js.org/#/",
 		docs : "https://discord.js.org/#/docs/main/stable/general/welcome",
-		others : []
+		others : [
+			{
+				name: "The open source Discord bot that solves all of your problems",
+				link: "https://github.com/SwitchbladeBot/switchblade"
+			}
+		]
 	},
 	{
 		name : "DOCSIFY JS",
@@ -101,6 +135,14 @@ var Ddata = [
 		github : "https://github.com/wavesoft/dot-dom",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "DRAFT JS",
+		description : "Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences.",
+		github : "https://github.com/facebook/draft-js",
+		website : "https://draftjs.org/",
+		docs : "https://draftjs.org/docs/getting-started",
 		others : []
 	}
 ]

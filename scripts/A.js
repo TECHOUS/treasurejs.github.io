@@ -16,11 +16,19 @@ var Adata = [
 		others : []
 	},
 	{
+		name : "AGENDA",
+		description : "Lightweight job scheduling for Node.js",
+		github : "https://github.com/agenda/agenda",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "AJV JS",
 		description : "The fastest JSON Schema Validator.",
 		github : "https://github.com/epoberezkin/ajv",
-		website : "https://ajv.js.org/",
-		docs : "",
+		website : "",
+		docs : "https://ajv.js.org/",
 		others : []
 	},
 	{
@@ -35,8 +43,8 @@ var Adata = [
 		name : "ALGREBRAIC EFFECTS",
 		description : "Manage side-effects in your javascript application cleanly with algebraic effects",
 		github : "https://github.com/phenax/algebraic-effects",
-		website : "https://phenax.github.io/algebraic-effects/",
-		docs : "",
+		website : "",
+		docs : "https://phenax.github.io/algebraic-effects/",
 		others : []
 	},
 	{
@@ -65,11 +73,16 @@ var Adata = [
 	},
 	{
 		name : "ANIME JS",
-		description : "* [INTRO TUTORIAL](https://www.youtube.com/watch?v=g7WnZ9hxUak)",
+		description : "JavaScript Animation Engine",
 		github : "https://github.com/juliangarnier/anime",
 		website : "http://animejs.com/",
 		docs : "http://animejs.com/documentation/",
-		others : []
+		others : [
+			{
+				name: "INTRO TUTORIAL",
+				link: "https://www.youtube.com/watch?v=g7WnZ9hxUak"
+			}
+		]
 	},
 	{
 		name : "AOS",
@@ -110,5 +123,18 @@ var Adata = [
 		website : "http://www.jacklmoore.com/autosize/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "AWAIT-TO-JS",
+		description : "Async await wrapper for easy error handling without try-catch",
+		github : "https://github.com/scopsy/await-to-js",
+		website : "",
+		docs : "",
+		others : [
+			{
+				name: "BLOG",
+				link: "https://blog.grossman.io/how-to-write-async-await-without-try-catch-blocks-in-javascript/"
+			}
+		]
 	}
 ]

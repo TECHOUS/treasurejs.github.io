@@ -27,17 +27,30 @@ var Ldata = [
 		name : "LERNA",
 		description : "A tool for managing JavaScript projects with multiple packages.",
 		github : "https://github.com/lerna/lerna",
-		website : "https://lernajs.io/",
-		docs : "",
+		website : "",
+		docs : "https://lernajs.io/",
+		others : []
+	},
+	{
+		name : "LIB",
+		description : "Standard Library API Development, Deployment, and Management Tools",
+		github : "https://github.com/stdlib/lib",
+		website : "https://stdlib.com/",
+		docs : "https://docs.stdlib.com/#introduction",
 		others : []
 	},
 	{
 		name : "LIGHT MY REQUEST",
-		description : "* [session plugin for fastify](https://github.com/SerayaEryn/fastify-session)",
+		description : "Fake HTTP injection library",
 		github : "https://github.com/fastify/light-my-request",
 		website : "",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "session plugin for fastify",
+				link: "https://github.com/SerayaEryn/fastify-session"
+			}
+		]
 	},
 	{
 		name : "LINARIA",
@@ -61,6 +74,22 @@ var Ldata = [
 		github : "https://github.com/typicode/lowdb",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "LUCID",
+		description : "A developer tool for engineers working with React and GraphQL",
+		github : "https://github.com/Gossamer-React/Lucid",
+		website : "https://reactlucid.io/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "LUMA GL",
+		description : "WebGL2 Components for Data Visualization",
+		github : "https://github.com/uber/luma.gl",
+		website : "https://luma.gl/",
+		docs : "https://luma.gl/#/documentation/overview/introduction",
 		others : []
 	}
 ]

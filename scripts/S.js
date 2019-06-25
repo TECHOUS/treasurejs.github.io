@@ -8,6 +8,14 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "SEARCH UI",
+		description : "Libraries for the fast development of modern, engaging search experiences.",
+		github : "https://github.com/elastic/search-ui",
+		website : "https://swiftype.com/search-ui",
+		docs : "https://swiftype.com/documentation/enterprise-search/getting-started",
+		others : []
+	},
+	{
 		name : "SEMANTIC UI",
 		description : "UI component framework based around useful principles from natural language",
 		github : "https://github.com/Semantic-Org/Semantic-UI",
@@ -28,7 +36,7 @@ var Sdata = [
 		description : "An easy-to-use multi SQL dialect ORM",
 		github : "https://github.com/sequelize/sequelize",
 		website : "http://docs.sequelizejs.com/",
-		docs : "EFERENCE](http://docs.sequelizejs.com/identifiers.html",
+		docs : "http://docs.sequelizejs.com/identifiers.html",
 		others : []
 	},
 	{
@@ -60,8 +68,13 @@ var Sdata = [
 		description : "Test spies, stubs and mocks for JavaScript.",
 		github : "https://github.com/sinonjs/sinon",
 		website : "https://sinonjs.org/",
-		docs : "https://devdocs.io/sinon~7/",
-		others : []
+		docs : "https://sinonjs.org/releases/latest/",
+		others : [
+			{
+				name: "DEVDOCS",
+				link: "https://devdocs.io/sinon~7/"
+			}
+		]
 	},
 	{
 		name : "SLATE JS",
@@ -73,11 +86,20 @@ var Sdata = [
 	},
 	{
 		name : "SMOOTH DND",
-		description : "* [Vue wrappers components for smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd)",
+		description : "A fast and lightweight drag&drop, sortable library for with many configuration options covering many d&d scenarios. There is no external dependencies. It uses css transitions for animations so it's hardware accelerated whenever possible.",
 		github : "https://github.com/kutlugsahin/smooth-dnd",
 		website : "",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "react wrapper components for smooth-dnd",
+				link: "https://github.com/kutlugsahin/react-smooth-dnd"
+			},
+			{
+				name: "Vue wrappers components for smooth-dnd",
+				link: "https://github.com/kutlugsahin/vue-smooth-dnd"
+			}
+		]
 	},
 	{
 		name : "SNAP SVG",
@@ -179,8 +201,8 @@ var Sdata = [
 		name : "STORYBOOK JS",
 		description : "Interactive UI component dev & test: React, React Native, Vue, Angular, Ember",
 		github : "https://github.com/storybooks/storybook",
-		website : "https://storybook.js.org/",
-		docs : "",
+		website : "",
+		docs : "https://storybook.js.org/",
 		others : []
 	},
 	{
@@ -209,10 +231,23 @@ var Sdata = [
 	},
 	{
 		name : "SVELTE JS",
-		description : "* [Military-grade progressive web apps, powered by Svelte](https://github.com/sveltejs/sapper)",
+		description : "Cybernetically enhanced web apps",
 		github : "https://github.com/sveltejs/svelte",
 		website : "https://svelte.dev/",
 		docs : "https://svelte.dev/docs",
+		others : [
+			{
+				name: "Military-grade progressive web apps, powered by Svelte",
+				link: "https://github.com/sveltejs/sapper"
+			}
+		]
+	},
+	{
+		name : "SWING",
+		description : "A swipeable cards interface. The swipe-left/swipe-right for yes/no input. As seen in apps like Jelly and Tinder.",
+		github : "https://github.com/gajus/swing",
+		website : "",
+		docs : "",
 		others : []
 	}
 ]

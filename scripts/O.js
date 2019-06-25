@@ -8,12 +8,25 @@ var Odata = [
 		others : []
 	},
 	{
+		name : "ODOO",
+		description : "Odoo. Open Source Apps To Grow Your Business.",
+		github : "https://github.com/odoo/odoo",
+		website : "https://www.odoo.com/",
+		docs : "https://www.odoo.com/page/docs",
+		others : []
+	},
+	{
 		name : "ONNX JS",
-		description : "* [demos to show the capabilities of ONNX.js](https://github.com/Microsoft/onnxjs-demo)",
+		description : "ONNX.js: run ONNX models using JavaScript",
 		github : "https://github.com/Microsoft/onnxjs",
 		website : "",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "demos to show the capabilities of ONNX.js",
+				link: "https://github.com/Microsoft/onnxjs-demo"
+			}
+		]
 	},
 	{
 		name : "OLA",
@@ -21,6 +34,14 @@ var Odata = [
 		github : "https://github.com/franciscop/ola",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "OpenZeppelin",
+		description : "OpenZeppelin is a library for secure smart contract development",
+		github : "https://github.com/OpenZeppelin/openzeppelin-solidity",
+		website : "https://openzeppelin.org/",
+		docs : "https://openzeppelin.org/api/docs/get-started.html",
 		others : []
 	}
 ]

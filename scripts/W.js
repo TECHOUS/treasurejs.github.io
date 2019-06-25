@@ -49,7 +49,7 @@ var Wdata = [
 	},
 	{
 		name : "WEBPACK JS",
-		description : "A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through loaders, modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.",
+		description : "A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through 'loaders,' modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.",
 		github : "https://github.com/webpack/webpack",
 		website : "https://webpack.js.org/",
 		docs : "https://webpack.js.org/concepts/",
@@ -76,15 +76,23 @@ var Wdata = [
 		description : "winston is designed to be a simple and universal logging library with support for multiple transports. A transport is essentially a storage device for your logs. Each winston logger can have multiple transports (see: Transports) configured at different levels (see: Logging levels). For example, one may want error logs to be stored in a persistent remote location (like a database), but all logs output to the console or a local file.",
 		github : "https://github.com/winstonjs/winston",
 		website : "",
-		docs : "",
+		docs : "https://github.com/winstonjs/winston#usage",
 		others : []
 	},
 	{
 		name : "WOLKENKIT",
-		description : "wolkenkit is a CQRS and event-sourcing framework for JavaScript and Node.js which fits perfectly with domain-driven design (DDD). It provides the technical foundation for your application, including an event-store and a scalable real-time API. This allows you to focus on what's essential: Solving actual real-world problems in no time.",
-		github : "https://github.com/thenativeweb/wolkenkit",
+		description : "The same DOM API and Frameworks you know, but in a Web Worker.",
+		github : "https://github.com/ampproject/worker-dom",
 		website : "https://www.wolkenkit.io/",
 		docs : "https://docs.wolkenkit.io/3.1.0/",
+		others : []
+	},
+	{
+		name : "WTF JS",
+		description : "A list of funny and tricky JavaScript examples",
+		github : "https://github.com/denysdovhan/wtfjs",
+		website : "",
+		docs : "",
 		others : []
 	}
 ]

@@ -34,7 +34,7 @@ var Idata = [
 	{
 		name : "IMMORTAL DB",
 		description : "A relentless key-value store for the browser.",
-		github : "OCS](https://github.com/gruns/ImmortalDB",
+		github : "https://github.com/gruns/ImmortalDB",
 		website : "",
 		docs : "",
 		others : []
@@ -57,11 +57,16 @@ var Idata = [
 	},
 	{
 		name : "INK",
-		description : "* [Utilities for testing Ink apps](https://github.com/vadimdemedes/ink-testing-library)",
+		description : "React for interactive command-line apps",
 		github : "https://github.com/vadimdemedes/ink",
 		website : "",
 		docs : "",
-		others : []
+		others : [
+			{
+				name: "Utilities for testing Ink apps",
+				link: "https://github.com/vadimdemedes/ink-testing-library"
+			}
+		]
 	},
 	{
 		name : "INQUIRER JS",
@@ -77,6 +82,14 @@ var Idata = [
 		github : "https://github.com/isomorphic-git/isomorphic-git",
 		website : "https://isomorphic-git.org/",
 		docs : "https://isomorphic-git.org/docs/en/alphabetic",
+		others : []
+	},
+	{
+		name : "ISTANBUL JS",
+		description : "Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale.",
+		github : "https://github.com/istanbuljs/istanbuljs",
+		website : "https://istanbul.js.org/",
+		docs : "https://istanbul.js.org/docs/tutorials/",
 		others : []
 	}
 ]

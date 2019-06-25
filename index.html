@@ -7,10 +7,23 @@
     <title>Treasure JS</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="shortcut icon" href="images/ICO/icon.ico" type="image/x-icon" />
+    <!-- GOOGLE FONT API -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body id="root">
     <script src="scripts/script.js"></script>
     <header>
+        <div id="toggle-div" onclick="handleNightMode()">
+            <span id="toggle-night">
+                <i class="fas fa-moon fa-2x"></i>
+            </span>
+            <span id="toggle-day">
+                <i class="fas fa-sun fa-2x"></i>
+            </span>
+        </div>
         <div id="header-div">
             <a href="https://github.com/TechOUs/Treasurejs-logo">
                 <img src="images/SVG/stamp-logo.svg" alt="treasure js logo"/>
@@ -22,9 +35,11 @@
     </header>
     <section>
         <div id="section-div">
-            <input type="text" placeholder="search the treasure" id="section-div-input" onkeyup="getData()"/>
+            <input type="text" placeholder="Search Treasures" id="section-div-input" onkeyup="getData()"/>
         </div>
-        <br/><br/>
+        <br/>
+        <hr id="horizontal-rule"/>
+        <br/>
         <div id="found-data">
 
             <!-- JUST FOR MAKING DOM IN JS AND FOR STYLING-->
@@ -32,17 +47,22 @@
                 <h2>ACTIONS TOOLKIT</h2>
                 <p>A toolkit for building GitHub Actions in Node.js</p>
                 
-                <ul>
-                    <li><a href="https://github.com/JasonEtco/actions-toolkit">GITHUB</a></li>
-                    <li><a href="https://aframe.io/">WEBSITE</a></li>
-                    <li><a href="https://aframe.io/docs/0.8.0/introduction/">DOCS</a></li>
+                <ul id="basicList">
+                    <li><a href="https://github.com/JasonEtco/actions-toolkit" class="link">GITHUB</a></li>
+                    <li><a href="https://aframe.io/" class="link">WEBSITE</a></li>
+                    <li><a href="https://aframe.io/docs/0.8.0/introduction/" class="link">DOCS</a></li>
+                </ul>
+                <ul id="advList">
+                    <li><a href="https://github.com/JasonEtco/actions-toolkit" class="link">GITHUB</a></li>
+                    <li><a href="https://aframe.io/" class="link">WEBSITE</a></li>
+                    <li><a href="https://aframe.io/docs/0.8.0/introduction/" class="link">DOCS</a></li>
                 </ul>
             </div> -->
 
         </div>
     </section>
     <footer>
-        &copy; TechOUs 2019
+        <p>&copy; TechOUs 2019</p>
     </footer>
 </body>
 </html>

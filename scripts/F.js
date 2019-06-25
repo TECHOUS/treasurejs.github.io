@@ -26,7 +26,7 @@ var Fdata = [
 	{
 		name : "FASTEST-VALIDATOR",
 		description : "The fastest JS validator library for NodeJS",
-		github : "OCS](https://github.com/icebob/fastest-validator",
+		github : "https://github.com/icebob/fastest-validator",
 		website : "",
 		docs : "",
 		others : []
@@ -51,8 +51,8 @@ var Fdata = [
 		name : "FBT",
 		description : "FBT is a framework for internationalizing user interfaces. It is designed to be not only powerful and flexible, but also simple and intuitive. Getting grammatically correct translated texts in dynamic applications is hard.",
 		github : "https://github.com/facebookincubator/fbt",
-		website : "https://facebookincubator.github.io/fbt/",
-		docs : "",
+		website : "",
+		docs : "https://facebookincubator.github.io/fbt/",
 		others : []
 	},
 	{
@@ -91,8 +91,8 @@ var Fdata = [
 		name : "FLATPICKR JS",
 		description : "lightweight, powerful javascript datetimepicker with no dependencies",
 		github : "https://github.com/flatpickr/flatpickr",
-		website : "https://flatpickr.js.org/",
-		docs : "",
+		website : "",
+		docs : "https://flatpickr.js.org/",
 		others : []
 	},
 	{
@@ -136,6 +136,14 @@ var Fdata = [
 		others : []
 	},
 	{
+		name : "FORG JS",
+		description : "ForgJs is a javascript lightweight object validator.",
+		github : "https://github.com/oussamahamdaoui/forgJs",
+		website : "https://oussamahamdaoui.github.io/forgjs-examples/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "FRINT JS",
 		description : "Modular JavaScript framework for building scalable and reactive applications",
 		github : "https://github.com/frintjs/frint",
@@ -156,6 +164,14 @@ var Fdata = [
 		description : "Fast SublimeText-like fuzzy search for JavaScript.",
 		github : "https://github.com/farzher/fuzzysort",
 		website : "https://rawgit.com/farzher/fuzzysort/master/test.html",
+		docs : "",
+		others : []
+	},
+	{
+		name : "FX",
+		description : "Command-line tool and terminal JSON viewer :fire:",
+		github : "https://github.com/antonmedv/fx",
+		website : "",
 		docs : "",
 		others : []
 	}

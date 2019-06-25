@@ -22,5 +22,13 @@ var Zdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "ZRPC JS",
+		description : "rpc micro-services inspired by muxrpc and serverless functions, based on zmq",
+		github : "https://github.com/ahdinosaur/zrpc-js",
+		website : "",
+		docs : "",
+		others : []
 	}
 ]

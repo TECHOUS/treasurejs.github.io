@@ -1,11 +1,16 @@
 var Cdata = [
 	{
 		name : "CAMAN JS",
-		description : "* [INTRO](https://www.youtube.com/watch?v=MEENB3_9yUw)",
+		description : "CamanJS is (ca)nvas (man)ipulation in Javascript. It's a combination of a simple-to-use interface with advanced and efficient image/canvas editing techniques.",
 		github : "https://github.com/meltingice/CamanJS/",
 		website : "http://camanjs.com/",
 		docs : "http://camanjs.com/docs/",
-		others : []
+		others : [
+			{
+				name: "INTRO",
+				link: "https://www.youtube.com/watch?v=MEENB3_9yUw"
+			}
+		]
 	},
 	{
 		name : "CANVAS JS",
@@ -26,7 +31,7 @@ var Cdata = [
 	{
 		name : "CASUAL",
 		description : "Fake data generator for javascript",
-		github : "OCS](https://github.com/boo1ean/casual",
+		github : "https://github.com/boo1ean/casual",
 		website : "",
 		docs : "",
 		others : []
@@ -45,6 +50,14 @@ var Cdata = [
 		github : "https://github.com/chartjs/Chart.js",
 		website : "https://www.chartjs.org/",
 		docs : "https://www.chartjs.org/docs/latest/",
+		others : []
+	},
+	{
+		name : "CHRONO",
+		description : "A natural language date parser in Javascript",
+		github : "https://github.com/wanasit/chrono",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{
@@ -75,7 +88,7 @@ var Cdata = [
 		name : "CLIPBOARD JS",
 		description : "Modern copy to clipboard. No Flash. Just 3kb gzipped",
 		github : "https://github.com/zenorocha/clipboard.js",
-		website : "https://clipboardjs.com/",
+		website : "OCS](https://clipboardjs.com/",
 		docs : "",
 		others : []
 	},
@@ -104,10 +117,39 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "CORE JS",
+		description : "Modular standard library for JavaScript. Includes polyfills for ECMAScript up to 2019: promises, symbols, collections, iterators, typed arrays, many other features, ECMAScript proposals, some cross-platform WHATWG / W3C features and proposals like URL. You can load only required features or use it without global namespace pollution.",
+		github : "https://github.com/zloirock/core-js",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "COSMIC JS",
-		description : "* Official Gatsby source plugin for Cosmic JS",
+		description : "The leading content management solution for modern digital teams",
 		github : "https://github.com/cosmicjs/gatsby-source-cosmicjs",
 		website : "https://cosmicjs.com/",
+		docs : "",
+		others : [
+			{
+				name: "The official JavaScript client for Cosmic JS",
+				link: "#cosmic-node"
+			}
+		]
+	},
+	{
+		name : "CSSCOMB JS",
+		description : "CSS coding style formatter",
+		github : "https://github.com/csscomb/csscomb.js",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "CXXT",
+		description : "A JavaScript / Python / PHP cryptocurrency trading API with support for more than 130 bitcoin/altcoin exchanges",
+		github : "https://github.com/ccxt/ccxt",
+		website : "https://github.com/ccxt/ccxt/wiki",
 		docs : "",
 		others : []
 	}

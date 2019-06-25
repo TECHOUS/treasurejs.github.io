@@ -1,6 +1,9 @@
 let flag=false;                                                             // for input
 let root = document.getElementById('root');                                 // for refering body node
 var database = [];                                                          // working database
+const darkBackground = "#121212";
+const lightBlack  = "#292b2c";
+let nightModeButton = false;
 
 /**
  * This function will be called when key is pressed
@@ -47,6 +50,7 @@ function getData()
 /**
  * this function will add the data from html dom to runtime database
  * plus delete the child nodes of found-data
+ * this function is used for correct name search
  **/
 function syncDatabase()
 {
@@ -59,21 +63,23 @@ function syncDatabase()
             github:"",
             website:"",
             docs:"",
-            other:""
+            other: []
         }
 
         let arr = array[i].childNodes;                                      // get datacard's data in arr
+
         for(let j=0;j<arr.length;j++)
         {
+            
             switch(j)
             {
-                case 1:
+                case 0:
                     object.name = arr[j].firstChild.nodeValue;
                     break;
-                case 3:
+                case 1:
                     object.description = arr[j].firstChild.nodeValue;
                     break;
-                case 5:
+                case 2:
                     var listarr = arr[j].childNodes;
                     for(let k=0;k<listarr.length;k++)
                     {
@@ -95,16 +101,28 @@ function syncDatabase()
                         }
                     }
                     break;
+                case 3:
+                    let links = arr[j].childNodes;
+                    for(let k=0;k<links.length;k++)
+                    {
+                        let pair = {
+                            name: "",
+                            link: ""
+                        }
+                        pair.name = links[k].firstChild.lastChild.nodeValue;
+                        pair.link = links[k].firstChild.href;
+                        object.other.push(pair);
+                    }
+                    break;
             }
-        }   
-
+        }
         database.push(object);
     }
     eraseDataList(); 
 }
 
 /**
- * This function will erase all the data list items
+ * This function will erase all the data list items from the dom
  **/
 function eraseDataList()
 {
@@ -186,6 +204,9 @@ function linkData(firstValue,key)
             case 'T':
                 object = Tdata;
                 break;
+            case 'U':
+                object = Udata;
+                break;
             case 'V':
                 object = Vdata;
                 break;
@@ -204,7 +225,7 @@ function linkData(firstValue,key)
             default:
                 break;
         }
-        // console.log(object);
+
         if(object!=null)
         {
             if(database.length!=0)                                          // erase database
@@ -249,11 +270,13 @@ function addToDOM()
             p.appendChild(paragraph);
 
             var ul = document.createElement('ul');
+            ul.setAttribute("id","basicList");
             if(database[i].github != "")
             {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
                 a.setAttribute("href",database[i].github);
+                a.setAttribute("class","link");
                 var adata = document.createTextNode('GITHUB');
                 a.appendChild(adata);
                 li.appendChild(a);
@@ -264,6 +287,7 @@ function addToDOM()
                 var li = document.createElement('li');
                 var a = document.createElement('a');
                 a.setAttribute("href",database[i].website);
+                a.setAttribute("class","link");
                 var adata = document.createTextNode('WEBSITE');
                 a.appendChild(adata);
                 li.appendChild(a);
@@ -273,6 +297,7 @@ function addToDOM()
             {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
+                a.setAttribute("class","link");
                 a.setAttribute("href",database[i].docs);
                 var adata = document.createTextNode('DOCS');
                 a.appendChild(adata);
@@ -284,7 +309,122 @@ function addToDOM()
             div.appendChild(p);
             div.appendChild(ul);
 
+            if(database[i].others.length!=0)                        // adding others data info
+            {
+                let othersListNode = document.createElement('ul');
+                othersListNode.setAttribute("id","advList")
+
+                for(let j=0;j<database[i].others.length;j++)
+                {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    a.setAttribute("href",database[i].others[j].link);
+                    a.setAttribute("class","link");
+                    var data = document.createTextNode(database[i].others[j].name);
+                    a.appendChild(data);
+                    li.appendChild(a);
+                    othersListNode.appendChild(li);
+                }
+                div.appendChild(othersListNode);
+            }
+
             root.appendChild(div);
         }
+    }
+
+    if(nightModeButton == true)
+    {
+        switchNightMode();
+    }
+    else
+    {
+        switchLightMode();
+    }
+}
+
+/**
+ * This function will change the toggle icon on click
+ **/
+function handleNightMode()
+{
+    if(nightModeButton==true)                                              // night mode
+    {
+        nightModeButton = false;
+        let night = document.getElementById('toggle-night');
+        night.style.display = "block";
+        document.getElementById('toggle-day').style.display = "none";
+        document.getElementById('toggle-div').style.backgroundColor = "#ccc";
+        document.getElementById('toggle-div').style.color = "black";
+        switchLightMode();
+    }
+    else if(nightModeButton == false)
+    {
+        nightModeButton = true;
+        document.getElementById('toggle-night').style.display = "none";
+        let day = document.getElementById('toggle-day');
+        day.style.display = "block";
+        document.getElementById('toggle-div').style.backgroundColor = "rgb(139, 139, 255)";
+        document.getElementById('toggle-div').style.color = "white";
+        switchNightMode();
+    }
+}
+
+/**
+ * it will handle night mode colors
+ **/
+function switchNightMode()
+{
+    let body = document.getElementsByTagName('body')[0];
+    body.style.color = "white";
+    body.style.backgroundColor = darkBackground;
+
+    document.getElementById('horizontal-rule').style.border = "1px solid white";
+
+    let input = document.getElementById('section-div-input');
+    input.style.color = "white";
+    input.style.backgroundColor = lightBlack;
+
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "white";
+        cards[i].style.backgroundColor = lightBlack;
+        cards[i].style.border = "none";
+    }
+
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "rgb(139, 139, 255)";
+    }
+}
+
+/**
+ * it will handle light mode colors
+ **/
+function switchLightMode()
+{
+    let body = document.getElementsByTagName('body')[0];
+    body.style.color = "black";
+    body.style.backgroundColor = "white";
+
+    document.getElementById('horizontal-rule').style.border = "1px solid gray";
+
+    let input = document.getElementById('section-div-input');
+    input.style.color = "initial";
+    input.style.backgroundColor = "white";
+
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "black";
+        cards[i].style.backgroundColor = "rgb(248, 148, 148)";
+        cards[i].style.border = "2px solid yellow";
+    }
+
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "blue";
     }
 }
