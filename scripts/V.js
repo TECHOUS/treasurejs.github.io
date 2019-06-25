@@ -71,5 +71,13 @@ var Vdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "VUETIFY JS",
+		description : "Material Component Framework for Vue.js 2",
+		github : " Material Component Framework for Vue.js 2",
+		website : "https://vuetifyjs.com/en/",
+		docs : "https://vuetifyjs.com/en/getting-started/quick-start",
+		others : []
 	}
 ]

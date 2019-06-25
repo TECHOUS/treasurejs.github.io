@@ -83,5 +83,13 @@ var Ldata = [
 		website : "https://reactlucid.io/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "LUMA GL",
+		description : "WebGL2 Components for Data Visualization",
+		github : "https://github.com/uber/luma.gl",
+		website : "https://luma.gl/",
+		docs : "https://luma.gl/#/documentation/overview/introduction",
+		others : []
 	}
 ]

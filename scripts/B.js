@@ -165,5 +165,13 @@ var Bdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "BUNDLEPHOBIA",
+		description : "Find out the cost of adding a new frontend dependency to your project",
+		github : "Find out the cost of adding a new frontend dependency to your project ",
+		website : "https://bundlephobia.com/",
+		docs : "",
+		others : []
 	}
 ]

@@ -1,6 +1,8 @@
 let flag=false;                                                             // for input
 let root = document.getElementById('root');                                 // for refering body node
 var database = [];                                                          // working database
+const darkBackground = "#121212";
+const lightBlack  = "#292b2c";
 
 /**
  * This function will be called when key is pressed
@@ -273,6 +275,7 @@ function addToDOM()
                 var li = document.createElement('li');
                 var a = document.createElement('a');
                 a.setAttribute("href",database[i].github);
+                a.setAttribute("class","link");
                 var adata = document.createTextNode('GITHUB');
                 a.appendChild(adata);
                 li.appendChild(a);
@@ -283,6 +286,7 @@ function addToDOM()
                 var li = document.createElement('li');
                 var a = document.createElement('a');
                 a.setAttribute("href",database[i].website);
+                a.setAttribute("class","link");
                 var adata = document.createTextNode('WEBSITE');
                 a.appendChild(adata);
                 li.appendChild(a);
@@ -292,6 +296,7 @@ function addToDOM()
             {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
+                a.setAttribute("class","link");
                 a.setAttribute("href",database[i].docs);
                 var adata = document.createTextNode('DOCS');
                 a.appendChild(adata);
@@ -313,6 +318,7 @@ function addToDOM()
                     var li = document.createElement('li');
                     var a = document.createElement('a');
                     a.setAttribute("href",database[i].others[j].link);
+                    a.setAttribute("class","link");
                     var data = document.createTextNode(database[i].others[j].name);
                     a.appendChild(data);
                     li.appendChild(a);
@@ -323,5 +329,82 @@ function addToDOM()
 
             root.appendChild(div);
         }
+    }
+    handleNightMode();
+}
+
+/**
+ * it will handle night mode of the application
+ **/
+function handleNightMode()
+{
+    let toggleSwitch = document.getElementById('toggleSwitch');
+    if(toggleSwitch.checked)
+    {
+        switchNightMode();
+    }
+    else
+    {
+        switchLightMode();
+    }
+}
+
+/**
+ * it will handle night mode colors
+ **/
+function switchNightMode()
+{
+    let body = document.getElementsByTagName('body')[0];
+    body.style.color = "white";
+    body.style.backgroundColor = darkBackground;
+
+    document.getElementById('horizontal-rule').style.border = "1px solid white";
+
+    let input = document.getElementById('section-div-input');
+    input.style.color = "white";
+    input.style.backgroundColor = lightBlack;
+
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "white";
+        cards[i].style.backgroundColor = lightBlack;
+        cards[i].style.border = "none";
+    }
+
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "rgb(139, 139, 255)";
+    }
+}
+
+/**
+ * it will handle light mode colors
+ **/
+function switchLightMode()
+{
+    let body = document.getElementsByTagName('body')[0];
+    body.style.color = "black";
+    body.style.backgroundColor = "white";
+
+    document.getElementById('horizontal-rule').style.border = "1px solid gray";
+
+    let input = document.getElementById('section-div-input');
+    input.style.color = "initial";
+    input.style.backgroundColor = "white";
+
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "black";
+        cards[i].style.backgroundColor = "rgb(248, 148, 148)";
+        cards[i].style.border = "2px solid yellow";
+    }
+
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "blue";
     }
 }

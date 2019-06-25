@@ -35,5 +35,13 @@ var Odata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "OpenZeppelin",
+		description : "OpenZeppelin is a library for secure smart contract development",
+		github : "https://github.com/OpenZeppelin/openzeppelin-solidity",
+		website : "https://openzeppelin.org/",
+		docs : "https://openzeppelin.org/api/docs/get-started.html",
+		others : []
 	}
 ]

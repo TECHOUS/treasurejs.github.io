@@ -176,5 +176,13 @@ var Pdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "PUPPETEER JS",
+		description : "Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full (non-headless) Chrome or Chromium.",
+		github : "https://github.com/GoogleChrome/puppeteer",
+		website : "",
+		docs : "https://devdocs.io/puppeteer/",
+		others : []
 	}
 ]

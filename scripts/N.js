@@ -141,5 +141,38 @@ var Ndata = [
 		website : "",
 		docs : "https://zeit.co/docs",
 		others : []
+	},
+	{
+		name : "NUXT JS",
+		description : "Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.",
+		github : "https://github.com/nuxt/nuxt.js",
+		website : "https://nuxtjs.org/",
+		docs : "https://github.com/nuxt/docs",
+		others : [
+			{
+				name: "API",
+				link: "https://nuxtjs.org/api"
+			},
+			{
+				name: "Minify the html for each request served by nuxt server",
+				link: "https://github.com/nuxt-community/html-minifier-module"
+			},
+			{
+				name: "Supercharge Nuxt with a heavily tested, updated and stable PWA solution",
+				link: "https://github.com/nuxt-community/pwa-module"
+			},
+			{
+				name: "Nobody likes extra @import statements!",
+				link: "https://github.com/nuxt-community/style-resources-module"
+			},
+			{
+				name: "Exploring secure authentication using Python/Flask and Nuxt.",
+				link: "https://github.com/danjac/nuxt-python-secure-example"
+			},
+			{
+				name: "The one-liner node.js http-proxy middleware solution for Nuxt.js using http-proxy-middleware",
+				link: "https://github.com/nuxt-community/proxy-module"
+			}
+		]
 	}
 ]

@@ -116,5 +116,13 @@ var Hdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "HYPER",
+		description : "A terminal built on web technologies",
+		github : "https://github.com/zeit/hyper",
+		website : "",
+		docs : "https://hyper.is/",
+		others : []
 	}
 ]

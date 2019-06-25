@@ -95,5 +95,13 @@ var Jdata = [
 		website : "",
 		docs : "https://jupyterlab.readthedocs.io/en/stable/",
 		others : []
+	},
+	{
+		name : "JUST",
+		description : "The task library that just works",
+		github : "https://github.com/Microsoft/just",
+		website : "https://microsoft.github.io/just/",
+		docs : "https://microsoft.github.io/just/docs/doc-start",
+		others : []
 	}
 ]

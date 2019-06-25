@@ -83,5 +83,13 @@ var Idata = [
 		website : "https://isomorphic-git.org/",
 		docs : "https://isomorphic-git.org/docs/en/alphabetic",
 		others : []
+	},
+	{
+		name : "ISTANBUL JS",
+		description : "Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale.",
+		github : "https://github.com/istanbuljs/istanbuljs",
+		website : "https://istanbul.js.org/",
+		docs : "https://istanbul.js.org/docs/tutorials/",
+		others : []
 	}
 ]

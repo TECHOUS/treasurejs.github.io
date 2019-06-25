@@ -30,5 +30,13 @@ var Xdata = [
 		website : "https://xstate.js.org/docs/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "XTERM JS",
+		description : "Xterm.js is a front-end component written in TypeScript that lets applications bring fully-featured terminals to their users in the browser.",
+		github : "https://github.com/xtermjs/xterm.js",
+		website : "https://xtermjs.org/",
+		docs : "https://xtermjs.org/docs/",
+		others : []
 	}
 ]

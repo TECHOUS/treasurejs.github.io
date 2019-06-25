@@ -48,5 +48,18 @@ var Kdata = [
 				link: "https://www.tutorialspoint.com/koajs/"
 			}
 		]
+	},
+	{
+		name : "KY",
+		description : "Tiny & elegant HTTP client based on window.fetch",
+		github : "https://github.com/sindresorhus/ky",
+		website : "",
+		docs : "",
+		others : [
+			{
+				name: "Use Ky in both Node.js and browsers",
+				link: "https://github.com/sindresorhus/ky-universal"
+			}
+		]
 	}
 ]

@@ -123,5 +123,18 @@ var Adata = [
 		website : "http://www.jacklmoore.com/autosize/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "AWAIT-TO-JS",
+		description : "Async await wrapper for easy error handling without try-catch",
+		github : "https://github.com/scopsy/await-to-js",
+		website : "",
+		docs : "",
+		others : [
+			{
+				name: "BLOG",
+				link: "https://blog.grossman.io/how-to-write-async-await-without-try-catch-blocks-in-javascript/"
+			}
+		]
 	}
 ]

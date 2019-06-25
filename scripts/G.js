@@ -115,5 +115,13 @@ var Gdata = [
 		website : "https://guess-js.github.io/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "GUITAREDITOR JS",
+		description : "Guitar Tablature Editor in Javascript",
+		github : "https://github.com/fernandojsg/guitareditor.js",
+		website : "",
+		docs : "",
+		others : []
 	}
 ]

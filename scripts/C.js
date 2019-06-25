@@ -144,5 +144,13 @@ var Cdata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "CXXT",
+		description : "A JavaScript / Python / PHP cryptocurrency trading API with support for more than 130 bitcoin/altcoin exchanges",
+		github : "https://github.com/ccxt/ccxt",
+		website : "https://github.com/ccxt/ccxt/wiki",
+		docs : "",
+		others : []
 	}
 ]

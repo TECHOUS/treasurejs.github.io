@@ -166,5 +166,13 @@ var Fdata = [
 		website : "https://rawgit.com/farzher/fuzzysort/master/test.html",
 		docs : "",
 		others : []
+	},
+	{
+		name : "FX",
+		description : "Command-line tool and terminal JSON viewer :fire:",
+		github : "https://github.com/antonmedv/fx",
+		website : "",
+		docs : "",
+		others : []
 	}
 ]

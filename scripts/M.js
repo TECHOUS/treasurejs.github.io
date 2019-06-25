@@ -219,5 +219,13 @@ var Mdata = [
 		website : "http://momentjs.com/",
 		docs : "https://devdocs.io/moment/",
 		others : []
+	},
+	{
+		name : "MONGOOSE",
+		description : "MongoDB object modeling designed to work in an asynchronous environment",
+		github : "https://github.com/Automattic/mongoose/",
+		website : "https://mongoosejs.com/",
+		docs : "https://devdocs.io/mongoose/",
+		others : []
 	}
 ]

@@ -128,5 +128,34 @@ var Edata = [
 		website : "https://www.balena.io/etcher/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "EXPRESS JS",
+		description : "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.",
+		github : "https://github.com/expressjs/expressjs.com",
+		website : "https://expressjs.com/",
+		docs : "https://devdocs.io/express/",
+		others : [
+			{
+				name: "Express JS",
+				link: "https://www.javatpoint.com/expressjs-tutorial"
+			},
+			{
+				name: "A sample express environment that is well architected for scale",
+				link: "https://github.com/kelyvin/express-env-example"
+			},
+			{
+				name: "connect/express middleware that validates a JsonWebToken ",
+				link: "JWT"
+			},
+			{
+				name: "A Yeoman generator for Express.js based 12-factor apps and apis",
+				link: "https://github.com/cdimascio/generator-express-no-stress"
+			},
+			{
+				name: "Example Node ",
+				link: "Express + Mongoose"
+			}
+		]
 	}
 ]

@@ -19,11 +19,8 @@ for(let i=0;i<charArray.length;i++)
         // MARKDOWN PARSING
         for(let j=0;j<arr.length;j++)                               // parsing markdown and create objects
         {
-            // console.log(arr[i]);
             if(arr[j].search("## :rocket:")!=-1)
-            {
-                // console.log(object);
-                // console.log();
+            {    
                 if(object!=null)
                 {
                     objectDatabase.push(object);
@@ -52,7 +49,6 @@ for(let i=0;i<charArray.length;i++)
             else if(arr[j].search("DEVDOCS")==-1 && arr[j].search("DOCS")!=-1)
             {
                 let docs = arr[j].split("DOCS")[1];
-                // console.log(docs);
                 object.docs = docs.substring(2,docs.length-1);
             }
             else if(arr[j].indexOf("*")!=-1)
@@ -69,9 +65,7 @@ for(let i=0;i<charArray.length;i++)
             }
             else                                                            // writing description
             {
-                // console.log(arr[j]);
                 let array = arr[j].split("## :rocket:");
-                // console.log(array);
                 if(array.length==1 && array[0]!='' && array[0].search("#")==-1)
                 {
                     array[0] = array[0].replace(/"/g, "'");
@@ -79,6 +73,7 @@ for(let i=0;i<charArray.length;i++)
                 }
             }
         }
+        objectDatabase.push(object);                                        //pushing last created object
 
         // writing js files
         var data = "var " + charArray[i] + "data = [\n";
@@ -124,8 +119,6 @@ for(let i=0;i<charArray.length;i++)
             data=data+"\n";
         }
         data = data+"]";
-
-        // console.log(data); 
 
         let writeFileName = "../scripts/" + charArray[i] +".js";
 

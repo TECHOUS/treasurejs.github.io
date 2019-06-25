@@ -176,5 +176,134 @@ var Tdata = [
 		website : "https://mattboldt.com/demos/typed-js/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "TYPESCRIPT",
+		description : "TypeScript is a superset of JavaScript that compiles to clean JavaScript output",
+		github : "https://github.com/Microsoft/TypeScript",
+		website : "http://www.typescriptlang.org",
+		docs : "https://devdocs.io/typescript/",
+		others : [
+			{
+				name: "The TypeScript Handbook is a comprehensive guide to the TypeScript language",
+				link: "https://github.com/Microsoft/TypeScript-Handbook"
+			},
+			{
+				name: "EDX-Typescript 2",
+				link: "https://www.edx.org/course/introduction-to-typescript-2-1"
+			},
+			{
+				name: "EVA ICONS",
+				link: "https://github.com/akveo/eva-icons"
+			},
+			{
+				name: "probot",
+				link: "https://github.com/probot/probot"
+			},
+			{
+				name: "DESKTOP",
+				link: "https://github.com/desktop/desktop"
+			},
+			{
+				name: "GRAPHQL TOOLS",
+				link: "https://github.com/apollographql/graphql-tools"
+			},
+			{
+				name: "TYPEORM",
+				link: "https://github.com/typeorm/typeorm"
+			},
+			{
+				name: "TERMINUS",
+				link: "https://github.com/Eugeny/terminus"
+			},
+			{
+				name: "DOCZ",
+				link: "https://github.com/pedronauck/docz"
+			},
+			{
+				name: "An open source AutoML toolkit for neural architecture search and hyper-parameter tuning",
+				link: "https://github.com/Microsoft/nni"
+			},
+			{
+				name: "Make images smaller using best-in-class codecs, right in the browser",
+				link: "https://github.com/GoogleChromeLabs/squoosh"
+			},
+			{
+				name: "GraphQL server for Express, Connect, Hapi, Koa and more",
+				link: "https://github.com/apollographql/apollo-server"
+			},
+			{
+				name: "ORM for TypeScript and JavaScript ",
+				link: "ES7, ES6, ES5"
+			},
+			{
+				name: "Browser extension for strava. "Elevate" tracks your fitness and progressions over time. Analyse deeper your activities & segments.",
+				link: "https://github.com/thomaschampagne/elevate"
+			},
+			{
+				name: "The markdown-based note-taking app",
+				link: "https://github.com/fabiospampinato/notable"
+			},
+			{
+				name: "Convert React JavaScript code to TypeScript with proper typing",
+				link: "https://github.com/lyft/react-javascript-to-typescript-transform"
+			},
+			{
+				name: "CLIFlix",
+				link: "https://github.com/fabiospampinato/cliflix"
+			},
+			{
+				name: "The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More",
+				link: "https://github.com/grafana/grafana"
+			},
+			{
+				name: "Make images smaller using best-in-class codecs, right in the browser.",
+				link: "https://github.com/GoogleChromeLabs/squoosh"
+			},
+			{
+				name: "Sample code illustrating the VS Code extension API.",
+				link: "https://github.com/Microsoft/vscode-extension-samples"
+			},
+			{
+				name: "Fixtures loader for typeorm",
+				link: "https://github.com/RobinCK/typeorm-fixtures"
+			},
+			{
+				name: "TypeScript execution and REPL for node.js",
+				link: "https://github.com/TypeStrong/ts-node"
+			},
+			{
+				name: "Netlify menubar app to receive build information or trigger new builds",
+				link: "https://github.com/stefanjudis/netlify-menubar"
+			},
+			{
+				name: "An API boilerplate project built on Node.js and TypeScript",
+				link: "https://github.com/Ethan-Arrowood/matterhorn"
+			},
+			{
+				name: "Highly extensible, modern, JavaScript video player. Handles MPEG-Dash / HLS / MPEG-4 and is built on top of the HTML5 video element",
+				link: "https://github.com/matvp91/indigo-player"
+			},
+			{
+				name: "A super-simple-small promise-based keyval store implemented with IndexedDB",
+				link: "https://github.com/jakearchibald/idb-keyval"
+			},
+			{
+				name: "Very fast and lightweight, standards-compliant, self-hosted javascript parser with high focus on both performance and stability",
+				link: "https://github.com/cherow/cherow"
+			},
+			{
+				name: "Serverless back-end framework in TypeScript for AWS Lambda. Declarative dependency injection and event binding.",
+				link: "https://github.com/alitelabs/tyx"
+			},
+			{
+				name: "An implementation of WHATWG AbortController interface.",
+				link: "https://github.com/mysticatea/abort-controller"
+			},
+			{
+				name: "Model Viewer for random games",
+				link: "https://github.com/magcius/noclip.website"
+			}
+		]
 	}
 ]

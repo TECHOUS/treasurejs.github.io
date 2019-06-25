@@ -241,5 +241,13 @@ var Rdata = [
 		website : "https://runpkg.com/",
 		docs : "",
 		others : []
+	},
+	{
+		name : "RX JS",
+		description : "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.",
+		github : "https://github.com/ReactiveX/rxjs",
+		website : "https://rxjs-dev.firebaseapp.com/",
+		docs : "https://rxjs-dev.firebaseapp.com/api",
+		others : []
 	}
 ]

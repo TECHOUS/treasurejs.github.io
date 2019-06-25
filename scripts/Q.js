@@ -14,5 +14,13 @@ var Qdata = [
 		website : "https://quasar-framework.org/",
 		docs : "https://quasar-framework.org/guide/",
 		others : []
+	},
+	{
+		name : "QUICKLINK",
+		description : "Faster subsequent page-loads by prefetching in-viewport links during idle time",
+		github : "https://github.com/GoogleChromeLabs/quicklink",
+		website : "",
+		docs : "",
+		others : []
 	}
 ]

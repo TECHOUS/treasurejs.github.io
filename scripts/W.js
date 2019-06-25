@@ -86,5 +86,13 @@ var Wdata = [
 		website : "https://www.wolkenkit.io/",
 		docs : "https://docs.wolkenkit.io/3.1.0/",
 		others : []
+	},
+	{
+		name : "WTF JS",
+		description : "A list of funny and tricky JavaScript examples",
+		github : "https://github.com/denysdovhan/wtfjs",
+		website : "",
+		docs : "",
+		others : []
 	}
 ]

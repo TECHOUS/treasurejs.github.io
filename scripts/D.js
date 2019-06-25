@@ -136,5 +136,13 @@ var Ddata = [
 		website : "",
 		docs : "",
 		others : []
+	},
+	{
+		name : "DRAFT JS",
+		description : "Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences.",
+		github : "https://github.com/facebook/draft-js",
+		website : "https://draftjs.org/",
+		docs : "https://draftjs.org/docs/getting-started",
+		others : []
 	}
 ]
