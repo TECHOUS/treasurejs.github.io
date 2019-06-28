@@ -189,9 +189,9 @@ var Rdata = [
 	{
 		name : "REST JS",
 		description : "GitHub REST API client for JavaScript",
-		github : "GitHub REST API client for JavaScript",
-		website : "",
-		docs : "https://octokit.github.io/rest.js/",
+		github : "https://github.com/octokit/rest.js",
+		website : "https://octokit.github.io/rest.js/",
+		docs : "",
 		others : []
 	},
 	{

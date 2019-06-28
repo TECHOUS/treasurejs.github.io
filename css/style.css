@@ -108,6 +108,27 @@ body,input{
     color: blue;
     text-decoration: none;
 }
+.badge-class,.more-div{
+    background-color: rgb(230, 119, 119);
+    text-align: center;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 10px;
+    border: none;
+}
+.badge-img{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.more-div{
+    color: white;
+    font-weight: bold;
+}
 
 /* styling footer */
 footer{
