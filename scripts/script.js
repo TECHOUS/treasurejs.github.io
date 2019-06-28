@@ -23,15 +23,15 @@ function getData()
 
     var filename = "scripts/" + firstValue + ".js";
     
-    var script1 = document.createElement('script');                             // sample script element
+    var script1 = document.createElement('script');                         // sample script element
     script1.setAttribute("src", filename);
 
-    if (key.length == 1 && !flag)                   // add script node
+    if (key.length == 1 && !flag)                                           // add script node
     {
         flag=true;    
-        root.prepend(script1);                      // append script tag according to firstname
+        root.prepend(script1);                                              // append script tag according to firstname
     }
-    else if(key.length==0 && flag)                  // remove script node
+    else if(key.length==0 && flag)                                          // remove script node
     {
         try
         {
@@ -67,10 +67,9 @@ function syncDatabase()
         }
 
         let arr = array[i].childNodes;                                      // get datacard's data in arr
-
+        // console.log(arr);
         for(let j=0;j<arr.length;j++)
         {
-            
             switch(j)
             {
                 case 0:
@@ -83,7 +82,6 @@ function syncDatabase()
                     var listarr = arr[j].childNodes;
                     for(let k=0;k<listarr.length;k++)
                     {
-                        // console.log(listarr[k]);
                         if(k%2!=0)
                         {
                             if(listarr[k].lastChild.firstChild.nodeValue=='GITHUB')
@@ -105,17 +103,21 @@ function syncDatabase()
                     let links = arr[j].childNodes;
                     for(let k=0;k<links.length;k++)
                     {
-                        let pair = {
-                            name: "",
-                            link: ""
+                        if(k%2!=0)
+                        {
+                            let pair = {
+                                name: "",
+                                link: ""
+                            }
+                            pair.name = links[k].firstChild.lastChild.nodeValue;
+                            pair.link = links[k].firstChild.href;
+                            object.other.push(pair);
                         }
-                        pair.name = links[k].firstChild.lastChild.nodeValue;
-                        pair.link = links[k].firstChild.href;
-                        object.other.push(pair);
                     }
                     break;
             }
         }
+        // console.log(object);
         database.push(object);
     }
     eraseDataList(); 
@@ -232,18 +234,25 @@ function linkData(firstValue,key)
             {
                 database = [];
             }
-
-            let index = key.length;
-            for (let i = 0; i < object.length; i++)                         // add objects data to database 
-            {
-                if (object[i].name.substring(0, index) === key.toUpperCase()) 
-                {
-                    database.push(object[i]);
-                }
-            }   
+            filterData(object,key);
         }
         addToDOM();                                                            
     }, 100);
+}
+
+/**
+ * This function will filter the data linked
+ **/
+function filterData(object,key)
+{
+    let index = key.length;
+    for (let i = 0; i < object.length; i++)                         // add filter objects data to database 
+    {
+        if (object[i].name.substring(0, index) === key.toUpperCase()) 
+        {
+            database.push(object[i]);
+        }
+    }
 }
 
 /**
@@ -258,12 +267,27 @@ function addToDOM()
 
         for(let i=0;i<database.length;i++)
         {
+            let parseUrl = "";
+            if(database[i].github != "")
+            {
+                parseUrl = database[i].github.substring(18).split("/");
+            }
+            
             var div = document.createElement('div');
             div.setAttribute("class","data-card");
             
             var h2 = document.createElement('h2');           
             var heading = document.createTextNode(database[i].name);
             h2.appendChild(heading);
+            if(parseUrl!=="")
+            {
+                var img1 = document.createElement('img');
+                img1.setAttribute("alt","GitHub Release");
+                img1.setAttribute("class","badge-img");
+                let img1src = "https://img.shields.io/github/tag/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
+                img1.setAttribute("src",img1src);
+                h2.appendChild(img1);
+            }
 
             var p = document.createElement('p');
             var paragraph = document.createTextNode(database[i].description);
@@ -328,6 +352,15 @@ function addToDOM()
                 div.appendChild(othersListNode);
             }
 
+            if(parseUrl!=="")
+            {
+                let div2 = document.createElement('div');
+                div2.setAttribute("class","more-div");
+                div2.setAttribute("onclick","addBadges(this)");
+                let more = document.createTextNode("more")
+                div2.appendChild(more);
+                div.appendChild(div2);
+            }
             root.appendChild(div);
         }
     }
@@ -397,6 +430,20 @@ function switchNightMode()
     {
         links[i].style.color = "rgb(139, 139, 255)";
     }
+
+    let badgeArray = document.getElementsByClassName('badge-class');
+    for(let i=0;i<badgeArray.length;i++)
+    {
+        badgeArray[i].style.backgroundColor = lightBlack;
+    }
+
+    let moreArray = document.getElementsByClassName('more-div');
+    for(let i=0;i<moreArray.length;i++)
+    {
+        moreArray[i].style.backgroundColor = lightBlack;
+    }
+
+    document.getElementsByTagName('footer')[0].style.backgroundColor = "#292b2c";    
 }
 
 /**
@@ -426,5 +473,88 @@ function switchLightMode()
     for(let i=0;i<links.length;i++)
     {
         links[i].style.color = "blue";
+    }
+
+    let badgeArray = document.getElementsByClassName('badge-class');
+    for(let i=0;i<badgeArray.length;i++)
+    {
+        badgeArray[i].style.backgroundColor = "rgb(230, 119, 119)";
+    }
+
+    let moreArray = document.getElementsByClassName('more-div');
+    for(let i=0;i<moreArray.length;i++)
+    {
+        moreArray[i].style.backgroundColor = "rgb(230, 119, 119)";
+    }
+
+    document.getElementsByTagName('footer')[0].style.backgroundColor = "brown";
+}
+
+function addBadges(element)
+{
+    let parent = element.parentNode;
+
+    let parseUrl = parent.childNodes[2].firstChild.firstChild.href.substring(18).split("/");
+
+    if(parseUrl!=="")
+    {
+        let badgesDiv = document.createElement('div');
+        badgesDiv.setAttribute("id","badges");
+        badgesDiv.setAttribute("class","badge-class");
+
+        let badge2 = document.createElement('img');
+        badge2.setAttribute("alt","GitHub repo size");
+        badge2.setAttribute("class","badge-img");
+        let badge2src = "https://img.shields.io/github/repo-size/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
+        badge2.setAttribute("src",badge2src);
+        badgesDiv.appendChild(badge2);
+
+        let badge3 = document.createElement('img');
+        badge3.setAttribute("alt","GitHub license");
+        badge3.setAttribute("class","badge-img");
+        let badge3src = "https://img.shields.io/github/license/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
+        badge3.setAttribute("src",badge3src);
+        badgesDiv.appendChild(badge3);
+
+        let badge4 = document.createElement('img');
+        badge4.setAttribute("alt","GitHub issues");
+        badge4.setAttribute("class","badge-img");
+        let badge4src = "https://img.shields.io/github/issues/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
+        badge4.setAttribute("src",badge4src);
+        badgesDiv.appendChild(badge4);
+
+        let badge5 = document.createElement('img');
+        badge5.setAttribute("alt","GitHub pull requests");
+        badge5.setAttribute("class","badge-img");
+        let badge5src = "https://img.shields.io/github/issues-pr/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
+        badge5.setAttribute("src",badge5src);
+        badgesDiv.appendChild(badge5);
+
+        let badge6 = document.createElement('img');
+        badge6.setAttribute("alt","GitHub forks");
+        badge6.setAttribute("class","badge-img");
+        let badge6src = "https://img.shields.io/github/forks/" + parseUrl[1] + "/" + parseUrl[2] +".svg?style=social";
+        badge6.setAttribute("src",badge6src);
+        badgesDiv.appendChild(badge6);
+
+        let badge7 = document.createElement('img');
+        badge7.setAttribute("alt","GitHub stars");
+        badge7.setAttribute("class","badge-img");
+        let badge7src = "https://img.shields.io/github/stars/" + parseUrl[1] + "/" + parseUrl[2] +".svg?style=social";
+        badge7.setAttribute("src",badge7src);
+        badgesDiv.appendChild(badge7);
+
+        parent.appendChild(badgesDiv);
+
+        element.style.display = "none";
+    } 
+
+    if(nightModeButton == true)
+    {
+        switchNightMode();
+    }
+    else
+    {
+        switchLightMode();
     }
 }
