@@ -117,7 +117,6 @@ function syncDatabase()
                     break;
             }
         }
-        // console.log(object);
         database.push(object);
     }
     eraseDataList(); 
@@ -256,7 +255,7 @@ function filterData(object,key)
 }
 
 /**
- * This function will add to 
+ * This function will add 
  * runtime database to HTML DOM
  **/
 function addToDOM()
@@ -365,14 +364,7 @@ function addToDOM()
         }
     }
 
-    if(nightModeButton == true)
-    {
-        switchNightMode();
-    }
-    else
-    {
-        switchLightMode();
-    }
+    nightModeButton ? switchNightMode() : switchLightMode();
 }
 
 /**
@@ -403,20 +395,40 @@ function handleNightMode()
 }
 
 /**
- * it will handle night mode colors
+ * This function will change the body theme to dark theme
  **/
-function switchNightMode()
+function bodyNightMode()
 {
     let body = document.getElementsByTagName('body')[0];
     body.style.color = "white";
     body.style.backgroundColor = darkBackground;
+}
 
+/**
+ * change the horizontal rule to dark mode
+ **/
+function hrNightMode()
+{
     document.getElementById('horizontal-rule').style.border = "1px solid white";
+}
 
+/**
+ * change section color to night mode
+ **/
+function sectionNightMode()
+{
+    // input dark mode
     let input = document.getElementById('section-div-input');
     input.style.color = "white";
     input.style.backgroundColor = lightBlack;
+    
+    let searchBar = document.getElementById('search-bar');
+    searchBar.style.backgroundColor = lightBlack;
+    searchBar.style.border = "1px solid white";
 
+    document.getElementById('find-icon').style.color = "white";
+
+    // cards dark mode
     let cards = document.getElementsByClassName('data-card');
     for(let i=0;i<cards.length;i++)
     {
@@ -425,42 +437,82 @@ function switchNightMode()
         cards[i].style.border = "none";
     }
 
+    // card links dark mode
     let links = document.getElementsByClassName('link');
     for(let i=0;i<links.length;i++)
     {
         links[i].style.color = "rgb(139, 139, 255)";
     }
 
+    // card footer dark mode
     let badgeArray = document.getElementsByClassName('badge-class');
     for(let i=0;i<badgeArray.length;i++)
     {
         badgeArray[i].style.backgroundColor = lightBlack;
     }
 
+    // card footer text dark mode
     let moreArray = document.getElementsByClassName('more-div');
     for(let i=0;i<moreArray.length;i++)
     {
         moreArray[i].style.backgroundColor = lightBlack;
     }
-
-    document.getElementsByTagName('footer')[0].style.backgroundColor = "#292b2c";    
 }
 
 /**
- * it will handle light mode colors
+ * change footer to dark mode
  **/
-function switchLightMode()
+function footerNightMode()
+{
+    document.getElementsByTagName('footer')[0].style.backgroundColor = "#292b2c";
+}
+
+/**
+ * it will handle night mode colors
+ **/
+function switchNightMode()
+{
+    bodyNightMode();
+    hrNightMode();
+    sectionNightMode();
+    footerNightMode();
+}
+
+/**
+ * This function will handle body light mode
+ **/
+function bodyLightMode()
 {
     let body = document.getElementsByTagName('body')[0];
     body.style.color = "black";
     body.style.backgroundColor = "white";
+}
 
+/**
+ * change hr line color for light mode i.e black color
+ **/
+function hrLightMode()
+{
     document.getElementById('horizontal-rule').style.border = "1px solid gray";
+}
 
+/**
+ * change section colors to light mode
+ **/
+function sectionLightMode()
+{
+    // input light mode
     let input = document.getElementById('section-div-input');
     input.style.color = "initial";
     input.style.backgroundColor = "white";
 
+    let searchBar = document.getElementById('search-bar');
+    searchBar.style.backgroundColor = "white";
+    searchBar.style.border = "2px solid brown";
+
+    document.getElementById('find-icon').style.color = "brown";
+
+    // cards light mode
     let cards = document.getElementsByClassName('data-card');
     for(let i=0;i<cards.length;i++)
     {
@@ -469,27 +521,52 @@ function switchLightMode()
         cards[i].style.border = "2px solid yellow";
     }
 
+    // card links light mode
     let links = document.getElementsByClassName('link');
     for(let i=0;i<links.length;i++)
     {
         links[i].style.color = "blue";
     }
 
+    // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');
     for(let i=0;i<badgeArray.length;i++)
     {
         badgeArray[i].style.backgroundColor = "rgb(230, 119, 119)";
     }
 
+    // card footer text light mode
     let moreArray = document.getElementsByClassName('more-div');
     for(let i=0;i<moreArray.length;i++)
     {
         moreArray[i].style.backgroundColor = "rgb(230, 119, 119)";
     }
+}
 
+/**
+ * change the footer to light mode color i.e brown
+ **/
+function footerLightMode()
+{
     document.getElementsByTagName('footer')[0].style.backgroundColor = "brown";
 }
 
+/**
+ * it will handle light mode colors
+ **/
+function switchLightMode()
+{
+    bodyLightMode();
+    hrLightMode();
+    sectionLightMode();
+    footerLightMode();
+}
+
+/**
+ * this function will add the repo badges to the card clicked
+ * 
+ * @param element for card clicked
+ **/
 function addBadges(element)
 {
     let parent = element.parentNode;
@@ -544,17 +621,38 @@ function addBadges(element)
         badge7.setAttribute("src",badge7src);
         badgesDiv.appendChild(badge7);
 
+        let lessDiv = document.createElement('div');
+        lessDiv.appendChild(document.createTextNode('less'));
+        lessDiv.setAttribute('class','less-div');
+        lessDiv.setAttribute('onclick','hideBadges(this)');
+        badgesDiv.appendChild(lessDiv);
+
         parent.appendChild(badgesDiv);
 
         element.style.display = "none";
     } 
 
-    if(nightModeButton == true)
+    nightModeButton ? switchNightMode() : switchLightMode();
+}
+
+/**
+ * this function will handle the event called by clicking less button
+ * 
+ * @param element for element clicked
+ **/
+function hideBadges(element)
+{
+    let parent = element.parentNode.parentNode;
+    let parentArr = parent.childNodes; 
+
+    if(parentArr.length == 6)
     {
-        switchNightMode();
+        parentArr[4].style.display = "block";
+        parent.removeChild(parentArr[5]);
     }
-    else
+    else if(parentArr.length == 5)
     {
-        switchLightMode();
+        parentArr[3].style.display = "block";
+        parent.removeChild(parentArr[4]);
     }
 }

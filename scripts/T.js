@@ -237,7 +237,7 @@ var Tdata = [
 				link: "ES7, ES6, ES5"
 			},
 			{
-				name: "Browser extension for strava. "Elevate" tracks your fitness and progressions over time. Analyse deeper your activities & segments.",
+				name: "Browser extension for strava. 'Elevate' tracks your fitness and progressions over time. Analyse deeper your activities & segments.",
 				link: "https://github.com/thomaschampagne/elevate"
 			},
 			{

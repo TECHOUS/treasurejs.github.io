@@ -16,6 +16,14 @@ var Edata = [
 		others : []
 	},
 	{
+		name : "EJS",
+		description : "Embedded JavaScript templates",
+		github : "https://github.com/mde/ejs",
+		website : "https://ejs.co/",
+		docs : "https://ejs.co/#docs",
+		others : []
+	},
+	{
 		name : "ELECTRON JS",
 		description : "Build cross platform desktop apps with JavaScript, HTML, and CSS",
 		github : "https://github.com/electron/electron",
@@ -45,6 +53,10 @@ var Edata = [
 			{
 				name: "Boilerplate to kickstart creating an app with Electron",
 				link: "https://github.com/sindresorhus/electron-boilerplate"
+			},
+			{
+				name: "break time reminder app",
+				link: "https://github.com/hovancik/stretchly"
 			}
 		]
 	},
@@ -126,6 +138,14 @@ var Edata = [
 		description : "Flash OS images to SD cards & USB drives, safely and easily.",
 		github : "https://github.com/balena-io/etcher",
 		website : "https://www.balena.io/etcher/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "EXIF JS",
+		description : "JavaScript library for reading EXIF image metadata",
+		github : "https://github.com/exif-js/exif-js",
+		website : "",
 		docs : "",
 		others : []
 	},

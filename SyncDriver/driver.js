@@ -59,7 +59,7 @@ for(let i=0;i<charArray.length;i++)
                 }
                 let parse = arr[j].split(/([()])/);
                 let first  = parse[0].replace('* [','').replace(']','');
-                pair.name = first;
+                pair.name = first.replace(/"/g, "'");
                 pair.link = parse[2];
                 object.other.push(pair);
             }

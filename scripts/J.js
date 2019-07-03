@@ -65,6 +65,14 @@ var Jdata = [
 		]
 	},
 	{
+		name : "JS-GIT",
+		description : "A JavaScript implementation of Git",
+		github : "https://github.com/creationix/js-git",
+		website : "https://www.bountysource.com/fundraisers/325-js-git",
+		docs : "",
+		others : []
+	},
+	{
 		name : "JSONFORM",
 		description : "The generated HTML form includes client-side validation logic that provides direct inline feedback to the user upon form submission (provided a JSON Schema validator is available). If values are valid, the JSON Form library uses submitted values to create the JavaScript data structure that matches the data model.",
 		github : "https://github.com/jsonform/jsonform",

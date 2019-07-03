@@ -49,16 +49,31 @@ body,input{
     text-align: center;
 }
 
+#search-bar{
+    border: 2px solid brown;
+    border-radius: 23px;
+    margin: auto;
+    width: 90%;
+}
+#search-bar:hover{
+    box-shadow: 0px 0px 10px #888888;
+}
+
+#find-icon{
+    color: brown;
+    font-size: 20px;
+}
 /* styling section div input */
 #section-div-input{
     text-align: center;
     font-size: 20px;
-    padding: 5px;
-    border-color: brown;
+    padding: 8px;
+    border: none;
     width: 80%;
+    outline: none;
+    border-radius: 20px;
 }
 #section-div-input:focus{
-    outline-color: yellow;
     color: brown;
 }
 #section-div-input::placeholder{
@@ -125,9 +140,13 @@ body,input{
     margin-right: 5px;
 }
 
-.more-div{
+.more-div,
+.less-div{
     color: white;
     font-weight: bold;
+}
+.less-div{
+    padding: 5px;
 }
 
 /* styling footer */
@@ -142,8 +161,11 @@ footer{
 /* RESPONSIVENESS */
 /* TABLETS/DESKTOPS */
 @media (min-width: 992px) and (max-width: 1199px){
-    #section-div-input{
+    #search-bar{
         width: 60%;
+    }
+    #section-div-input{
+        width: 85%;
     }
     #horizontal-rule{
         width: 70%;
@@ -156,8 +178,11 @@ footer{
 
 /* large */
 @media screen and (min-width: 1200px){
+    #search-bar{
+        width: 40%;
+    }
     #section-div-input{
-        width: 60%;
+        width: 88%;
     }
     #horizontal-rule{
         width: 70%;

@@ -118,6 +118,14 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "SOFA",
+		description : "The best way to create REST APIs - Generate RESTful APIs from your GraphQL Server",
+		github : "https://github.com/Urigo/SOFA",
+		website : "https://sofa-api.com/",
+		docs : "https://sofa-api.com/docs/",
+		others : []
+	},
+	{
 		name : "SONAR JS",
 		description : "SonarJS: JavaScript Analyzer for SonarQube",
 		github : "https://github.com/SonarSource/SonarJS",
@@ -247,6 +255,14 @@ var Sdata = [
 		description : "A swipeable cards interface. The swipe-left/swipe-right for yes/no input. As seen in apps like Jelly and Tinder.",
 		github : "https://github.com/gajus/swing",
 		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "SYNAPTIC",
+		description : "architecture-free neural network library for node.js and the browser",
+		github : "https://github.com/cazala/synaptic",
+		website : "http://caza.la/synaptic/",
 		docs : "",
 		others : []
 	}

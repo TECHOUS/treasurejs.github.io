@@ -58,6 +58,10 @@ var Bdata = [
 			{
 				name: "DEVDOCS",
 				link: "https://devdocs.io/backbone/"
+			},
+			{
+				name: "Simple, flexible and powerful Model-View binding for Backbone.",
+				link: "https://github.com/theironcook/Backbone.ModelBinder"
 			}
 		]
 	},
@@ -75,6 +79,14 @@ var Bdata = [
 		github : "https://github.com/kefranabg/bento-starter",
 		website : "https://bento-starter.firebaseapp.com/home",
 		docs : "https://bento-starter.netlify.com/",
+		others : []
+	},
+	{
+		name : "BLENO",
+		description : "A Node.js module for implementing BLE (Bluetooth Low Energy) peripherals.",
+		github : "https://github.com/noble/bleno",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{

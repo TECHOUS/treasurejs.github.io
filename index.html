@@ -35,7 +35,10 @@
     </header>
     <section>
         <div id="section-div">
-            <input type="text" placeholder="Search Treasures" id="section-div-input" onkeyup="getData()"/>
+            <div id="search-bar">
+                <i class="fas fa-search" id="find-icon"></i>
+                <input type="text" placeholder="Search Treasures" id="section-div-input" onkeyup="getData()" title="Search Treasures"/>
+            </div>
         </div>
         <br/>
         <hr id="horizontal-rule"/>
@@ -60,7 +63,7 @@
                     <li><a href="https://aframe.io/docs/0.8.0/introduction/" class="link">DOCS</a></li>
                 </ul>
                 <div class="more-div" onclick="addBadges(this)">
-                    more details...
+                    more
                 </div>
                 <div id="badges" class="badge-class">
                     <img class="badge-img" alt="GitHub repo size" src="https://img.shields.io/github/repo-size/JasonEtco/actions-toolkit.svg">
@@ -69,6 +72,7 @@
                     <img class="badge-img" alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/JasonEtco/actions-toolkit.svg">   
                     <img class="badge-img" alt="GitHub forks" src="https://img.shields.io/github/forks/JasonEtco/actions-toolkit.svg?style=social">
                     <img class="badge-img" alt="GitHub stars" src="https://img.shields.io/github/stars/JasonEtco/actions-toolkit.svg?style=social">
+                    <div class="less-span" onclick="hideBadges(this)">less</div>
                 </div>
             </div>-->
             
