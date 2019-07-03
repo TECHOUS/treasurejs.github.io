@@ -77,6 +77,14 @@ var Pdata = [
 		]
 	},
 	{
+		name : "PIXELMATCH",
+		description : "The smallest, simplest and fastest JavaScript pixel-level image comparison librarY",
+		github : "https://github.com/mapbox/pixelmatch",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "PLATFORM JS",
 		description : "A platform detection library.",
 		github : "https://github.com/bestiejs/platform.js",
@@ -167,6 +175,14 @@ var Pdata = [
 		github : "https://github.com/postcss/postcss",
 		website : "https://postcss.org/",
 		docs : "https://github.com/postcss/postcss/tree/master/docs",
+		others : []
+	},
+	{
+		name : "PRETENDER",
+		description : "A mock server library with a nice routing DSL",
+		github : "https://github.com/pretenderjs/pretender",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{

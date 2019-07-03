@@ -8,6 +8,14 @@ var Vdata = [
 		others : []
 	},
 	{
+		name : "VERDACCIO",
+		description : "A lightweight private npm proxy registry",
+		github : "https://github.com/verdaccio/verdaccio",
+		website : "https://verdaccio.org/",
+		docs : "https://verdaccio.org/docs/en/installation",
+		others : []
+	},
+	{
 		name : "VIA JS",
 		description : "Write JS code that runs in a different context. E.g. use the DOM in a Web Worker",
 		github : "https://github.com/AshleyScirra/via.js",

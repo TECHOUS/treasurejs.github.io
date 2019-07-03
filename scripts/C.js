@@ -53,6 +53,14 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "CHOICES JS",
+		description : "A vanilla JS customisable select box/text input plugin",
+		github : "https://github.com/jshjohnson/Choices",
+		website : "https://joshuajohnson.co.uk/Choices/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "CHRONO",
 		description : "A natural language date parser in Javascript",
 		github : "https://github.com/wanasit/chrono",
@@ -90,6 +98,14 @@ var Cdata = [
 		github : "https://github.com/zenorocha/clipboard.js",
 		website : "OCS](https://clipboardjs.com/",
 		docs : "",
+		others : []
+	},
+	{
+		name : "CLOUDBOOST",
+		description : "Realtime JavaScript Backend.",
+		github : "Realtime JavaScript Backend.",
+		website : "https://www.cloudboost.io/",
+		docs : "https://tutorials.cloudboost.io/",
 		others : []
 	},
 	{

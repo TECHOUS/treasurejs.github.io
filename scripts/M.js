@@ -136,6 +136,14 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MIDDY JS",
+		description : "The stylish Node.js middleware engine for AWS Lambda",
+		github : "https://github.com/middyjs/middy",
+		website : "https://middy.js.org/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "MIGHTY INPUT",
 		description : "Text input for modern web",
 		github : "https://github.com/rumkin/mighty-input",

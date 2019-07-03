@@ -53,7 +53,12 @@ var Wdata = [
 		github : "https://github.com/webpack/webpack",
 		website : "https://webpack.js.org/",
 		docs : "https://webpack.js.org/concepts/",
-		others : []
+		others : [
+			{
+				name: "a collection of simple demos of Webpack",
+				link: "https://github.com/ruanyf/webpack-demos"
+			}
+		]
 	},
 	{
 		name : "WHEELNAV JS",

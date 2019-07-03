@@ -1,5 +1,13 @@
 var Ldata = [
 	{
+		name : "LACONIA JS",
+		description : "Create well-crafted serverless applications, effortlessly",
+		github : "https://github.com/laconiajs/laconia",
+		website : "https://laconiajs.io/",
+		docs : "https://laconiajs.io/docs/introduction/getting-started",
+		others : []
+	},
+	{
 		name : "LAGO",
 		description : "Data Structures and Algorithms library in JavaScript",
 		github : "https://github.com/yangshun/lago",

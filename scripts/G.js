@@ -77,6 +77,14 @@ var Gdata = [
 		others : []
 	},
 	{
+		name : "GRAPES JS",
+		description : "Free and Open source Web Builder Framework. Next generation tool for building templates without coding",
+		github : "https://github.com/artf/grapesjs",
+		website : "https://grapesjs.com/",
+		docs : "https://grapesjs.com/docs/",
+		others : []
+	},
+	{
 		name : "GRAPHPACK",
 		description : "A minimalistic zero-config GraphQL server.",
 		github : "https://github.com/glennreyes/graphpack",
@@ -106,6 +114,14 @@ var Gdata = [
 		github : "https://github.com/gruntjs/grunt",
 		website : "https://gruntjs.com/",
 		docs : "https://gruntjs.com/getting-started",
+		others : []
+	},
+	{
+		name : "GRUNT SVGSTORE",
+		description : "Merge svgs from a folder",
+		github : "https://github.com/FWeinb/grunt-svgstore",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{

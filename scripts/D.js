@@ -61,6 +61,14 @@ var Ddata = [
 		others : []
 	},
 	{
+		name : "DATA MAPS",
+		description : "Customizable SVG map visualizations for the web in a single Javascript file using D3.js",
+		github : "https://github.com/markmarkoh/datamaps",
+		website : "http://datamaps.github.io/",
+		docs : "https://github.com/markmarkoh/datamaps/blob/master/README.md#getting-started",
+		others : []
+	},
+	{
 		name : "DATALOADER",
 		description : "DataLoader is a generic utility to be used as part of your application's data fetching layer to provide a consistent API over various backends and reduce requests to those backends via batching and caching.",
 		github : "https://github.com/facebook/dataloader",
@@ -74,6 +82,14 @@ var Ddata = [
 		github : "https://github.com/date-fns/date-fns",
 		website : "https://date-fns.org/",
 		docs : "https://date-fns.org/docs/Getting-Started",
+		others : []
+	},
+	{
+		name : "DEB JS",
+		description : "Minimalistic JavaScript library for debugging in the browser",
+		github : "https://github.com/krasimir/deb.js",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{

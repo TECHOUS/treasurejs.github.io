@@ -78,6 +78,14 @@ var Hdata = [
 		]
 	},
 	{
+		name : "HJS WEBPACK",
+		description : "Helpers/presets for setting up webpack with hotloading react and ES6(2015) using Babel.",
+		github : "https://github.com/HenrikJoreteg/hjs-webpack",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "HLS JS",
 		description : "JavaScript HLS client using Media Source Extension",
 		github : "https://github.com/video-dev/hls.js",
