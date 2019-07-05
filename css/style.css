@@ -6,6 +6,9 @@
     font-family: "Samarkan";
     src: url(SAMARN__.TTF);
 }
+#search-results{
+    display: none;
+}
 
 body,input{
     font-family: 'Source Sans Pro', sans-serif;
@@ -48,7 +51,21 @@ body,input{
 #section-div{
     text-align: center;
 }
-
+#search-results{
+    text-align: center;
+}
+#search-results-list{
+    border: 2px solid yellow;
+    background-color: rgb(248, 148, 148);
+    border-radius: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: left;
+    list-style-type: none;
+}
+#search-results-list > li{
+    padding: 12px;
+}
 #search-bar{
     border: 2px solid brown;
     border-radius: 23px;
@@ -58,10 +75,17 @@ body,input{
 #search-bar:hover{
     box-shadow: 0px 0px 10px #888888;
 }
-
+#recent-searches{
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
 #find-icon{
     color: brown;
     font-size: 20px;
+}
+.history-checkbox{
+    margin-right: 20px;
 }
 /* styling section div input */
 #section-div-input{
@@ -88,7 +112,7 @@ body,input{
 
 #found-data{
     padding-bottom: 50px;
-    min-height: 56vh;
+    min-height: 50vh;
     padding: 10px;
 }
 

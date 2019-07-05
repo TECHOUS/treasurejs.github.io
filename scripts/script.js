@@ -4,6 +4,83 @@ var database = [];                                                          // w
 const darkBackground = "#121212";
 const lightBlack  = "#292b2c";
 let nightModeButton = false;
+let recentSearches = [];
+
+/**
+ * it will clear the local storage
+ **/
+function clearLocalStorage()
+{
+    localStorage.setItem('treasureHistory','[]');
+}
+
+/**
+ * this function will clear the number of elements in the list
+ **/
+function clearDom()
+{
+    let search = document.getElementById('recent-searches');
+    if(search.hasChildNodes)
+    {
+        search.removeChild(search.childNodes[3]);
+    }
+}
+
+/**
+ * it will add recent searches to dom
+ **/
+function addRecentSearchesToDom()
+{
+    let search = document.getElementById('recent-searches');
+    let ul = document.createElement('ul');
+    ul.setAttribute('id','search-results-list');
+    search.appendChild(ul);
+
+    for(let i=recentSearches.length-1;i>=0;i--)
+    {
+        if(recentSearches.length - i > 10)
+        {
+            break;
+        }
+        let li = document.createElement('li');
+        let text = document.createTextNode(recentSearches[i]);
+        
+        let label = document.createElement('label');
+        label.setAttribute('for','check'+i);
+        let checkbox = document.createElement('input');
+        checkbox.setAttribute('type','checkbox');
+        checkbox.setAttribute('class','history-checkbox');
+        checkbox.setAttribute('id','check'+i);
+        
+        label.appendChild(checkbox);
+        label.appendChild(text);
+        li.appendChild(label);
+        ul.appendChild(li);
+    }
+}
+
+function addLocalStorageToRecentSearches()
+{
+    let storage = localStorage.getItem('treasureHistory');
+    let arr = JSON.parse(storage);
+    for(let i=0;i<arr.length;i++)
+    {
+        recentSearches.push(arr[i]);
+    }
+}
+
+window.onload = function(){
+    let storage = localStorage.getItem('treasureHistory');
+    if(storage == null)
+    {
+        storage = [];
+    }
+    else
+    {
+        addLocalStorageToRecentSearches();
+    }
+    addRecentSearchesToDom();
+}
 
 /**
  * This function will be called when key is pressed
@@ -41,6 +118,11 @@ function getData()
         flag=false;
 
         eraseDataList();
+        hideSearchResults();
+        showRecentSearches();
+        clearDom();
+        addRecentSearchesToDom();
+
         database=[];
         return;
     }
@@ -252,6 +334,42 @@ function filterData(object,key)
             database.push(object[i]);
         }
     }
+    hideRecentSearches();
+    showSearchResults();
+    updateSearchCount(database.length);
+}
+
+function showSearchResults()
+{
+    document.getElementById('search-results').style.display = "block";
+}
+
+function hideSearchResults()
+{
+    document.getElementById('search-results').style.display = "none";
+}
+
+function hideRecentSearches()
+{
+    document.getElementById('recent-searches').style.display = "none";
+}
+
+function showRecentSearches()
+{
+    document.getElementById('recent-searches').style.display = "block";
+}
+
+function updateSearchCount(count)
+{
+    let i = 0;
+    let x = setInterval(function(){
+        document.getElementById('search-count').innerHTML = i;
+        i++;
+        if(i>count)
+        {
+            clearInterval(x);
+        }
+    },10);
 }
 
 /**
@@ -444,6 +562,11 @@ function sectionNightMode()
         links[i].style.color = "rgb(139, 139, 255)";
     }
 
+    // recent search dark mode
+    let recent = document.getElementById('search-results-list');
+    recent.style.backgroundColor = lightBlack;
+    recent.style.border = "0.5px solid white";
+
     // card footer dark mode
     let badgeArray = document.getElementsByClassName('badge-class');
     for(let i=0;i<badgeArray.length;i++)
@@ -527,6 +650,11 @@ function sectionLightMode()
     {
         links[i].style.color = "blue";
     }
+
+    // recent search light mode
+    let recent = document.getElementById('search-results-list');
+    recent.style.backgroundColor = "rgb(248, 148, 148)";
+    recent.style.border = "2px solid yellow";
 
     // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -630,6 +758,24 @@ function addBadges(element)
         parent.appendChild(badgesDiv);
 
         element.style.display = "none";
+
+        let libraryName = parent.childNodes[0].firstChild.nodeValue;
+
+        if(recentSearches.includes(libraryName))
+        {
+            for(let j = 0; j < recentSearches.length; j++){ 
+                if ( recentSearches[j] === libraryName) {
+                    recentSearches.splice(j, 1); 
+                }
+            }
+            recentSearches.push(libraryName);
+            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
+        }
+        else
+        {   
+            recentSearches.push(libraryName);
+            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
+        }
     } 
 
     nightModeButton ? switchNightMode() : switchLightMode();
