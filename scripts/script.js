@@ -4,6 +4,63 @@ var database = [];                                                          // w
 const darkBackground = "#121212";
 const lightBlack  = "#292b2c";
 let nightModeButton = false;
+let recentSearches = [];
+
+function clearLocalStorage()
+{
+    localStorage.setItem('treasureHistory','[]');
+}
+
+function clearDom()
+{
+    let search = document.getElementById('recent-searches');
+    if(search.hasChildNodes)
+    {
+        search.removeChild(search.childNodes[1]);
+    }
+}
+
+function addRecentSearchesToDom()
+{
+    let search = document.getElementById('recent-searches');
+    let ul = document.createElement('ul');
+    search.appendChild(ul);
+
+    for(let i=recentSearches.length-1;i>=0;i--)
+    {
+        // if(arr.length - i > 10)
+        // {
+        //     break;
+        // }
+        let li = document.createElement('li');
+        let text = document.createTextNode(recentSearches[i]);
+        li.appendChild(text);
+        ul.appendChild(li);
+    }
+}
+
+function addLocalStorageToRecentSearches()
+{
+    let storage = localStorage.getItem('treasureHistory');
+    let arr = JSON.parse(storage);
+    for(let i=0;i<arr.length;i++)
+    {
+        recentSearches.push(arr[i]);
+    }
+}
+
+window.onload = function(){
+    let storage = localStorage.getItem('treasureHistory');
+    if(storage == null)
+    {
+        storage = [];
+    }
+    else
+    {
+        addLocalStorageToRecentSearches();
+    }
+    addRecentSearchesToDom();
+}
 
 /**
  * This function will be called when key is pressed
@@ -41,6 +98,11 @@ function getData()
         flag=false;
 
         eraseDataList();
+        hideSearchResults();
+        showRecentSearches();
+        clearDom();
+        addRecentSearchesToDom();
+
         database=[];
         return;
     }
@@ -252,6 +314,42 @@ function filterData(object,key)
             database.push(object[i]);
         }
     }
+    hideRecentSearches();
+    showSearchResults();
+    updateSearchCount(database.length);
+}
+
+function showSearchResults()
+{
+    document.getElementById('search-results').style.display = "block";
+}
+
+function hideSearchResults()
+{
+    document.getElementById('search-results').style.display = "none";
+}
+
+function hideRecentSearches()
+{
+    document.getElementById('recent-searches').style.display = "none";
+}
+
+function showRecentSearches()
+{
+    document.getElementById('recent-searches').style.display = "block";
+}
+
+function updateSearchCount(count)
+{
+    let i = 0;
+    let x = setInterval(function(){
+        document.getElementById('search-count').innerHTML = i;
+        i++;
+        if(i>count)
+        {
+            clearInterval(x);
+        }
+    },10);
 }
 
 /**
@@ -630,6 +728,23 @@ function addBadges(element)
         parent.appendChild(badgesDiv);
 
         element.style.display = "none";
+
+        let libraryName = parent.childNodes[0].firstChild.nodeValue;
+
+        if(recentSearches.includes(libraryName))
+        {
+            for(let j = 0; j < recentSearches.length; j++){ 
+                if ( recentSearches[j] === libraryName) {
+                    recentSearches.splice(j, 1); 
+                }
+            }
+            recentSearches.push(libraryName);
+        }
+        else
+        {   
+            recentSearches.push(libraryName);
+            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
+        }
     } 
 
     nightModeButton ? switchNightMode() : switchLightMode();

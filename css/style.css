@@ -6,6 +6,9 @@
     font-family: "Samarkan";
     src: url(SAMARN__.TTF);
 }
+#search-results{
+    display: none;
+}
 
 body,input{
     font-family: 'Source Sans Pro', sans-serif;
@@ -48,7 +51,9 @@ body,input{
 #section-div{
     text-align: center;
 }
-
+#search-results{
+    text-align: center;
+}
 #search-bar{
     border: 2px solid brown;
     border-radius: 23px;
@@ -58,7 +63,9 @@ body,input{
 #search-bar:hover{
     box-shadow: 0px 0px 10px #888888;
 }
-
+#recent-searches{
+    text-align: center;
+}
 #find-icon{
     color: brown;
     font-size: 20px;
