@@ -24,6 +24,6 @@ A **Wikipedia for JavaScript** where to can get JavaScript:
 * **Extensions**
 * **Other Popular GitHub repos info**
 
-We need some support so please do *star, watch* and [**contribute**](CONTRIBUTING.md) to our repo
+We need some support so please do *star, watch* and [**contribute**](.github/CONTRIBUTING.md) to our repo
 
 Keep Supporting!

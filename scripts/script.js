@@ -20,9 +20,13 @@ function clearLocalStorage()
 function clearDom()
 {
     let search = document.getElementById('recent-searches');
+    if(recentSearches.length == 0)
+    {
+        return;
+    }
     if(search.hasChildNodes)
     {
-        search.removeChild(search.childNodes[3]);
+        search.removeChild(search.childNodes[4]);
     }
 }
 
@@ -32,33 +36,37 @@ function clearDom()
 function addRecentSearchesToDom()
 {
     let search = document.getElementById('recent-searches');
-    let ul = document.createElement('ul');
-    ul.setAttribute('id','search-results-list');
-    search.appendChild(ul);
 
-    for(let i=recentSearches.length-1;i>=0;i--)
+    if(recentSearches.length!=0)
     {
-        if(recentSearches.length - i > 10)
+        let ul = document.createElement('ul');
+        ul.setAttribute('id','search-results-list');
+        search.appendChild(ul);
+
+        for(let i=recentSearches.length-1;i>=0;i--)
         {
-            break;
+            if(recentSearches.length - i > 10)
+            {
+                break;
+            }
+            let li = document.createElement('li');
+            let text = document.createTextNode(recentSearches[i]);
+            
+            let label = document.createElement('label');
+            label.setAttribute('for','check'+i);
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type','checkbox');
+            checkbox.setAttribute('class','history-checkbox');
+            checkbox.setAttribute('id','check'+i);
+            
+            label.appendChild(checkbox);
+            label.appendChild(text);
+            li.appendChild(label);
+            ul.appendChild(li);
         }
-        let li = document.createElement('li');
-        let text = document.createTextNode(recentSearches[i]);
         
-        let label = document.createElement('label');
-        label.setAttribute('for','check'+i);
-        let checkbox = document.createElement('input');
-        checkbox.setAttribute('type','checkbox');
-        checkbox.setAttribute('class','history-checkbox');
-        checkbox.setAttribute('id','check'+i);
-        
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        li.appendChild(label);
-        ul.appendChild(li);
+        nightModeButton ? recentSearchNightMode() : recentSearchLightMode();    
     }
-    
-    nightModeButton ? recentSearchNightMode() : recentSearchLightMode();
 }
 
 function addLocalStorageToRecentSearches()
@@ -482,9 +490,8 @@ function addToDOM()
             }
             root.appendChild(div);
         }
+        nightModeButton ? switchNightMode() : switchLightMode();
     }
-
-    nightModeButton ? switchNightMode() : switchLightMode();
 }
 
 /**
@@ -813,4 +820,13 @@ function hideBadges(element)
         parentArr[3].style.display = "block";
         parent.removeChild(parentArr[4]);
     }
+}
+
+/**
+ * This function will clear the history
+ **/
+function clearSearchHistory()
+{
+    clearDom();
+    clearLocalStorage();
 }
