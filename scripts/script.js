@@ -57,6 +57,8 @@ function addRecentSearchesToDom()
         li.appendChild(label);
         ul.appendChild(li);
     }
+    
+    nightModeButton ? recentSearchNightMode() : recentSearchLightMode();
 }
 
 function addLocalStorageToRecentSearches()
@@ -530,6 +532,14 @@ function hrNightMode()
     document.getElementById('horizontal-rule').style.border = "1px solid white";
 }
 
+function recentSearchNightMode()
+{
+    // recent search dark mode
+    let recent = document.getElementById('search-results-list');
+    recent.style.backgroundColor = lightBlack;
+    recent.style.border = "0.5px solid white";
+}
+
 /**
  * change section color to night mode
  **/
@@ -562,10 +572,7 @@ function sectionNightMode()
         links[i].style.color = "rgb(139, 139, 255)";
     }
 
-    // recent search dark mode
-    let recent = document.getElementById('search-results-list');
-    recent.style.backgroundColor = lightBlack;
-    recent.style.border = "0.5px solid white";
+    recentSearchNightMode();
 
     // card footer dark mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -619,6 +626,14 @@ function hrLightMode()
     document.getElementById('horizontal-rule').style.border = "1px solid gray";
 }
 
+function recentSearchLightMode()
+{
+    // recent search light mode
+    let recent = document.getElementById('search-results-list');
+    recent.style.backgroundColor = "rgb(248, 148, 148)";
+    recent.style.border = "2px solid yellow";
+}
+
 /**
  * change section colors to light mode
  **/
@@ -651,10 +666,7 @@ function sectionLightMode()
         links[i].style.color = "blue";
     }
 
-    // recent search light mode
-    let recent = document.getElementById('search-results-list');
-    recent.style.backgroundColor = "rgb(248, 148, 148)";
-    recent.style.border = "2px solid yellow";
+    recentSearchLightMode();
 
     // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');

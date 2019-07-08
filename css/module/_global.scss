@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+// link additonal font
+@font-face{
+    font-family: "Samarkan";
+    src: url(SAMARN__.TTF);
+}
+
+// change font of body and input tags
+body,input{
+    font-family: 'Source Sans Pro', sans-serif;
+}

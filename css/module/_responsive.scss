@@ -1,0 +1,35 @@
+/* RESPONSIVENESS */
+/* TABLETS/DESKTOPS */
+@media (min-width: 992px) and (max-width: 1199px){
+    #search-bar{
+        width: 60%;
+    }
+    #section-div-input{
+        width: 85%;
+    }
+    #horizontal-rule{
+        width: 70%;
+    }
+    .data-card{
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+}
+
+/* large */
+@media screen and (min-width: 1200px){
+    #search-bar{
+        width: 40%;
+    }
+    #section-div-input{
+        width: 88%;
+    }
+    #horizontal-rule{
+        width: 70%;
+    }
+    .data-card{
+        margin-left: 14%;
+        margin-right: 14%;
+        margin-bottom: 1%;
+    }
+}
