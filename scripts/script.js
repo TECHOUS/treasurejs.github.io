@@ -1,10 +1,9 @@
 let flag=false;                                                             // for input
-let root = document.getElementById('root');                                 // for refering body node
-var database = [];                                                          // working database
 const darkBackground = "#121212";
 const lightBlack  = "#292b2c";
 let nightModeButton = false;
-let recentSearches = [];
+let database = [];                                                          // working database
+let recentSearches = [];                                                    // array for storing recent searches
 
 /**
  * it will clear the local storage
@@ -69,6 +68,9 @@ function addRecentSearchesToDom()
     }
 }
 
+/**
+ * add local storage data to recent searches array
+ **/
 function addLocalStorageToRecentSearches()
 {
     let storage = localStorage.getItem('treasureHistory');
@@ -79,6 +81,7 @@ function addLocalStorageToRecentSearches()
     }
 }
 
+// called when window is loaded
 window.onload = function(){
     let storage = localStorage.getItem('treasureHistory');
     if(storage == null)
@@ -90,6 +93,35 @@ window.onload = function(){
         addLocalStorageToRecentSearches();
     }
     addRecentSearchesToDom();
+}
+
+/**
+ * it will create new script tag and prepend to the dom
+ **/
+function addScriptToDom(firstValue)
+{
+    let filename = "scripts/" + firstValue + ".js";
+    let script1 = document.createElement('script');                         // sample script element
+    let root = document.getElementById('root');                             // for refering body node
+    script1.setAttribute("src", filename);
+    try
+    {
+        root.prepend(script1);                                              // append script tag according to firstname
+    }
+    catch(err){}
+}
+
+/**
+ * it will remove the first script node from the body
+ **/
+function removeScriptFromDom()
+{
+    let root = document.getElementById('root');                                 // for refering body node
+    try
+    {
+        root.removeChild(root.firstChild);
+    }
+    catch(err){}
 }
 
 /**
@@ -108,35 +140,27 @@ function getData()
         return;
     }
 
-    var filename = "scripts/" + firstValue + ".js";
-    
-    var script1 = document.createElement('script');                         // sample script element
-    script1.setAttribute("src", filename);
-
-    if (key.length == 1 && !flag)                                           // add script node
+    if (key.length == 1 && !flag)                                               // add script node
     {
         flag=true;    
-        root.prepend(script1);                                              // append script tag according to firstname
+        addScriptToDom(firstValue);
     }
-    else if(key.length==0 && flag)                                          // remove script node
+    else if(key.length==0 && flag)                                              // remove script node
     {
-        try
-        {
-            root.removeChild(root.firstChild);
-        }
-        catch(err){}
         flag=false;
-
+        removeScriptFromDom();
         eraseDataList();
         hideSearchResults();
         showRecentSearches();
         clearDom();        
         addRecentSearchesToDom();
-
         database=[];
         return;
     }
-    linkData(firstValue,key);
+
+    setTimeout(function(){
+        linkData(firstValue,key);
+    },100);
 }
 
 /**
@@ -235,100 +259,96 @@ function eraseDataList()
 function linkData(firstValue,key) 
 {
     let object = null;
-    setTimeout(function () {
-        switch (firstValue) {
-            case 'A':
-                object = Adata;
-                break;
-            case 'B':
-                object = Bdata;
-                break;
-            case 'C':
-                object = Cdata;
-                break;
-            case 'D':
-                object = Ddata;
-                break;
-            case 'E':
-                object = Edata;
-                break;
-            case 'F':
-                object = Fdata;
-                break;
-            case 'G':
-                object = Gdata;
-                break;
-            case 'H':
-                object = Hdata;
-                break;
-            case 'I':
-                object = Idata;
-                break;
-            case 'J':
-                object = Jdata;
-                break;
-            case 'K':
-                object = Kdata;
-                break;
-            case 'L':
-                object = Ldata;
-                break;
-            case 'M':
-                object = Mdata;
-                break;
-            case 'N':
-                object = Ndata;
-                break;
-            case 'O':
-                object = Odata;
-                break;
-            case 'P':
-                object = Pdata;
-                break;
-            case 'Q':
-                object = Qdata;
-                break;
-            case 'R':
-                object = Rdata;
-                break;
-            case 'S':
-                object = Sdata;
-                break;
-            case 'T':
-                object = Tdata;
-                break;
-            case 'U':
-                object = Udata;
-                break;
-            case 'V':
-                object = Vdata;
-                break;
-            case 'W':
-                object = Wdata;
-                break;
-            case 'X':
-                object = Xdata;
-                break;
-            case 'Y':
-                object = Ydata;
-                break;
-            case 'Z':
-                object = Zdata;
-                break;
-            default:
-                break;
-        }
+    switch (firstValue) {
+        case 'A':
+            object = Adata;
+            break;
+        case 'B':
+            object = Bdata;
+            break;
+        case 'C':
+            object = Cdata;
+            break;
+        case 'D':
+            object = Ddata;
+            break;
+        case 'E':
+            object = Edata;
+            break;
+        case 'F':
+            object = Fdata;
+            break;
+        case 'G':
+            object = Gdata;
+            break;
+        case 'H':
+            object = Hdata;
+            break;
+        case 'I':
+            object = Idata;
+            break;
+        case 'J':
+            object = Jdata;
+            break;
+        case 'K':
+            object = Kdata;
+            break;
+        case 'L':
+            object = Ldata;
+            break;
+        case 'M':
+            object = Mdata;
+            break;
+        case 'N':
+            object = Ndata;
+            break;
+        case 'O':
+            object = Odata;
+            break;
+        case 'P':
+            object = Pdata;
+            break;
+        case 'Q':
+            object = Qdata;
+            break;
+        case 'R':
+            object = Rdata;
+            break;
+        case 'S':
+            object = Sdata;
+            break;
+        case 'T':
+            object = Tdata;
+            break;
+        case 'U':
+            object = Udata;
+            break;
+        case 'V':
+            object = Vdata;
+            break;
+        case 'W':
+            object = Wdata;
+            break;
+        case 'X':
+            object = Xdata;
+            break;
+        case 'Y':
+            object = Ydata;
+            break;
+        case 'Z':
+            object = Zdata;
+            break;
+        default:
+            break;
+    }
 
-        if(object!=null)
-        {
-            if(database.length!=0)                                          // erase database
-            {
-                database = [];
-            }
-            filterData(object,key);
-        }
-        addToDOM();                                                            
-    }, 100);
+    if(database.length!=0)                                          // erase database
+    {
+        database = [];
+    }
+    filterData(object,key);
+
+    addToDOM();
 }
 
 /**
