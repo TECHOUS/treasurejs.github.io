@@ -1,9 +1,71 @@
-let flag=false;                                                             // for input
-const darkBackground = "#121212";
-const lightBlack  = "#292b2c";
-let nightModeButton = false;
-let database = [];                                                          // working database
-let recentSearches = [];                                                    // array for storing recent searches
+let flag                = false;                                                             
+const darkBackground    = "#121212";
+const lightBlack        = "#292b2c";
+let nightModeButton     = false;
+let database            = [];                                       // working database
+let recentSearches      = [];                                       // array for storing recent searches
+
+// called when window is loaded
+window.onload = function(){
+    let storage = localStorage.getItem('treasureHistory');
+    if(storage == null)
+    {
+        storage = [];
+    }
+    else
+    {
+        addLocalStorageToRecentSearches();
+    }
+    addRecentSearchesToDom();
+}
+
+/**
+ * This function will be called when key is pressed
+ * create script node and add to html dom
+ **/
+function getData(e) 
+{
+    if(e.keyCode>=37 && e.keyCode<=40)
+    {
+        return;
+    }
+
+    syncDatabase();
+    const key = document.getElementById('section-div-input').value;
+    var firstValue = key.charAt(0).toUpperCase();
+    
+    if(!isNaN(parseInt(firstValue)))
+    {
+        alert("we don't index libraries with numbers");
+        return;
+    } 
+
+    if (key.length == 1 && !flag)                                               // add script node
+    {
+        flag=true;    
+        addScriptToDom(firstValue);
+    }
+    else if((key==="" || key.length==0) && flag)                                              // remove script node
+    {
+        flag=false;
+        removeScriptFromDom();
+        eraseDataList();
+        hideSearchResults();
+        showRecentSearches();
+        clearDom();        
+        addRecentSearchesToDom();
+        database=[];
+        return;
+    }
+
+    if(key==="")
+    {
+        return;
+    }
+    setTimeout(function(){
+        linkData(firstValue,key);
+    },100);
+}
 
 /**
  * it will clear the local storage
@@ -25,6 +87,7 @@ function clearDom()
     }
     if(search.hasChildNodes)
     {
+        // console.log(search.childNodes);
         search.removeChild(search.childNodes[5]);
     }
 }
@@ -81,20 +144,6 @@ function addLocalStorageToRecentSearches()
     }
 }
 
-// called when window is loaded
-window.onload = function(){
-    let storage = localStorage.getItem('treasureHistory');
-    if(storage == null)
-    {
-        storage = [];
-    }
-    else
-    {
-        addLocalStorageToRecentSearches();
-    }
-    addRecentSearchesToDom();
-}
-
 /**
  * it will create new script tag and prepend to the dom
  **/
@@ -122,45 +171,6 @@ function removeScriptFromDom()
         root.removeChild(root.firstChild);
     }
     catch(err){}
-}
-
-/**
- * This function will be called when key is pressed
- * create script node and add to html dom
- **/
-function getData() 
-{
-    syncDatabase();
-    const key = document.getElementById('section-div-input').value;
-    var firstValue = key.charAt(0).toUpperCase();
-    
-    if(!isNaN(parseInt(firstValue)))
-    {
-        alert("we don't index libraries with numbers");
-        return;
-    }
-
-    if (key.length == 1 && !flag)                                               // add script node
-    {
-        flag=true;    
-        addScriptToDom(firstValue);
-    }
-    else if(key.length==0 && flag)                                              // remove script node
-    {
-        flag=false;
-        removeScriptFromDom();
-        eraseDataList();
-        hideSearchResults();
-        showRecentSearches();
-        clearDom();        
-        addRecentSearchesToDom();
-        database=[];
-        return;
-    }
-
-    setTimeout(function(){
-        linkData(firstValue,key);
-    },100);
 }
 
 /**
