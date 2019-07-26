@@ -22,8 +22,10 @@ window.onload = function(){
 /**
  * This function will be called when key is pressed
  * create script node and add to html dom
+ * 
+ * @param e for event
  **/
-function getData(e) 
+function search(e) 
 {
     if(e.keyCode>=37 && e.keyCode<=40)
     {
@@ -58,7 +60,7 @@ function getData(e)
         return;
     }
 
-    if(key==="")
+    if(key==="")                            // if user press enter with no search content
     {
         return;
     }
@@ -87,7 +89,6 @@ function clearDom()
     }
     if(search.hasChildNodes)
     {
-        // console.log(search.childNodes);
         search.removeChild(search.childNodes[5]);
     }
 }
@@ -363,6 +364,9 @@ function linkData(firstValue,key)
 
 /**
  * This function will filter the data linked
+ * 
+ * @param object for searching array
+ * @param key for search key
  **/
 function filterData(object,key)
 {
@@ -379,26 +383,43 @@ function filterData(object,key)
     updateSearchCount(database.length);
 }
 
+/**
+ * it will show search results div in div
+ **/
 function showSearchResults()
 {
     document.getElementById('search-results').style.display = "block";
 }
 
+/**
+ * it will hide the search result div from the div
+ **/
 function hideSearchResults()
 {
     document.getElementById('search-results').style.display = "none";
 }
 
+/**
+ * it will hide recent searches div
+ **/
 function hideRecentSearches()
 {
     document.getElementById('recent-searches').style.display = "none";
 }
 
+/**
+ * it will show recent searches div in dom
+ **/
 function showRecentSearches()
 {
     document.getElementById('recent-searches').style.display = "block";
 }
 
+/**
+ * it will update the search count when a key is searched
+ * 
+ * @param count for rotating the exact count
+ **/
 function updateSearchCount(count)
 {
     let i = 0;
@@ -569,6 +590,9 @@ function hrNightMode()
     document.getElementById('horizontal-rule').style.border = "1px solid white";
 }
 
+/**
+ * it will recent search section to dark mode
+ **/
 function recentSearchNightMode()
 {
     // recent search dark mode
@@ -585,6 +609,9 @@ function recentSearchNightMode()
  **/
 function sectionNightMode()
 {
+    // heading dark mode
+    document.getElementById('header-div-a').style.color = "white";
+
     // input dark mode
     let input = document.getElementById('section-div-input');
     input.style.color = "white";
@@ -656,6 +683,9 @@ function bodyLightMode()
     let body = document.getElementsByTagName('body')[0];
     body.style.color = "black";
     body.style.backgroundColor = "white";
+
+    // heading light mode
+    document.getElementById('header-div-a').style.color = "black";
 }
 
 /**

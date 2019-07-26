@@ -26,10 +26,19 @@
     width: 150px;
 }
 
-// header heading
-#header-div > h1{
+// header heading link
+#header-div-a:link,
+#header-div-a:active,
+#header-div-a:visited{
+    text-decoration: none;
+    color: black;
     font-family: Samarkan;
-    font-size: 2.5em;
+    font-size: 1.25em;
+}
+
+//header version
+#header-div-version{
+    height: 15px;
 }
 
 // header paragraph
