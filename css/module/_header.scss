@@ -1,0 +1,48 @@
+// handling the right button
+#toggle-div{
+    right: 0;
+    position: absolute;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #ccc;
+    color: black;
+}
+
+// handle toggle on day
+#toggle-day{
+    display: none;
+}
+
+// main header content
+#header-div{
+    text-align: center;
+    padding: 20px;
+}
+
+// header image
+#header-div > a > img{
+    height: 150px;
+    width: 150px;
+}
+
+// header heading link
+#header-div-a:link,
+#header-div-a:active,
+#header-div-a:visited{
+    text-decoration: none;
+    color: black;
+    font-family: Samarkan;
+    font-size: 1.25em;
+}
+
+//header version
+#header-div-version{
+    height: 15px;
+}
+
+// header paragraph
+#header-div-p{
+    font-weight: bold;
+    font-style: italic;
+}

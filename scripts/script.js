@@ -1,74 +1,11 @@
-let flag=false;                                                             // for input
-let root = document.getElementById('root');                                 // for refering body node
-var database = [];                                                          // working database
-const darkBackground = "#121212";
-const lightBlack  = "#292b2c";
-let nightModeButton = false;
-let recentSearches = [];
+let flag                = false;                                                             
+const darkBackground    = "#121212";
+const lightBlack        = "#292b2c";
+let nightModeButton     = false;
+let database            = [];                                       // working database
+let recentSearches      = [];                                       // array for storing recent searches
 
-/**
- * it will clear the local storage
- **/
-function clearLocalStorage()
-{
-    localStorage.setItem('treasureHistory','[]');
-}
-
-/**
- * this function will clear the number of elements in the list
- **/
-function clearDom()
-{
-    let search = document.getElementById('recent-searches');
-    if(search.hasChildNodes)
-    {
-        search.removeChild(search.childNodes[3]);
-    }
-}
-
-/**
- * it will add recent searches to dom
- **/
-function addRecentSearchesToDom()
-{
-    let search = document.getElementById('recent-searches');
-    let ul = document.createElement('ul');
-    ul.setAttribute('id','search-results-list');
-    search.appendChild(ul);
-
-    for(let i=recentSearches.length-1;i>=0;i--)
-    {
-        if(recentSearches.length - i > 10)
-        {
-            break;
-        }
-        let li = document.createElement('li');
-        let text = document.createTextNode(recentSearches[i]);
-        
-        let label = document.createElement('label');
-        label.setAttribute('for','check'+i);
-        let checkbox = document.createElement('input');
-        checkbox.setAttribute('type','checkbox');
-        checkbox.setAttribute('class','history-checkbox');
-        checkbox.setAttribute('id','check'+i);
-        
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        li.appendChild(label);
-        ul.appendChild(li);
-    }
-}
-
-function addLocalStorageToRecentSearches()
-{
-    let storage = localStorage.getItem('treasureHistory');
-    let arr = JSON.parse(storage);
-    for(let i=0;i<arr.length;i++)
-    {
-        recentSearches.push(arr[i]);
-    }
-}
-
+// called when window is loaded
 window.onload = function(){
     let storage = localStorage.getItem('treasureHistory');
     if(storage == null)
@@ -85,9 +22,16 @@ window.onload = function(){
 /**
  * This function will be called when key is pressed
  * create script node and add to html dom
+ * 
+ * @param e for event
  **/
-function getData() 
+function search(e) 
 {
+    if(e.keyCode>=37 && e.keyCode<=40)
+    {
+        return;
+    }
+
     syncDatabase();
     const key = document.getElementById('section-div-input').value;
     var firstValue = key.charAt(0).toUpperCase();
@@ -96,37 +40,138 @@ function getData()
     {
         alert("we don't index libraries with numbers");
         return;
-    }
+    } 
 
-    var filename = "scripts/" + firstValue + ".js";
-    
-    var script1 = document.createElement('script');                         // sample script element
-    script1.setAttribute("src", filename);
-
-    if (key.length == 1 && !flag)                                           // add script node
+    if (key.length == 1 && !flag)                                               // add script node
     {
         flag=true;    
-        root.prepend(script1);                                              // append script tag according to firstname
+        addScriptToDom(firstValue);
     }
-    else if(key.length==0 && flag)                                          // remove script node
+    else if((key==="" || key.length==0) && flag)                                              // remove script node
     {
-        try
-        {
-            root.removeChild(root.firstChild);
-        }
-        catch(err){}
         flag=false;
-
+        removeScriptFromDom();
         eraseDataList();
         hideSearchResults();
         showRecentSearches();
-        clearDom();
+        clearDom();        
         addRecentSearchesToDom();
-
         database=[];
         return;
     }
-    linkData(firstValue,key);
+
+    if(key==="")                            // if user press enter with no search content
+    {
+        return;
+    }
+    setTimeout(function(){
+        linkData(firstValue,key);
+    },100);
+}
+
+/**
+ * it will clear the local storage
+ **/
+function clearLocalStorage()
+{
+    localStorage.setItem('treasureHistory','[]');
+}
+
+/**
+ * this function will clear the number of elements in the list
+ **/
+function clearDom()
+{
+    let search = document.getElementById('recent-searches');
+    if(recentSearches.length == 0)
+    {
+        return;
+    }
+    if(search.hasChildNodes)
+    {
+        search.removeChild(search.childNodes[5]);
+    }
+}
+
+/**
+ * it will add recent searches to dom
+ **/
+function addRecentSearchesToDom()
+{
+    let search = document.getElementById('recent-searches');
+
+    if(recentSearches.length!=0)
+    {
+        let ul = document.createElement('ul');
+        ul.setAttribute('id','search-results-list');
+        search.appendChild(ul);
+
+        for(let i=recentSearches.length-1;i>=0;i--)
+        {
+            if(recentSearches.length - i > 10)
+            {
+                break;
+            }
+            let li = document.createElement('li');
+            let text = document.createTextNode(recentSearches[i]);
+            
+            let label = document.createElement('label');
+            label.setAttribute('for','check'+i);
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type','checkbox');
+            checkbox.setAttribute('class','history-checkbox');
+            checkbox.setAttribute('id','check'+i);
+            
+            label.appendChild(checkbox);
+            label.appendChild(text);
+            li.appendChild(label);
+            ul.appendChild(li);
+        }
+        
+        nightModeButton ? recentSearchNightMode() : recentSearchLightMode();    
+    }
+}
+
+/**
+ * add local storage data to recent searches array
+ **/
+function addLocalStorageToRecentSearches()
+{
+    let storage = localStorage.getItem('treasureHistory');
+    let arr = JSON.parse(storage);
+    for(let i=0;i<arr.length;i++)
+    {
+        recentSearches.push(arr[i]);
+    }
+}
+
+/**
+ * it will create new script tag and prepend to the dom
+ **/
+function addScriptToDom(firstValue)
+{
+    let filename = "scripts/" + firstValue + ".js";
+    let script1 = document.createElement('script');                         // sample script element
+    let root = document.getElementById('root');                             // for refering body node
+    script1.setAttribute("src", filename);
+    try
+    {
+        root.prepend(script1);                                              // append script tag according to firstname
+    }
+    catch(err){}
+}
+
+/**
+ * it will remove the first script node from the body
+ **/
+function removeScriptFromDom()
+{
+    let root = document.getElementById('root');                                 // for refering body node
+    try
+    {
+        root.removeChild(root.firstChild);
+    }
+    catch(err){}
 }
 
 /**
@@ -225,104 +270,103 @@ function eraseDataList()
 function linkData(firstValue,key) 
 {
     let object = null;
-    setTimeout(function () {
-        switch (firstValue) {
-            case 'A':
-                object = Adata;
-                break;
-            case 'B':
-                object = Bdata;
-                break;
-            case 'C':
-                object = Cdata;
-                break;
-            case 'D':
-                object = Ddata;
-                break;
-            case 'E':
-                object = Edata;
-                break;
-            case 'F':
-                object = Fdata;
-                break;
-            case 'G':
-                object = Gdata;
-                break;
-            case 'H':
-                object = Hdata;
-                break;
-            case 'I':
-                object = Idata;
-                break;
-            case 'J':
-                object = Jdata;
-                break;
-            case 'K':
-                object = Kdata;
-                break;
-            case 'L':
-                object = Ldata;
-                break;
-            case 'M':
-                object = Mdata;
-                break;
-            case 'N':
-                object = Ndata;
-                break;
-            case 'O':
-                object = Odata;
-                break;
-            case 'P':
-                object = Pdata;
-                break;
-            case 'Q':
-                object = Qdata;
-                break;
-            case 'R':
-                object = Rdata;
-                break;
-            case 'S':
-                object = Sdata;
-                break;
-            case 'T':
-                object = Tdata;
-                break;
-            case 'U':
-                object = Udata;
-                break;
-            case 'V':
-                object = Vdata;
-                break;
-            case 'W':
-                object = Wdata;
-                break;
-            case 'X':
-                object = Xdata;
-                break;
-            case 'Y':
-                object = Ydata;
-                break;
-            case 'Z':
-                object = Zdata;
-                break;
-            default:
-                break;
-        }
+    switch (firstValue) {
+        case 'A':
+            object = Adata;
+            break;
+        case 'B':
+            object = Bdata;
+            break;
+        case 'C':
+            object = Cdata;
+            break;
+        case 'D':
+            object = Ddata;
+            break;
+        case 'E':
+            object = Edata;
+            break;
+        case 'F':
+            object = Fdata;
+            break;
+        case 'G':
+            object = Gdata;
+            break;
+        case 'H':
+            object = Hdata;
+            break;
+        case 'I':
+            object = Idata;
+            break;
+        case 'J':
+            object = Jdata;
+            break;
+        case 'K':
+            object = Kdata;
+            break;
+        case 'L':
+            object = Ldata;
+            break;
+        case 'M':
+            object = Mdata;
+            break;
+        case 'N':
+            object = Ndata;
+            break;
+        case 'O':
+            object = Odata;
+            break;
+        case 'P':
+            object = Pdata;
+            break;
+        case 'Q':
+            object = Qdata;
+            break;
+        case 'R':
+            object = Rdata;
+            break;
+        case 'S':
+            object = Sdata;
+            break;
+        case 'T':
+            object = Tdata;
+            break;
+        case 'U':
+            object = Udata;
+            break;
+        case 'V':
+            object = Vdata;
+            break;
+        case 'W':
+            object = Wdata;
+            break;
+        case 'X':
+            object = Xdata;
+            break;
+        case 'Y':
+            object = Ydata;
+            break;
+        case 'Z':
+            object = Zdata;
+            break;
+        default:
+            break;
+    }
 
-        if(object!=null)
-        {
-            if(database.length!=0)                                          // erase database
-            {
-                database = [];
-            }
-            filterData(object,key);
-        }
-        addToDOM();                                                            
-    }, 100);
+    if(database.length!=0)                                          // erase database
+    {
+        database = [];
+    }
+    filterData(object,key);
+
+    addToDOM();
 }
 
 /**
  * This function will filter the data linked
+ * 
+ * @param object for searching array
+ * @param key for search key
  **/
 function filterData(object,key)
 {
@@ -339,26 +383,43 @@ function filterData(object,key)
     updateSearchCount(database.length);
 }
 
+/**
+ * it will show search results div in div
+ **/
 function showSearchResults()
 {
     document.getElementById('search-results').style.display = "block";
 }
 
+/**
+ * it will hide the search result div from the div
+ **/
 function hideSearchResults()
 {
     document.getElementById('search-results').style.display = "none";
 }
 
+/**
+ * it will hide recent searches div
+ **/
 function hideRecentSearches()
 {
     document.getElementById('recent-searches').style.display = "none";
 }
 
+/**
+ * it will show recent searches div in dom
+ **/
 function showRecentSearches()
 {
     document.getElementById('recent-searches').style.display = "block";
 }
 
+/**
+ * it will update the search count when a key is searched
+ * 
+ * @param count for rotating the exact count
+ **/
 function updateSearchCount(count)
 {
     let i = 0;
@@ -480,9 +541,8 @@ function addToDOM()
             }
             root.appendChild(div);
         }
+        nightModeButton ? switchNightMode() : switchLightMode();
     }
-
-    nightModeButton ? switchNightMode() : switchLightMode();
 }
 
 /**
@@ -531,10 +591,27 @@ function hrNightMode()
 }
 
 /**
+ * it will recent search section to dark mode
+ **/
+function recentSearchNightMode()
+{
+    // recent search dark mode
+    let recent = document.getElementById('search-results-list');
+    if(recent !== null)
+    {
+        recent.style.backgroundColor = lightBlack;
+        recent.style.border = "0.5px solid white";
+    }
+}
+
+/**
  * change section color to night mode
  **/
 function sectionNightMode()
 {
+    // heading dark mode
+    document.getElementById('header-div-a').style.color = "white";
+
     // input dark mode
     let input = document.getElementById('section-div-input');
     input.style.color = "white";
@@ -562,10 +639,7 @@ function sectionNightMode()
         links[i].style.color = "rgb(139, 139, 255)";
     }
 
-    // recent search dark mode
-    let recent = document.getElementById('search-results-list');
-    recent.style.backgroundColor = lightBlack;
-    recent.style.border = "0.5px solid white";
+    recentSearchNightMode();
 
     // card footer dark mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -609,6 +683,9 @@ function bodyLightMode()
     let body = document.getElementsByTagName('body')[0];
     body.style.color = "black";
     body.style.backgroundColor = "white";
+
+    // heading light mode
+    document.getElementById('header-div-a').style.color = "black";
 }
 
 /**
@@ -617,6 +694,17 @@ function bodyLightMode()
 function hrLightMode()
 {
     document.getElementById('horizontal-rule').style.border = "1px solid gray";
+}
+
+function recentSearchLightMode()
+{
+    // recent search light mode
+    let recent = document.getElementById('search-results-list');
+    if(recent !== null)
+    {
+        recent.style.backgroundColor = "rgb(248, 148, 148)";
+        recent.style.border = "2px solid yellow";
+    }
 }
 
 /**
@@ -651,10 +739,7 @@ function sectionLightMode()
         links[i].style.color = "blue";
     }
 
-    // recent search light mode
-    let recent = document.getElementById('search-results-list');
-    recent.style.backgroundColor = "rgb(248, 148, 148)";
-    recent.style.border = "2px solid yellow";
+    recentSearchLightMode();
 
     // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -801,4 +886,13 @@ function hideBadges(element)
         parentArr[3].style.display = "block";
         parent.removeChild(parentArr[4]);
     }
+}
+
+/**
+ * This function will clear the history
+ **/
+function clearSearchHistory()
+{
+    clearDom();
+    clearLocalStorage();
 }

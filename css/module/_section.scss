@@ -1,0 +1,167 @@
+// div having input
+#section-div{
+    text-align: center;
+}
+
+// search bar
+#search-bar{
+    border: 2px solid brown;
+    border-radius: 23px;
+    margin: auto;
+    width: 90%;
+}
+
+// search bar on hover
+#search-bar:hover{
+    box-shadow: 0px 0px 10px #888888;
+}
+
+// find icon in input field
+#find-icon{
+    color: brown;
+    font-size: 20px;
+}
+
+// styling section div input
+#section-div-input{
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    border: none;
+    width: 80%;
+    outline: none;
+    border-radius: 20px;
+}
+
+// section input on focus
+#section-div-input:focus{
+    color: brown;
+}
+
+// section input placeholder
+#section-div-input::placeholder{
+    color: gray;
+}
+
+// horizontal line after input
+#horizontal-rule{
+    border: 1px solid gray;
+    width: 90%;
+    margin: auto;
+}
+
+// search results after typing
+#search-results{
+    text-align: center;
+    display: none;
+}
+
+// search results list
+#search-results-list{
+    border: 2px solid yellow;
+    background-color: rgb(248, 148, 148);
+    border-radius: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: left;
+    list-style-type: none;
+}
+
+// search result list card
+#search-results-list > li{
+    padding: 12px;
+}
+
+// recent search text
+#recent-searches{
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#clear-search-history{
+    margin-left: 20px;
+}
+
+.history-checkbox{
+    margin-right: 20px;
+}
+
+// card data found
+#found-data{
+    padding-bottom: 50px;
+    min-height: 50vh;
+    padding: 10px;
+}
+
+/* styling data cards */
+.data-card{
+    background-color: rgb(248, 148, 148);
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid yellow;
+    margin-bottom: 2%;
+}
+.data-card > p{
+    padding: 0.5%;
+}
+
+// horizontal list
+#basicList{
+    list-style-type: none;
+    margin-top: 0.5%;
+}
+
+// horizontal list item
+#basicList > li{
+    display: inline;
+    padding: 5px;
+}
+
+// other links list
+#advList{
+    list-style-type: square;
+    margin-top: 0.5%;
+    margin-left: 50px;
+}
+
+// styling link
+.link{
+    color: blue;
+    text-decoration: none;
+}
+
+// styling badges and more button div
+.badge-class,
+.more-div{
+    background-color: rgb(230, 119, 119);
+    text-align: center;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 10px;
+    border: none;
+}
+
+// badges images
+.badge-img{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+// stlying more and less link color
+.more-div,
+.less-div{
+    color: white;
+    font-weight: bold;
+}
+
+// less link
+.less-div{
+    padding: 5px;
+}

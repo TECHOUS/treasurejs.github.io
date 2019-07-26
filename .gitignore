@@ -2,3 +2,5 @@
 
 node_modules
 Treasure-js
+.sass-cache
+*.css.map
