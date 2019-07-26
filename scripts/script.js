@@ -4,6 +4,7 @@ const lightBlack        = "#292b2c";
 let nightModeButton     = false;
 let database            = [];                                       // working database
 let recentSearches      = [];                                       // array for storing recent searches
+let linkedObjectData    = [];                                       // data array that comes after linking the js files
 
 // called when window is loaded
 window.onload = function(){
@@ -27,7 +28,7 @@ window.onload = function(){
  **/
 function search(e) 
 {
-    if(e.keyCode>=37 && e.keyCode<=40)
+    if(e.keyCode>=37 && e.keyCode<=40)                                          // when arrow keys are used
     {
         return;
     }
@@ -42,12 +43,19 @@ function search(e)
         return;
     } 
 
-    if (key.length == 1 && !flag)                                               // add script node
+    if (key.length == 1 && !flag)                                               // add script node when one digit is entered
     {
         flag=true;    
         addScriptToDom(firstValue);
+        
+        setTimeout(function(){
+            linkData(firstValue, function(){
+                filterData(key);
+                addToDOM();
+            });
+        },100);
     }
-    else if((key==="" || key.length==0) && flag)                                              // remove script node
+    else if((key==="" || key.length==0) && flag)                                // remove script node
     {
         flag=false;
         removeScriptFromDom();
@@ -60,13 +68,13 @@ function search(e)
         return;
     }
 
-    if(key==="")                            // if user press enter with no search content
+    if(key==="")                                                                // if user press enter with no search content
     {
         return;
     }
-    setTimeout(function(){
-        linkData(firstValue,key);
-    },100);
+
+    filterData(key);
+    addToDOM();
 }
 
 /**
@@ -266,88 +274,90 @@ function eraseDataList()
 
 /**
  * This function will link the data from files
+ * 
+ * @param firstValue first char entered by the user
+ * @callback fun for doing the work after linking
  **/
-function linkData(firstValue,key) 
+function linkData(firstValue, fun) 
 {
-    let object = null;
     switch (firstValue) {
         case 'A':
-            object = Adata;
+            linkedObjectData = Adata;
             break;
         case 'B':
-            object = Bdata;
+            linkedObjectData = Bdata;
             break;
         case 'C':
-            object = Cdata;
+            linkedObjectData = Cdata;
             break;
         case 'D':
-            object = Ddata;
+            linkedObjectData = Ddata;
             break;
         case 'E':
-            object = Edata;
+            linkedObjectData = Edata;
             break;
         case 'F':
-            object = Fdata;
+            linkedObjectData = Fdata;
             break;
         case 'G':
-            object = Gdata;
+            linkedObjectData = Gdata;
             break;
         case 'H':
-            object = Hdata;
+            linkedObjectData = Hdata;
             break;
         case 'I':
-            object = Idata;
+            linkedObjectData = Idata;
             break;
         case 'J':
-            object = Jdata;
+            linkedObjectData = Jdata;
             break;
         case 'K':
-            object = Kdata;
+            linkedObjectData = Kdata;
             break;
         case 'L':
-            object = Ldata;
+            linkedObjectData = Ldata;
             break;
         case 'M':
-            object = Mdata;
+            linkedObjectData = Mdata;
             break;
         case 'N':
-            object = Ndata;
+            linkedObjectData = Ndata;
             break;
         case 'O':
-            object = Odata;
+            linkedObjectData = Odata;
             break;
         case 'P':
-            object = Pdata;
+            linkedObjectData = Pdata;
             break;
         case 'Q':
-            object = Qdata;
+            linkedObjectData = Qdata;
             break;
         case 'R':
-            object = Rdata;
+            linkedObjectData = Rdata;
             break;
         case 'S':
-            object = Sdata;
+            linkedObjectData = Sdata;
             break;
         case 'T':
-            object = Tdata;
+            linkedObjectData = Tdata;
             break;
         case 'U':
-            object = Udata;
+            linkedObjectData = Udata;
             break;
         case 'V':
-            object = Vdata;
+            linkedObjectData = Vdata;
             break;
         case 'W':
-            object = Wdata;
+            linkedObjectData = Wdata;
             break;
         case 'X':
-            object = Xdata;
+            linkedObjectData = Xdata;
             break;
         case 'Y':
-            object = Ydata;
+            linkedObjectData = Ydata;
             break;
         case 'Z':
-            object = Zdata;
+            linkedObjectData = Zdata;
             break;
         default:
             break;
@@ -357,25 +367,24 @@ function linkData(firstValue,key)
     {
         database = [];
     }
-    filterData(object,key);
 
-    addToDOM();
+    fun();
 }
 
 /**
- * This function will filter the data linked
+ * This function will filter the data linked in linkedObjectData and put it into database
  * 
- * @param object for searching array
  * @param key for search key
  **/
-function filterData(object,key)
+function filterData(key)
 {
+    database = [];                                                      // reset runtime database
     let index = key.length;
-    for (let i = 0; i < object.length; i++)                         // add filter objects data to database 
+    for (let i = 0; i < linkedObjectData.length; i++)                             // add filter objects data to database 
     {
-        if (object[i].name.substring(0, index) === key.toUpperCase()) 
+        if (linkedObjectData[i].name.substring(0, index) === key.toUpperCase()) 
         {
-            database.push(object[i]);
+            database.push(linkedObjectData[i]);
         }
     }
     hideRecentSearches();
