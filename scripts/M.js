@@ -48,6 +48,14 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MARKED JS",
+		description : "A markdown parser and compiler. Built for speed.",
+		github : "https://github.com/markedjs/marked",
+		website : "",
+		docs : "https://marked.js.org/#/README.md#README.md",
+		others : []
+	},
+	{
 		name : "MATERIALIZE",
 		description : "Materialize, a CSS Framework based on Material Design",
 		github : "https://github.com/Dogfalo/materialize",
@@ -101,6 +109,14 @@ var Mdata = [
 		github : "https://github.com/postlight/mercury-parser",
 		website : "https://mercury.postlight.com/web-parser/",
 		docs : "",
+		others : []
+	},
+	{
+		name : "MERGE GRAPHQL SCHEMAS",
+		description : "A utility library to facilitate merging of modularized GraphQL schemas and resolver objects.",
+		github : "https://github.com/Urigo/merge-graphql-schemas",
+		website : "",
+		docs : "https://www.npmjs.com/package/merge-graphql-schemas#usage",
 		others : []
 	},
 	{

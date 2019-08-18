@@ -24,6 +24,22 @@ var Jdata = [
 		others : []
 	},
 	{
+		name : "JEST RUNNER ESLINT",
+		description : "An ESLint runner for Jest",
+		github : "https://github.com/jest-community/jest-runner-eslint",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "JIFF",
+		description : "JavaScript library for building web-based applications that employ secure multi-party computation (MPC).",
+		github : "https://github.com/multiparty/jiff",
+		website : "",
+		docs : "https://multiparty.org/jiff/docs/jsdoc/",
+		others : []
+	},
+	{
 		name : "JMESPATH JS",
 		description : "Javascript implementation of JMESPath, a query language for JSON",
 		github : "https://github.com/jmespath/jmespath.js",

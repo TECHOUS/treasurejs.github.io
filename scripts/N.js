@@ -98,6 +98,30 @@ var Ndata = [
 		others : []
 	},
 	{
+		name : "NODE CASSANDRA CLIENT",
+		description : "CQL client for Cassandra written in Node.js",
+		github : "https://github.com/racker/node-cassandra-client",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NORMALIZE URL",
+		description : "Useful when you need to display, store, deduplicate, sort, compare, etc, URLs.",
+		github : "https://github.com/sindresorhus/normalize-url",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NOW BUILDERS",
+		description : "Official Now Builders created by the ZEIT team",
+		github : "https://github.com/zeit/now-builders",
+		website : "",
+		docs : "https://zeit.co/docs",
+		others : []
+	},
+	{
 		name : "NPM",
 		description : "![image](/logo/npm.jpg)",
 		github : "",
@@ -133,14 +157,6 @@ var Ndata = [
 				link: "https://github.com/alexfernandez/loadtest"
 			}
 		]
-	},
-	{
-		name : "NOW BUILDERS",
-		description : "Official Now Builders created by the ZEIT team",
-		github : "https://github.com/zeit/now-builders",
-		website : "",
-		docs : "https://zeit.co/docs",
-		others : []
 	},
 	{
 		name : "NUXT JS",
