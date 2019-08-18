@@ -150,6 +150,14 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "SPECTRUM",
+		description : "Simple, powerful online communities.",
+		github : "https://github.com/withspectrum/spectrum",
+		website : "https://spectrum.chat/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "SPOKE",
 		description : "Easily create custom 3D environments",
 		github : "https://github.com/mozilla/Spoke",
@@ -249,6 +257,14 @@ var Sdata = [
 				link: "https://github.com/sveltejs/sapper"
 			}
 		]
+	},
+	{
+		name : "SVELTE TESTING LIBRARY",
+		description : "Simple and complete Svelte DOM testing utilities that encourage good testing practices",
+		github : "https://github.com/testing-library/svelte-testing-library",
+		website : "",
+		docs : "",
+		others : []
 	},
 	{
 		name : "SWING",

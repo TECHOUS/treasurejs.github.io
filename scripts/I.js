@@ -48,6 +48,14 @@ var Idata = [
 		others : []
 	},
 	{
+		name : "INCUBATOR ECHARTS",
+		description : "A powerful, interactive charting and visualization library for browser",
+		github : "https://github.com/apache/incubator-echarts",
+		website : "https://echarts.apache.org/en/index.html",
+		docs : "https://echarts.apache.org/en/tutorial.html#Get%20Started%20with%20ECharts%20in%205%20minutes",
+		others : []
+	},
+	{
 		name : "INFERNO JS",
 		description : "Inferno is an insanely fast, React-like library for building high-performance user interfaces on both the client and server.",
 		github : "https://github.com/infernojs/inferno",

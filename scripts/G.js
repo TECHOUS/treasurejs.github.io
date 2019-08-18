@@ -1,5 +1,13 @@
 var Gdata = [
 	{
+		name : "G9 JS",
+		description : "Automatically Interactive Graphics",
+		github : "https://github.com/bijection/g9",
+		website : "http://omrelli.ug/g9/gallery/",
+		docs : "https://github.com/bijection/g9#docs",
+		others : []
+	},
+	{
 		name : "GATBYJS",
 		description : "Gatsby lets you build blazing fast sites with your data, whatever the source. Liberate your sites from legacy CMSs and fly into the future.",
 		github : "https://github.com/gatsbyjs/gatsby",
@@ -74,6 +82,14 @@ var Gdata = [
 		github : "https://github.com/greensock/GreenSock-JS",
 		website : "https://greensock.com/",
 		docs : "https://greensock.com/docs",
+		others : []
+	},
+	{
+		name : "GRADIENT PATH",
+		description : "A small library to have any gradient follow along any SVG path",
+		github : "https://github.com/mnsht/gradient-path",
+		website : "https://mnsht.github.io/gradient-path/?path=/story/gradientpath--default",
+		docs : "",
 		others : []
 	},
 	{

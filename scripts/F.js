@@ -40,6 +40,14 @@ var Fdata = [
 		others : []
 	},
 	{
+		name : "FASY",
+		description : "FP iterators that are both eager and asynchronous",
+		github : "https://github.com/getify/fasy",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "FAYE",
 		description : "Simple pub/sub messaging for the web",
 		github : "https://github.com/faye/faye",
