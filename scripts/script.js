@@ -28,7 +28,7 @@ window.onload = function(){
  **/
 function search(e) 
 {
-    if(e.keyCode>=37 && e.keyCode<=40)                                          // when arrow keys are used
+    if(e.keyCode>=37 && e.keyCode<=40)                              // when arrow keys are used
     {
         return;
     }
@@ -43,7 +43,7 @@ function search(e)
         return;
     } 
 
-    if (key.length == 1 && !flag)                                               // add script node when one digit is entered
+    if (key.length == 1 && !flag)                                   // add script node when one digit is entered
     {
         flag=true;    
         addScriptToDom(firstValue);
@@ -55,7 +55,7 @@ function search(e)
             });
         },100);
     }
-    else if((key==="" || key.length==0) && flag)                                // remove script node
+    else if((key==="" || key.length==0) && flag)                    // remove script node
     {
         flag=false;
         removeScriptFromDom();
@@ -68,7 +68,7 @@ function search(e)
         return;
     }
 
-    if(key==="")                                                                // if user press enter with no search content
+    if(key==="")                                                    // if user press enter with no search content
     {
         return;
     }
@@ -129,7 +129,24 @@ function addRecentSearchesToDom()
             checkbox.setAttribute('type','checkbox');
             checkbox.setAttribute('class','history-checkbox');
             checkbox.setAttribute('id','check'+i);
-            
+
+            checkbox.addEventListener('click',function(event){
+                let check = event.srcElement.checked;
+                let node = event.srcElement.parentNode.parentNode;
+                
+                if(check)
+                {
+                    node.style.backgroundColor = "brown";
+                    node.style.borderRadius = "20px";
+                    node.style.color = "white";
+                }
+                else
+                {
+                    node.style.backgroundColor = "initial";
+                    node.style.color = "initial";
+                }                
+            })
+
             label.appendChild(checkbox);
             label.appendChild(text);
             li.appendChild(label);
@@ -174,7 +191,7 @@ function addScriptToDom(firstValue)
  **/
 function removeScriptFromDom()
 {
-    let root = document.getElementById('root');                                 // for refering body node
+    let root = document.getElementById('root');                             // for refering body node
     try
     {
         root.removeChild(root.firstChild);
@@ -202,7 +219,6 @@ function syncDatabase()
         }
 
         let arr = array[i].childNodes;                                      // get datacard's data in arr
-        // console.log(arr);
         for(let j=0;j<arr.length;j++)
         {
             switch(j)
@@ -262,11 +278,10 @@ function syncDatabase()
  **/
 function eraseDataList()
 {
-    // remove all nodes from the found data
     let founddata = document.getElementById('found-data');
 
     var child = founddata.lastElementChild;  
-    while (child) { 
+    while (child) {                                                             // remove all nodes from the found data
         founddata.removeChild(child); 
         child = founddata.lastElementChild; 
     }
@@ -278,7 +293,7 @@ function eraseDataList()
  * @param firstValue first char entered by the user
  * @callback fun for doing the work after linking
  **/
-function linkData(firstValue, fun) 
+function linkData(firstValue, callback) 
 {
     switch (firstValue) {
         case 'A':
@@ -368,7 +383,7 @@ function linkData(firstValue, fun)
         database = [];
     }
 
-    fun();
+    callback();
 }
 
 /**
@@ -902,6 +917,37 @@ function hideBadges(element)
  **/
 function clearSearchHistory()
 {
+    // let checkedBoxes = false;
+    // let checkboxes = document.getElementsByClassName('history-checkbox');
+    // let historyList = document.getElementById('search-results-list');
+    // for(let i=0;i<checkboxes.length;i++)
+    // {
+    //     if(checkboxes[i].checked === true)                                  // if node find in the tree
+    //     {
+    //         // let node = checkboxes[i].parentNode.parentNode;
+    //         // console.log(node);
+    //         // historyList.removeChild(node);
+
+    //         let str = node.firstChild.childNodes[1].nodeValue;
+    //         // remove this element from the array
+    //         let index = recentSearches.indexOf(str);
+            
+    //         recentSearches.splice(index,1);
+    //         checkedBoxes = true;
+    //     }
+
+        // console.log(recentSearches);
+        // if(historyList.hasChildNodes() === false || recentSearches.length == 0)
+        // {
+        //     historyList.style.border = "none";   
+        // }
+    // }
     clearDom();
     clearLocalStorage();
+
+    // if(checkedBoxes===false)
+    // {
+    //     clearDom();
+    //     // clearLocalStorage();
+    // }
 }
