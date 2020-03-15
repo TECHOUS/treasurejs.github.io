@@ -6,7 +6,9 @@ let database            = [];                                       // working d
 let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
 
-// called when window is loaded
+/** 
+ * called when window is loaded
+ **/
 window.onload = function(){
     let storage = localStorage.getItem('treasureHistory');
     if(storage == null)
@@ -393,9 +395,9 @@ function linkData(firstValue, callback)
  **/
 function filterData(key)
 {
-    database = [];                                                      // reset runtime database
+    database = [];                                                                  // reset runtime database
     let index = key.length;
-    for (let i = 0; i < linkedObjectData.length; i++)                             // add filter objects data to database 
+    for (let i = 0; i < linkedObjectData.length; i++)                               // add filter objects data to database 
     {
         if (linkedObjectData[i].name.substring(0, index) === key.toUpperCase()) 
         {
@@ -574,7 +576,7 @@ function addToDOM()
  **/
 function handleNightMode()
 {
-    if(nightModeButton==true)                                              // night mode
+    if(nightModeButton == true)                                              // night mode
     {
         nightModeButton = false;
         let night = document.getElementById('toggle-night');
@@ -614,8 +616,61 @@ function hrNightMode()
     document.getElementById('horizontal-rule').style.border = "1px solid white";
 }
 
+function headingNightMode()
+{
+    // heading dark mode
+    document.getElementById('header-div-a').style.color = "white";
+} 
+
+function inputNightMode()
+{
+    // input dark mode
+    let input = document.getElementById('section-div-input');
+    input.style.color = "white";
+    input.style.backgroundColor = lightBlack;
+    
+    let searchBar = document.getElementById('search-bar');
+    searchBar.style.backgroundColor = lightBlack;
+    searchBar.style.border = "1px solid white";
+
+    document.getElementById('find-icon').style.color = "white";
+}
+
+function cardsNightMode()
+{
+    // cards dark mode
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "white";
+        cards[i].style.backgroundColor = lightBlack;
+        cards[i].style.border = "none";
+    }
+
+    // card links dark mode
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "rgb(139, 139, 255)";
+    }
+
+    // card footer dark mode
+    let badgeArray = document.getElementsByClassName('badge-class');
+    for(let i=0;i<badgeArray.length;i++)
+    {
+        badgeArray[i].style.backgroundColor = lightBlack;
+    }
+
+    // card footer text dark mode
+    let moreArray = document.getElementsByClassName('more-div');
+    for(let i=0;i<moreArray.length;i++)
+    {
+        moreArray[i].style.backgroundColor = lightBlack;
+    }
+}
+
 /**
- * it will recent search section to dark mode
+ * it will change recent search section to dark mode
  **/
 function recentSearchNightMode()
 {
@@ -633,51 +688,13 @@ function recentSearchNightMode()
  **/
 function sectionNightMode()
 {
-    // heading dark mode
-    document.getElementById('header-div-a').style.color = "white";
-
-    // input dark mode
-    let input = document.getElementById('section-div-input');
-    input.style.color = "white";
-    input.style.backgroundColor = lightBlack;
+    headingNightMode();
     
-    let searchBar = document.getElementById('search-bar');
-    searchBar.style.backgroundColor = lightBlack;
-    searchBar.style.border = "1px solid white";
+    inputNightMode();
 
-    document.getElementById('find-icon').style.color = "white";
-
-    // cards dark mode
-    let cards = document.getElementsByClassName('data-card');
-    for(let i=0;i<cards.length;i++)
-    {
-        cards[i].style.color = "white";
-        cards[i].style.backgroundColor = lightBlack;
-        cards[i].style.border = "none";
-    }
-
-    // card links dark mode
-    let links = document.getElementsByClassName('link');
-    for(let i=0;i<links.length;i++)
-    {
-        links[i].style.color = "rgb(139, 139, 255)";
-    }
+    cardsNightMode();
 
     recentSearchNightMode();
-
-    // card footer dark mode
-    let badgeArray = document.getElementsByClassName('badge-class');
-    for(let i=0;i<badgeArray.length;i++)
-    {
-        badgeArray[i].style.backgroundColor = lightBlack;
-    }
-
-    // card footer text dark mode
-    let moreArray = document.getElementsByClassName('more-div');
-    for(let i=0;i<moreArray.length;i++)
-    {
-        moreArray[i].style.backgroundColor = lightBlack;
-    }
 }
 
 /**
