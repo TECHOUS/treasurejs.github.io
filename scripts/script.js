@@ -6,6 +6,23 @@ let database            = [];                                       // working d
 let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
 
+/**
+ * automatic night mode according to hours
+ * 
+ * 7-18 - light
+ * 0-6 , 19-23 - night
+ **/
+let currentHours = new Date().getHours();
+if((currentHours>=0 && currentHours<=6) || (currentHours>=19 && currentHours<=23)){
+    // automatic night mode
+    nightModeButton = false;
+    handleNightMode();
+}else{
+    // automatic light mode
+    nightModeButton = true;
+    handleNightMode();
+}
+
 /** 
  * called when window is loaded
  **/
