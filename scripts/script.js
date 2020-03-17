@@ -13,13 +13,13 @@ let linkedObjectData    = [];                                       // data arra
  * 0-6 , 19-23 - night
  **/
 let currentHours = new Date().getHours();
-if((currentHours>=0 && currentHours<=6) || (currentHours>=19 && currentHours<=23)){
-    // automatic night mode
-    nightModeButton = false;
-    handleNightMode();
-}else{
+if(currentHours>=7 && currentHours<=18){
     // automatic light mode
     nightModeButton = true;
+    handleNightMode();
+}else{
+    // automatic night mode
+    nightModeButton = false;
     handleNightMode();
 }
 
@@ -591,9 +591,9 @@ function addToDOM()
 /**
  * This function will change the toggle icon on click
  **/
-function handleNightMode()
+function handleNightMode(event)
 {
-    if(nightModeButton == true)                                              // night mode
+    if(nightModeButton == true)                                              // light mode
     {
         nightModeButton = false;
         let night = document.getElementById('toggle-night');
@@ -984,4 +984,20 @@ function clearSearchHistory()
     //     clearDom();
     //     // clearLocalStorage();
     // }
+}
+
+/**
+ * this function is called when print action is called
+ **/
+function printResults(){
+    let earlierReverseNightMode = !nightModeButton;
+
+    document.getElementById('search-results').style.display = "none";
+    nightModeButton = true;
+    handleNightMode()
+    print();
+
+    document.getElementById('search-results').style.display = "block";
+    nightModeButton=earlierReverseNightMode;
+    handleNightMode()
 }

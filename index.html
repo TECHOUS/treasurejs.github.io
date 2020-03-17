@@ -42,7 +42,7 @@
         <div id="section-div">
             <div id="search-bar">
                 <i class="fas fa-search" id="find-icon"></i>
-                <input type="text" placeholder="search js library" id="section-div-input" onkeyup="search(event)" title="Search Treasures"/>
+                <input type="text" placeholder="search js library" id="section-div-input" onkeyup="search(event)" title="Search Treasures" x-webkit-speech />
             </div>
         </div>
         <br/>
@@ -53,8 +53,9 @@
             finded
             <span id="search-count">0</span>
             results
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span onclick="printResults()" id="printResultsAction" title="convert to pdf"><i class="far fa-file-pdf"></i></span>
         </div>
-
         <div id="recent-searches">
             <i class="fas fa-history"></i>
             &nbsp;
@@ -106,38 +107,49 @@
                 <h2>OTHER LINKS</h2>
                 <ul class="footer-links-list">
                     <li>
-                        <i class="fab fa-node-js"></i>&nbsp;
-                        <a href="https://github.com/TechOUs/treasurejs.github.io">Source Code</a>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io">
+                            <i class="fab fa-node-js"></i>&nbsp;Source Code
+                        </a>
                     </li>
                     <li>
-                        <i class="far fa-gem"></i>
-                        <a href="https://github.com/TechOUs/Treasure-js">Treasure Core</a>
+                        <a href="https://github.com/TechOUs/Treasure-js">
+                            <i class="far fa-gem"></i>&nbsp;Treasure Core
+                        </a>
                     </li>
                     <li>
-                        <i class="fas fa-terminal"></i>
-                        <a href="https://github.com/TechOUs/Treasurejs-cli">Treasure CLI</a>
+                        <a href="https://github.com/TechOUs/Treasurejs-cli">
+                            <i class="fas fa-terminal"></i>&nbsp;Treasure CLI
+                        </a>
                     </li>
-                    <li><i class="fab fa-autoprefixer"></i><a href="https://github.com/TechOUs/TreasureApis">Treasure APIs</a></li>
+                    <li>
+                        <a href="https://github.com/TechOUs/TreasureApis">
+                            <i class="fab fa-autoprefixer"></i>&nbsp;Treasure APIs
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div id="right-footer" class="footer-links-div">
                 <h2>COMMUNITY</h2>
                 <ul class="footer-links-list">
                     <li>
-                        <i class="fas fa-file-signature"></i>
-                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CONTRIBUTING.md">Contribution</a>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CONTRIBUTING.md">
+                            <i class="fas fa-file-signature"></i>&nbsp;Contribution
+                        </a>
                     </li>
                     <li>
-                        <i class="far fa-file-code"></i>
-                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CODE_OF_CONDUCT.md">Code of Conduct</a>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CODE_OF_CONDUCT.md">
+                            <i class="far fa-file-code"></i>&nbsp;Code of Conduct
+                        </a>
                     </li>
                     <li>
-                        <i class="far fa-comments"></i>&nbsp;
-                        <a href="https://techous.github.io/">Our Community</a>
+                        <a href="https://techous.github.io/">
+                            <i class="far fa-comments"></i>&nbsp;Our Community
+                        </a>
                     </li>
                     <li>
-                        <i class="far fa-file-alt"></i>
-                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/LICENSE">LICENSE</a>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/LICENSE">
+                            <i class="far fa-file-alt"></i>&nbsp;LICENSE
+                        </a>
                     </li>
                 </ul>
             </div>

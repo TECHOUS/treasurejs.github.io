@@ -101,7 +101,8 @@ body, input {
   padding-right: 2%; }
 
 #clear-search-history {
-  margin-left: 20px; }
+  margin-left: 20px;
+  cursor: pointer; }
 
 .history-checkbox {
   margin-right: 20px; }
@@ -161,10 +162,15 @@ body, input {
 .more-div,
 .less-div {
   color: white;
-  font-weight: bold; }
+  font-weight: bold;
+  cursor: pointer; }
 
 .less-div {
   padding: 5px; }
+
+#printResultsAction {
+  font-size: 24px;
+  cursor: pointer; }
 
 /* styling footer */
 footer {
@@ -264,9 +270,18 @@ footer > p > a {
   .footer-links-div:nth-child(2) {
     margin-left: 9%; }
 
-  .footer-links-list > li:hover,
   .footer-links-list > li > a:hover,
   #footer-techous:hover {
     color: cyan; } }
+@media print {
+  header,
+  footer,
+  #section-div,
+  #search-results,
+  #recent-searches,
+  #horizontal-rule,
+  .more-div,
+  .less-div {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
