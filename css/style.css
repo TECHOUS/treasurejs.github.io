@@ -101,7 +101,8 @@ body, input {
   padding-right: 2%; }
 
 #clear-search-history {
-  margin-left: 20px; }
+  margin-left: 20px;
+  cursor: pointer; }
 
 .history-checkbox {
   margin-right: 20px; }
@@ -161,10 +162,15 @@ body, input {
 .more-div,
 .less-div {
   color: white;
-  font-weight: bold; }
+  font-weight: bold;
+  cursor: pointer; }
 
 .less-div {
   padding: 5px; }
+
+#printResultsAction {
+  font-size: 24px;
+  cursor: pointer; }
 
 /* styling footer */
 footer {
@@ -178,7 +184,38 @@ footer > p > a {
   color: white;
   text-decoration: none; }
 
+.footer-links-div {
+  display: inline-block;
+  padding: 14px; }
+
+.footer-links-list {
+  list-style-type: none;
+  padding: 5px; }
+
+.footer-links-list > li {
+  padding: 1px; }
+
+.footer-links-list > li > a {
+  color: white;
+  text-decoration: none; }
+
+.footer-links-div:nth-child(1) {
+  margin-right: 1%; }
+
+.footer-links-div:nth-child(2) {
+  margin-left: 1%; }
+
 /* RESPONSIVENESS */
+/**/
+@media (min-width: 601px) and (max-width: 991px) {
+  .footer-links-div {
+    padding: 30px; }
+
+  .footer-links-div:nth-child(1) {
+    margin-right: 6%; }
+
+  .footer-links-div:nth-child(2) {
+    margin-left: 6%; } }
 /* TABLETS/DESKTOPS */
 @media (min-width: 992px) and (max-width: 1199px) {
   #search-bar {
@@ -192,7 +229,16 @@ footer > p > a {
 
   .data-card {
     margin-left: 14%;
-    margin-right: 14%; } }
+    margin-right: 14%; }
+
+  .footer-links-div {
+    padding: 30px; }
+
+  .footer-links-div:nth-child(1) {
+    margin-right: 8%; }
+
+  .footer-links-div:nth-child(2) {
+    margin-left: 8%; } }
 /* large */
 @media screen and (min-width: 1200px) {
   #search-bar {
@@ -207,6 +253,35 @@ footer > p > a {
   .data-card {
     margin-left: 14%;
     margin-right: 14%;
-    margin-bottom: 1%; } }
+    margin-bottom: 1%; }
+
+  .footer-links-div {
+    padding: 40px; }
+
+  .footer-links-list {
+    padding: 10px; }
+
+  .footer-links-list > li {
+    padding: 3px; }
+
+  .footer-links-div:nth-child(1) {
+    margin-right: 9%; }
+
+  .footer-links-div:nth-child(2) {
+    margin-left: 9%; }
+
+  .footer-links-list > li > a:hover,
+  #footer-techous:hover {
+    color: cyan; } }
+@media print {
+  header,
+  footer,
+  #section-div,
+  #search-results,
+  #recent-searches,
+  #horizontal-rule,
+  .more-div,
+  .less-div {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

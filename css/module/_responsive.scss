@@ -1,4 +1,18 @@
 /* RESPONSIVENESS */
+/**/
+@media (min-width: 601px) and (max-width: 991px){
+    //adjust footer links
+    .footer-links-div{
+        padding: 30px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 6%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 6%;
+    }
+}
+
 /* TABLETS/DESKTOPS */
 @media (min-width: 992px) and (max-width: 1199px){
     #search-bar{
@@ -13,6 +27,16 @@
     .data-card{
         margin-left: 14%;
         margin-right: 14%;
+    }
+    //adjust footer links
+    .footer-links-div{
+        padding: 30px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 8%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 8%;
     }
 }
 
@@ -31,5 +55,38 @@
         margin-left: 14%;
         margin-right: 14%;
         margin-bottom: 1%;
+    }
+    //adjust footer links
+    .footer-links-div{
+        padding: 40px;
+    }
+    .footer-links-list{
+        padding: 10px;
+    }
+    .footer-links-list > li{
+        padding: 3px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 9%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 9%;
+    }
+    .footer-links-list > li > a:hover,
+    #footer-techous:hover{
+        color: cyan;
+    }
+}
+
+@media print{
+    header,
+    footer,
+    #section-div,
+    #search-results,
+    #recent-searches,
+    #horizontal-rule,
+    .more-div,
+    .less-div{
+        display: none;
     }
 }

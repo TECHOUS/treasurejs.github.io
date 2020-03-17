@@ -10,3 +10,25 @@ footer > p > a{
     color: white;
     text-decoration: none;
 }
+.footer-links-div{
+    display: inline-block;
+    padding: 14px;
+    // border: 1px solid white;
+}
+.footer-links-list{
+    list-style-type: none;
+    padding: 5px;
+}
+.footer-links-list > li {
+    padding: 1px;
+}
+.footer-links-list > li > a{
+    color: white;
+    text-decoration: none;
+}
+.footer-links-div:nth-child(1){
+    margin-right: 1%;
+}
+.footer-links-div:nth-child(2){
+    margin-left: 1%;
+}

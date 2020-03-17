@@ -81,6 +81,7 @@
 
 #clear-search-history{
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .history-checkbox{
@@ -159,9 +160,15 @@
 .less-div{
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 // less link
 .less-div{
     padding: 5px;
+}
+
+#printResultsAction{
+    font-size: 24px;
+    cursor: pointer;
 }

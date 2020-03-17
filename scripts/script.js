@@ -4,8 +4,28 @@ const lightBlack        = "#292b2c";
 let nightModeButton     = false;
 let database            = [];                                       // working database
 let recentSearches      = [];                                       // array for storing recent searches
+let linkedObjectData    = [];                                       // data array that comes after linking the js files
 
-// called when window is loaded
+/**
+ * automatic night mode according to hours
+ * 
+ * 7-18 - light
+ * 0-6 , 19-23 - night
+ **/
+let currentHours = new Date().getHours();
+if(currentHours>=7 && currentHours<=18){
+    // automatic light mode
+    nightModeButton = true;
+    handleNightMode();
+}else{
+    // automatic night mode
+    nightModeButton = false;
+    handleNightMode();
+}
+
+/** 
+ * called when window is loaded
+ **/
 window.onload = function(){
     let storage = localStorage.getItem('treasureHistory');
     if(storage == null)
@@ -27,7 +47,7 @@ window.onload = function(){
  **/
 function search(e) 
 {
-    if(e.keyCode>=37 && e.keyCode<=40)
+    if(e.keyCode>=37 && e.keyCode<=40)                              // when arrow keys are used
     {
         return;
     }
@@ -42,12 +62,19 @@ function search(e)
         return;
     } 
 
-    if (key.length == 1 && !flag)                                               // add script node
+    if (key.length == 1 && !flag)                                   // add script node when one digit is entered
     {
         flag=true;    
         addScriptToDom(firstValue);
+        
+        setTimeout(function(){
+            linkData(firstValue, function(){
+                filterData(key);
+                addToDOM();
+            });
+        },100);
     }
-    else if((key==="" || key.length==0) && flag)                                              // remove script node
+    else if((key==="" || key.length==0) && flag)                    // remove script node
     {
         flag=false;
         removeScriptFromDom();
@@ -60,13 +87,13 @@ function search(e)
         return;
     }
 
-    if(key==="")                            // if user press enter with no search content
+    if(key==="")                                                    // if user press enter with no search content
     {
         return;
     }
-    setTimeout(function(){
-        linkData(firstValue,key);
-    },100);
+
+    filterData(key);
+    addToDOM();
 }
 
 /**
@@ -121,7 +148,24 @@ function addRecentSearchesToDom()
             checkbox.setAttribute('type','checkbox');
             checkbox.setAttribute('class','history-checkbox');
             checkbox.setAttribute('id','check'+i);
-            
+
+            checkbox.addEventListener('click',function(event){
+                let check = event.srcElement.checked;
+                let node = event.srcElement.parentNode.parentNode;
+                
+                if(check)
+                {
+                    node.style.backgroundColor = "brown";
+                    node.style.borderRadius = "20px";
+                    node.style.color = "white";
+                }
+                else
+                {
+                    node.style.backgroundColor = "initial";
+                    node.style.color = "initial";
+                }                
+            })
+
             label.appendChild(checkbox);
             label.appendChild(text);
             li.appendChild(label);
@@ -166,7 +210,7 @@ function addScriptToDom(firstValue)
  **/
 function removeScriptFromDom()
 {
-    let root = document.getElementById('root');                                 // for refering body node
+    let root = document.getElementById('root');                             // for refering body node
     try
     {
         root.removeChild(root.firstChild);
@@ -194,7 +238,6 @@ function syncDatabase()
         }
 
         let arr = array[i].childNodes;                                      // get datacard's data in arr
-        // console.log(arr);
         for(let j=0;j<arr.length;j++)
         {
             switch(j)
@@ -254,11 +297,10 @@ function syncDatabase()
  **/
 function eraseDataList()
 {
-    // remove all nodes from the found data
     let founddata = document.getElementById('found-data');
 
     var child = founddata.lastElementChild;  
-    while (child) { 
+    while (child) {                                                             // remove all nodes from the found data
         founddata.removeChild(child); 
         child = founddata.lastElementChild; 
     }
@@ -266,88 +308,90 @@ function eraseDataList()
 
 /**
  * This function will link the data from files
+ * 
+ * @param firstValue first char entered by the user
+ * @callback fun for doing the work after linking
  **/
-function linkData(firstValue,key) 
+function linkData(firstValue, callback) 
 {
-    let object = null;
     switch (firstValue) {
         case 'A':
-            object = Adata;
+            linkedObjectData = Adata;
             break;
         case 'B':
-            object = Bdata;
+            linkedObjectData = Bdata;
             break;
         case 'C':
-            object = Cdata;
+            linkedObjectData = Cdata;
             break;
         case 'D':
-            object = Ddata;
+            linkedObjectData = Ddata;
             break;
         case 'E':
-            object = Edata;
+            linkedObjectData = Edata;
             break;
         case 'F':
-            object = Fdata;
+            linkedObjectData = Fdata;
             break;
         case 'G':
-            object = Gdata;
+            linkedObjectData = Gdata;
             break;
         case 'H':
-            object = Hdata;
+            linkedObjectData = Hdata;
             break;
         case 'I':
-            object = Idata;
+            linkedObjectData = Idata;
             break;
         case 'J':
-            object = Jdata;
+            linkedObjectData = Jdata;
             break;
         case 'K':
-            object = Kdata;
+            linkedObjectData = Kdata;
             break;
         case 'L':
-            object = Ldata;
+            linkedObjectData = Ldata;
             break;
         case 'M':
-            object = Mdata;
+            linkedObjectData = Mdata;
             break;
         case 'N':
-            object = Ndata;
+            linkedObjectData = Ndata;
             break;
         case 'O':
-            object = Odata;
+            linkedObjectData = Odata;
             break;
         case 'P':
-            object = Pdata;
+            linkedObjectData = Pdata;
             break;
         case 'Q':
-            object = Qdata;
+            linkedObjectData = Qdata;
             break;
         case 'R':
-            object = Rdata;
+            linkedObjectData = Rdata;
             break;
         case 'S':
-            object = Sdata;
+            linkedObjectData = Sdata;
             break;
         case 'T':
-            object = Tdata;
+            linkedObjectData = Tdata;
             break;
         case 'U':
-            object = Udata;
+            linkedObjectData = Udata;
             break;
         case 'V':
-            object = Vdata;
+            linkedObjectData = Vdata;
             break;
         case 'W':
-            object = Wdata;
+            linkedObjectData = Wdata;
             break;
         case 'X':
-            object = Xdata;
+            linkedObjectData = Xdata;
             break;
         case 'Y':
-            object = Ydata;
+            linkedObjectData = Ydata;
             break;
         case 'Z':
-            object = Zdata;
+            linkedObjectData = Zdata;
             break;
         default:
             break;
@@ -357,25 +401,24 @@ function linkData(firstValue,key)
     {
         database = [];
     }
-    filterData(object,key);
 
-    addToDOM();
+    callback();
 }
 
 /**
- * This function will filter the data linked
+ * This function will filter the data linked in linkedObjectData and put it into database
  * 
- * @param object for searching array
  * @param key for search key
  **/
-function filterData(object,key)
+function filterData(key)
 {
+    database = [];                                                                  // reset runtime database
     let index = key.length;
-    for (let i = 0; i < object.length; i++)                         // add filter objects data to database 
+    for (let i = 0; i < linkedObjectData.length; i++)                               // add filter objects data to database 
     {
-        if (object[i].name.substring(0, index) === key.toUpperCase()) 
+        if (linkedObjectData[i].name.substring(0, index) === key.toUpperCase()) 
         {
-            database.push(object[i]);
+            database.push(linkedObjectData[i]);
         }
     }
     hideRecentSearches();
@@ -548,9 +591,9 @@ function addToDOM()
 /**
  * This function will change the toggle icon on click
  **/
-function handleNightMode()
+function handleNightMode(event)
 {
-    if(nightModeButton==true)                                              // night mode
+    if(nightModeButton == true)                                              // light mode
     {
         nightModeButton = false;
         let night = document.getElementById('toggle-night');
@@ -590,8 +633,61 @@ function hrNightMode()
     document.getElementById('horizontal-rule').style.border = "1px solid white";
 }
 
+function headingNightMode()
+{
+    // heading dark mode
+    document.getElementById('header-div-a').style.color = "white";
+} 
+
+function inputNightMode()
+{
+    // input dark mode
+    let input = document.getElementById('section-div-input');
+    input.style.color = "white";
+    input.style.backgroundColor = lightBlack;
+    
+    let searchBar = document.getElementById('search-bar');
+    searchBar.style.backgroundColor = lightBlack;
+    searchBar.style.border = "1px solid white";
+
+    document.getElementById('find-icon').style.color = "white";
+}
+
+function cardsNightMode()
+{
+    // cards dark mode
+    let cards = document.getElementsByClassName('data-card');
+    for(let i=0;i<cards.length;i++)
+    {
+        cards[i].style.color = "white";
+        cards[i].style.backgroundColor = lightBlack;
+        cards[i].style.border = "none";
+    }
+
+    // card links dark mode
+    let links = document.getElementsByClassName('link');
+    for(let i=0;i<links.length;i++)
+    {
+        links[i].style.color = "rgb(139, 139, 255)";
+    }
+
+    // card footer dark mode
+    let badgeArray = document.getElementsByClassName('badge-class');
+    for(let i=0;i<badgeArray.length;i++)
+    {
+        badgeArray[i].style.backgroundColor = lightBlack;
+    }
+
+    // card footer text dark mode
+    let moreArray = document.getElementsByClassName('more-div');
+    for(let i=0;i<moreArray.length;i++)
+    {
+        moreArray[i].style.backgroundColor = lightBlack;
+    }
+}
+
 /**
- * it will recent search section to dark mode
+ * it will change recent search section to dark mode
  **/
 function recentSearchNightMode()
 {
@@ -609,51 +705,13 @@ function recentSearchNightMode()
  **/
 function sectionNightMode()
 {
-    // heading dark mode
-    document.getElementById('header-div-a').style.color = "white";
-
-    // input dark mode
-    let input = document.getElementById('section-div-input');
-    input.style.color = "white";
-    input.style.backgroundColor = lightBlack;
+    headingNightMode();
     
-    let searchBar = document.getElementById('search-bar');
-    searchBar.style.backgroundColor = lightBlack;
-    searchBar.style.border = "1px solid white";
+    inputNightMode();
 
-    document.getElementById('find-icon').style.color = "white";
-
-    // cards dark mode
-    let cards = document.getElementsByClassName('data-card');
-    for(let i=0;i<cards.length;i++)
-    {
-        cards[i].style.color = "white";
-        cards[i].style.backgroundColor = lightBlack;
-        cards[i].style.border = "none";
-    }
-
-    // card links dark mode
-    let links = document.getElementsByClassName('link');
-    for(let i=0;i<links.length;i++)
-    {
-        links[i].style.color = "rgb(139, 139, 255)";
-    }
+    cardsNightMode();
 
     recentSearchNightMode();
-
-    // card footer dark mode
-    let badgeArray = document.getElementsByClassName('badge-class');
-    for(let i=0;i<badgeArray.length;i++)
-    {
-        badgeArray[i].style.backgroundColor = lightBlack;
-    }
-
-    // card footer text dark mode
-    let moreArray = document.getElementsByClassName('more-div');
-    for(let i=0;i<moreArray.length;i++)
-    {
-        moreArray[i].style.backgroundColor = lightBlack;
-    }
 }
 
 /**
@@ -893,6 +951,53 @@ function hideBadges(element)
  **/
 function clearSearchHistory()
 {
+    // let checkedBoxes = false;
+    // let checkboxes = document.getElementsByClassName('history-checkbox');
+    // let historyList = document.getElementById('search-results-list');
+    // for(let i=0;i<checkboxes.length;i++)
+    // {
+    //     if(checkboxes[i].checked === true)                                  // if node find in the tree
+    //     {
+    //         // let node = checkboxes[i].parentNode.parentNode;
+    //         // console.log(node);
+    //         // historyList.removeChild(node);
+
+    //         let str = node.firstChild.childNodes[1].nodeValue;
+    //         // remove this element from the array
+    //         let index = recentSearches.indexOf(str);
+            
+    //         recentSearches.splice(index,1);
+    //         checkedBoxes = true;
+    //     }
+
+        // console.log(recentSearches);
+        // if(historyList.hasChildNodes() === false || recentSearches.length == 0)
+        // {
+        //     historyList.style.border = "none";   
+        // }
+    // }
     clearDom();
     clearLocalStorage();
+
+    // if(checkedBoxes===false)
+    // {
+    //     clearDom();
+    //     // clearLocalStorage();
+    // }
+}
+
+/**
+ * this function is called when print action is called
+ **/
+function printResults(){
+    let earlierReverseNightMode = !nightModeButton;
+
+    document.getElementById('search-results').style.display = "none";
+    nightModeButton = true;
+    handleNightMode()
+    print();
+
+    document.getElementById('search-results').style.display = "block";
+    nightModeButton=earlierReverseNightMode;
+    handleNightMode()
 }
