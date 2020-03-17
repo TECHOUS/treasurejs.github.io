@@ -85,6 +85,14 @@ var Adata = [
 		]
 	},
 	{
+		name : "ANGOOSE",
+		description : "Connecting Mongoose and Angular and More",
+		github : "https://github.com/tjworks/angoose",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "AOS",
 		description : "Animate on scroll library",
 		github : "https://github.com/michalsnik/aos",

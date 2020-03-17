@@ -1,5 +1,13 @@
 var Cdata = [
 	{
+		name : "CAF",
+		description : "Cancelable Async Flows (CAF)",
+		github : "https://github.com/getify/CAF",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "CAMAN JS",
 		description : "CamanJS is (ca)nvas (man)ipulation in Javascript. It's a combination of a simple-to-use interface with advanced and efficient image/canvas editing techniques.",
 		github : "https://github.com/meltingice/CamanJS/",
@@ -50,6 +58,14 @@ var Cdata = [
 		github : "https://github.com/chartjs/Chart.js",
 		website : "https://www.chartjs.org/",
 		docs : "https://www.chartjs.org/docs/latest/",
+		others : []
+	},
+	{
+		name : "CHEERIO JS",
+		description : "Fast, flexible, and lean implementation of core jQuery designed specifically for the server.",
+		github : "https://github.com/cheeriojs/cheerio",
+		website : "https://cheerio.js.org/",
+		docs : "",
 		others : []
 	},
 	{
@@ -122,6 +138,14 @@ var Cdata = [
 		github : "https://github.com/tj/commander.js",
 		website : "",
 		docs : "http://tj.github.io/commander.js/",
+		others : []
+	},
+	{
+		name : "COMPONENTS",
+		description : "An easier way to build and share serverless applications w/ the Serverless Framework",
+		github : "https://github.com/serverless/components",
+		website : "https://serverless.com",
+		docs : "https://serverless.com/framework/docs/",
 		others : []
 	},
 	{

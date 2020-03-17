@@ -45,10 +45,50 @@ var Rdata = [
 		others : []
 	},
 	{
+		name : "READABILITY JS",
+		description : "A standalone version of the readability lib",
+		github : "https://github.com/mozilla/readability",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "REBASS JS",
+		description : "React primitive UI components built with styled-system",
+		github : "https://github.com/rebassjs/rebassjs.org",
+		website : "https://rebassjs.org/",
+		docs : "https://rebassjs.org/getting-started",
+		others : []
+	},
+	{
+		name : "REBOUND JS",
+		description : "Spring dynamics in JavaScript.",
+		github : "https://github.com/facebook/rebound-js",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "RECHART",
+		description : "Redefined chart library built with React and D3",
+		github : "https://github.com/recharts/recharts",
+		website : "http://recharts.org/",
+		docs : "http://recharts.org/en-US/guide",
+		others : []
+	},
+	{
+		name : "RECONNECTING WEBSOCKET",
+		description : "A small decorator for the JavaScript WebSocket API that automatically reconnects",
+		github : "https://github.com/joewalnes/reconnecting-websocket",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "REDUX",
-		description : "RxJS middleware for action side effects in Redux using 'Epics'",
-		github : "https://github.com/redux-observable/redux-observable",
-		website : "https://redux-observable.js.org/",
+		description : "Predictable state container for JavaScript apps",
+		github : "https://github.com/reduxjs/redux",
+		website : "https://redux.js.org/",
 		docs : "https://redux.js.org/introduction/getting-started",
 		others : [
 			{
@@ -102,35 +142,11 @@ var Rdata = [
 		]
 	},
 	{
-		name : "READABILITY JS",
-		description : "A standalone version of the readability lib",
-		github : "https://github.com/mozilla/readability",
-		website : "",
+		name : "REDUX OBSERVABLE JS",
+		description : "RxJS middleware for action side effects in Redux using 'Epics'",
+		github : "https://github.com/redux-observable/redux-observable",
+		website : "https://redux-observable.js.org/",
 		docs : "",
-		others : []
-	},
-	{
-		name : "REBASS JS",
-		description : "React primitive UI components built with styled-system",
-		github : "https://github.com/rebassjs/rebassjs.org",
-		website : "https://rebassjs.org/",
-		docs : "https://rebassjs.org/getting-started",
-		others : []
-	},
-	{
-		name : "REBOUND JS",
-		description : "Spring dynamics in JavaScript.",
-		github : "https://github.com/facebook/rebound-js",
-		website : "",
-		docs : "",
-		others : []
-	},
-	{
-		name : "RECHART",
-		description : "Redefined chart library built with React and D3",
-		github : "https://github.com/recharts/recharts",
-		website : "http://recharts.org/",
-		docs : "http://recharts.org/en-US/guide",
 		others : []
 	},
 	{
