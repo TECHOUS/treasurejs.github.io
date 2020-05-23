@@ -977,7 +977,7 @@ function printResults(){
 
     document.getElementById('search-results').style.display = "none";
     nightModeButton = true;
-    handleNightMode()
+    handleNightMode();
     print();
 
     document.getElementById('search-results').style.display = "block";
