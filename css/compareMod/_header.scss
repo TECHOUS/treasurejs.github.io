@@ -1,0 +1,66 @@
+// handling the right button
+#toggle-div{
+    right: 0;
+    position: absolute;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #ccc;
+    color: black;
+}
+// handle toggle on day
+#toggle-day{
+    display: none;
+}
+
+// STYLING HEADER
+#header-div{
+    background-color: brown;
+    text-align: center;
+}
+.headerLink > img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    margin: 10px;
+}
+// header heading link
+#header-div-a:link,
+#header-div-a:active,
+#header-div-a:visited{
+    color: white;
+    font-family: Samarkan;
+    font-size: 1.5em;
+}
+.headerLink{
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#treasureSlogan{
+    font-style: italic;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+.headerActions{
+    text-align: center;
+}
+.actionButtons{
+    border: none;
+    background: #e67777;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+#headerHrLine{
+    border: 1px solid #ccc;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

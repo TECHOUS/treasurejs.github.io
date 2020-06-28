@@ -27,11 +27,11 @@
                 <i class="fas fa-sun fa-2x"></i>
             </span>
         </div>
-        <div>
+        <div id="githubHeaderTag">
             <img id="header-div-version" alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/TechOUs/Treasure-js">
         </div>
         <div id="header-div">
-            <a href="https://github.com/TechOUs/Treasurejs-logo">
+            <a href="index.html">
                 <img src="images/SVG/stamp-logo.svg" alt="treasure js logo"/>
             </a>
             <h1>
@@ -59,16 +59,16 @@
                 <button class="actionButtons" onclick="printResults()">
                     Download <i class="far fa-file-pdf"></i>
                 </button>
-                <button class="actionButtons buttonRight">
-                    <a href="#">
+                <button class="actionButtons buttonRight" onclick="addSelectedToSession()">
+                    <a href="compare.html">
                         Compare <i class="fab fa-js-square"></i> Libraries
                     </a>
                 </button>                
             </div>
             <hr id="horizontal-rule"/>
             <div>
-                <button class="actionButtons buttonRight">
-                    <a href="#">
+                <button class="actionButtons buttonRight" onclick="addSelectedToSession()">
+                    <a href="compare.html">
                         <i class="fas fa-link"></i> Selected <span id="selectedLib">0</span>
                     </a>
                 </button>
@@ -93,8 +93,16 @@
         <!-- SEARCH CONTENT -->
         <div id="found-data">
             <!-- JUST FOR MAKING DOM IN JS AND FOR STYLING-->
-            <!-- <div class="data-card">
+            <!--<div class="data-card">
                 <h2>
+                    <span class="addLibraryIcon">
+                        <span class="plusIcon">
+                            <i class="fas fa-plus-circle"></i>
+                        </span>
+                        <span class="minusIcon">
+                            <i class="fas fa-minus-circle"></i>
+                        </span>
+                    </span>
                     ACTIONS TOOLKIT
                     <img class="badge-img" alt="GitHub tag" src="https://img.shields.io/github/tag/JasonEtco/actions-toolkit.svg">
                 </h2>

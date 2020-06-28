@@ -5,6 +5,8 @@ let nightModeButton     = false;
 let database            = [];                                       // working database
 let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
+let iconMap             = new Map();
+let selectedLibCount    = 0;
 
 /** 
  * called when window is loaded
@@ -459,6 +461,84 @@ function updateSearchCount(count)
     },10);
 }
 
+const createDOMIcons = (libraryName) => {
+    let addLibraryIconSpan = document.createElement('span');
+    addLibraryIconSpan.setAttribute("class","addLibraryIcon");
+    
+    let plusIconSpan = document.createElement('span');
+    plusIconSpan.setAttribute("class", "plusIcon");
+
+    let plusIconI = document.createElement('i');
+    plusIconI.setAttribute('class', 'fas fa-plus-circle');
+    plusIconSpan.appendChild(plusIconI);
+    addLibraryIconSpan.appendChild(plusIconSpan);
+
+    let minusIconSpan = document.createElement('span');
+    minusIconSpan.setAttribute("class", "minusIcon");
+
+    let minusIconI = document.createElement('i');
+    minusIconI.setAttribute('class', 'fas fa-minus-circle');
+    minusIconSpan.appendChild(minusIconI);
+
+    addLibraryIconSpan.appendChild(minusIconSpan);
+
+    if(iconMap.has(libraryName) && iconMap.get(libraryName).selected){
+        plusIconSpan.style.display = "none";
+        minusIconSpan.style.display = "inline";
+    }else{
+        plusIconSpan.style.display = "inline";
+        minusIconSpan.style.display = "none";
+    }
+
+    return addLibraryIconSpan;
+}
+
+function addFunctionsToIcons(){
+    let addLibraryIcons = document.getElementsByClassName('addLibraryIcon');
+    for(let i=0;i<addLibraryIcons.length;i++){
+        addLibraryIcons[i].addEventListener('click', (event)=>{
+            let nodes = event.target.parentNode.parentNode.parentNode.childNodes;
+            let iconNodes = event.target.parentNode.parentNode.childNodes;
+            
+            // toggle
+            if(iconMap.has(nodes[1].nodeValue.trim()) 
+                && iconMap.get(nodes[1].nodeValue.trim()).selected ){
+                iconMap.set(nodes[1].nodeValue.trim(), {
+                    selected: false
+                });
+                selectedLibCount--;
+            }else{
+                iconMap.set(nodes[1].nodeValue.trim(), {
+                    selected: true,
+                    github: event.target.parentNode.parentNode.parentNode.parentNode.childNodes[2].childNodes[0].firstChild.href
+                });
+                selectedLibCount++;
+            }
+
+            if(iconMap.get(nodes[1].nodeValue.trim()).selected){
+                iconNodes[0].style.display = "none";
+                iconNodes[1].style.display = "inline";
+            }else{
+                iconNodes[0].style.display = "inline";
+                iconNodes[1].style.display = "none";
+            }
+            updateSelectedCount()
+        })
+    };
+}
+
+// this function will update the selected lib count
+function updateSelectedCount(){
+    let selectedLib = document.getElementById('selectedLib');
+    selectedLib.innerHTML = selectedLibCount;
+}
+
+// add runtime selected map to session storage
+function addSelectedToSession(){
+    sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(iconMap.entries())));
+    // console.log(new Map(JSON.parse(sessionStorage.getItem('compareSelected'))))
+}
+
 /**
  * This function will add 
  * runtime database to HTML DOM
@@ -479,8 +559,9 @@ function addToDOM()
             
             var div = document.createElement('div');
             div.setAttribute("class","data-card");
-            
-            var h2 = document.createElement('h2');           
+
+            var h2 = document.createElement('h2');
+            h2.appendChild(createDOMIcons(database[i].name));
             var heading = document.createTextNode(database[i].name);
             h2.appendChild(heading);
             if(parseUrl!=="")
@@ -567,6 +648,7 @@ function addToDOM()
             }
             root.appendChild(div);
         }
+        addFunctionsToIcons()
         nightModeButton ? switchNightMode() : switchLightMode();
     }
 }
@@ -826,7 +908,7 @@ function addBadges(element)
     let parent = element.parentNode;
 
     let parseUrl = parent.childNodes[2].firstChild.firstChild.href.substring(18).split("/");
-
+    
     if(parseUrl!=="")
     {
         let badgesDiv = document.createElement('div');

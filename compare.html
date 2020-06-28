@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure JS</title>
+    <link rel="stylesheet" href="css/compare.css" />
+    <link rel="shortcut icon" href="images/ICO/icon.ico" type="image/x-icon" />
+    <!-- GOOGLE FONT API -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="scripts/compare.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div id="toggle-div" onclick="handleNightMode()">
+            <span id="toggle-night">
+                <i class="fas fa-moon fa-2x"></i>
+            </span>
+            <span id="toggle-day">
+                <i class="fas fa-sun fa-2x"></i>
+            </span>
+        </div>
+        <div id="header-div">
+            <a href="index.html" class="headerLink">
+                <img src="images/SVG/stamp-logo.svg" alt="treasure js logo"/>
+            </a>
+            <h1 class="headerLink">
+                <a href="index.html" id="header-div-a" class="headerLink">
+                    TREASURE JS
+                </a>
+            </h1>
+        </div>
+        <div class="headerActions">
+            <p id="treasureSlogan">A JavaScript WikiPedia for GitHub</p>
+            <button class="actionButtons" onclick="printResults()">
+                <i class="far fa-file-pdf"></i> Download Comparisons 
+            </button>
+            <hr id="headerHrLine"/>
+        </div>
+    </header>
+
+    <!-- SECTION -->
+    <section id="root">
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="footer-links">
+            <div id="left-footer" class="footer-links-div">
+                <h2>OTHER LINKS</h2>
+                <ul class="footer-links-list">
+                    <li>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io">
+                            <i class="fab fa-node-js"></i>&nbsp;Source Code
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TechOUs/Treasure-js">
+                            <i class="far fa-gem"></i>&nbsp;Treasure Core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TechOUs/Treasurejs-cli">
+                            <i class="fas fa-terminal"></i>&nbsp;Treasure CLI
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TechOUs/TreasureApis">
+                            <i class="fab fa-autoprefixer"></i>&nbsp;Treasure APIs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="right-footer" class="footer-links-div">
+                <h2>COMMUNITY</h2>
+                <ul class="footer-links-list">
+                    <li>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CONTRIBUTING.md">
+                            <i class="fas fa-file-signature"></i>&nbsp;Contribution
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/.github/CODE_OF_CONDUCT.md">
+                            <i class="far fa-file-code"></i>&nbsp;Code of Conduct
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://techous.github.io/">
+                            <i class="far fa-comments"></i>&nbsp;Our Community
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TechOUs/treasurejs.github.io/blob/master/LICENSE">
+                            <i class="far fa-file-alt"></i>&nbsp;LICENSE
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p>
+            <a href="https://github.com/TechOUs" id="footer-techous">&copy; TechOUs 2020</a>
+        </p>
+    </footer>
+</body>
+</html>

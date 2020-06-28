@@ -17,6 +17,11 @@ body, input {
   background-color: #ccc;
   color: black; }
 
+#githubHeaderTag {
+  position: absolute;
+  padding: 10px;
+  margin: 20px; }
+
 #toggle-day {
   display: none; }
 
