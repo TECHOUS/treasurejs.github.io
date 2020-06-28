@@ -16,6 +16,8 @@
 <body id="root">
     <script src="scripts/script.js"></script>
     <script src="scripts/automatic.js" defer></script>                          <!--Automatic night mode after dom get parsed fully-->                          
+    
+    <!-- HEADER -->
     <header>
         <div id="toggle-div" onclick="handleNightMode()">
             <span id="toggle-night">
@@ -25,38 +27,60 @@
                 <i class="fas fa-sun fa-2x"></i>
             </span>
         </div>
+        <div>
+            <img id="header-div-version" alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/TechOUs/Treasure-js">
+        </div>
         <div id="header-div">
             <a href="https://github.com/TechOUs/Treasurejs-logo">
                 <img src="images/SVG/stamp-logo.svg" alt="treasure js logo"/>
             </a>
             <h1>
                 <a href="https://github.com/TechOUs/Treasure-js" id="header-div-a">TREASURE JS</a>
-                <sup>
-                    <img id="header-div-version" alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/TechOUs/Treasure-js">
-                </sup>
             </h1>
             <p id="header-div-p">A JavaScript WikiPedia for GitHub</p>
-            <br/>
         </div>
     </header>
+    
+    <!-- SECTION -->
     <section>
+        <!-- SEARCH BAR -->
         <div id="section-div">
+            <p class="searchLabel">Search any JavaScript Library</p>
+            <br/>
             <div id="search-bar">
                 <i class="fas fa-search" id="find-icon"></i>
-                <input type="text" placeholder="search js library" id="section-div-input" onkeyup="search(event)" title="Search Treasures" x-webkit-speech />
+                <input type="search" id="section-div-input" onkeyup="search(event)" title="Search Treasures" />
             </div>
         </div>
-        <br/>
-        <hr id="horizontal-rule"/>
-        <br/>
 
-        <div id="search-results">
-            finded
-            <span id="search-count">0</span>
-            results
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span onclick="printResults()" id="printResultsAction" title="convert to pdf"><i class="far fa-file-pdf"></i></span>
+        <!-- SEARCH ACTIONS -->
+        <div id="search-actions">
+            <div>
+                <button class="actionButtons" onclick="printResults()">
+                    Download <i class="far fa-file-pdf"></i>
+                </button>
+                <button class="actionButtons buttonRight">
+                    <a href="#">
+                        Compare <i class="fab fa-js-square"></i> Libraries
+                    </a>
+                </button>                
+            </div>
+            <hr id="horizontal-rule"/>
+            <div>
+                <button class="actionButtons buttonRight">
+                    <a href="#">
+                        <i class="fas fa-link"></i> Selected <span id="selectedLib">0</span>
+                    </a>
+                </button>
+                <div class="displayActions">
+                    finded
+                    <span id="search-count">0</span>
+                    results
+                </div>
+            </div>
         </div>
+        
+        <!-- OLDER SEARCHES -->
         <div id="recent-searches">
             <i class="fas fa-history"></i>
             &nbsp;
@@ -66,8 +90,8 @@
             </span>
         </div>
         
+        <!-- SEARCH CONTENT -->
         <div id="found-data">
-
             <!-- JUST FOR MAKING DOM IN JS AND FOR STYLING-->
             <!-- <div class="data-card">
                 <h2>
@@ -98,10 +122,10 @@
                     <div class="less-span" onclick="hideBadges(this)">less</div>
                 </div>
             </div>-->
-            
         </div>
     </section>
     
+    <!-- FOOTER -->
     <footer>
         <div id="footer-links">
             <div id="left-footer" class="footer-links-div">

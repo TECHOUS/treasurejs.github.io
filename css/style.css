@@ -37,12 +37,52 @@ body, input {
   font-size: 1.25em; }
 
 #header-div-version {
-  height: 15px; }
+  height: 20px; }
 
 #header-div-p {
   font-weight: bold;
   font-style: italic; }
 
+/**************/
+/* SEARCH BAR */
+/**************/
+/******************/
+/* SEARCH ACTIONS */
+/******************/
+#search-actions {
+  display: none;
+  padding-left: 5%;
+  padding-right: 5%; }
+
+#horizontal-rule {
+  border: 1px solid gray;
+  width: 95%;
+  margin: auto; }
+
+.actionButtons {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px; }
+
+.actionButtons > a {
+  text-decoration: none;
+  color: black; }
+
+.displayActions {
+  padding: 10px;
+  font-size: 18px; }
+
+.buttonRight {
+  float: right; }
+
+/******************/
+/* OLDER SEARCHES */
+/******************/
+/******************/
+/* SEARCH CONTENT */
+/******************/
 #section-div {
   text-align: center; }
 
@@ -64,7 +104,7 @@ body, input {
   font-size: 20px;
   padding: 8px;
   border: none;
-  width: 80%;
+  width: 90%;
   outline: none;
   border-radius: 20px; }
 
@@ -74,17 +114,11 @@ body, input {
 #section-div-input::placeholder {
   color: gray; }
 
-#horizontal-rule {
-  border: 1px solid gray;
-  width: 90%;
-  margin: auto; }
-
-#search-results {
-  text-align: center;
-  display: none; }
+.searchLabel {
+  font-size: 20px; }
 
 #search-results-list {
-  border: 2px solid yellow;
+  border: 1px solid yellow;
   background-color: #f89494;
   border-radius: 20px;
   margin-left: 2%;
@@ -119,7 +153,7 @@ body, input {
   margin-right: 2%;
   border-radius: 20px;
   padding: 10px;
-  border: 2px solid yellow;
+  border: 1px solid yellow;
   margin-bottom: 2%; }
 
 .data-card > p {
@@ -167,10 +201,6 @@ body, input {
 
 .less-div {
   padding: 5px; }
-
-#printResultsAction {
-  font-size: 24px;
-  cursor: pointer; }
 
 /* styling footer */
 footer {

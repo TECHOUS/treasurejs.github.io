@@ -37,7 +37,7 @@ function search(e)
 
     syncDatabase();
     const key = document.getElementById('section-div-input').value;
-    var firstValue = key.charAt(0).toUpperCase();
+    let firstValue = key.charAt(0).toUpperCase();
     
     if(!isNaN(parseInt(firstValue)))
     {
@@ -45,7 +45,7 @@ function search(e)
         return;
     } 
 
-    if (key.length == 1 && !flag)                                   // add script node when one digit is entered
+    if ((key.length == 1 || key.length == 2) && !flag)                                   // add script node when one digit is entered
     {
         flag=true;    
         addScriptToDom(firstValue);
@@ -414,7 +414,7 @@ function filterData(key)
  **/
 function showSearchResults()
 {
-    document.getElementById('search-results').style.display = "block";
+    document.getElementById('search-actions').style.display = "block";
 }
 
 /**
@@ -422,7 +422,7 @@ function showSearchResults()
  **/
 function hideSearchResults()
 {
-    document.getElementById('search-results').style.display = "none";
+    document.getElementById('search-actions').style.display = "none";
 }
 
 /**
@@ -975,12 +975,12 @@ function clearSearchHistory()
 function printResults(){
     let earlierReverseNightMode = !nightModeButton;
 
-    document.getElementById('search-results').style.display = "none";
+    document.getElementById('search-actions').style.display = "none";
     nightModeButton = true;
     handleNightMode();
     print();
 
-    document.getElementById('search-results').style.display = "block";
+    document.getElementById('search-actions').style.display = "block";
     nightModeButton=earlierReverseNightMode;
     handleNightMode()
 }
