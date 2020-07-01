@@ -68,6 +68,22 @@ body, input {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.compareTable {
+  border: 1px solid brown;
+  overflow: scroll;
+  border-spacing: 0; }
+
+.compareTableRow {
+  border: 1px solid brown; }
+
+.compareTableData {
+  border: 1px solid brown;
+  padding: 10px; }
+
+#root {
+  overflow: scroll;
+  margin: 15px; }
+
 /* styling footer */
 footer {
   color: white;
