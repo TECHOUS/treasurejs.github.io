@@ -1,6 +1,7 @@
 const darkBackground    = "#121212";
 const lightBlack        = "#292b2c";
 let nightModeButton     = false;
+let map = new Map(JSON.parse(sessionStorage.getItem('compareSelected')))
 
 // handles night mode functionality
 function handleNightMode(event)
@@ -30,11 +31,12 @@ window.onload = () => {
 }
 
 function renderTable(){
-    let map = new Map(JSON.parse(sessionStorage.getItem('compareSelected')))
-    
     let table = document.createElement('table');
     table.setAttribute("class", "compareTable");
     document.getElementById('root').appendChild(table);
+    
+    // render table header
+    table.appendChild(renderTableHeader())
 
     map.forEach((value, key) => {
         if(map.get(key).selected){
@@ -44,12 +46,46 @@ function renderTable(){
     })
 }
 
+function renderTableHeader(){
+    let tr = document.createElement('tr');
+    tr.setAttribute("class", "compareTableRow");
+
+    tr.appendChild(renderTableHeaderData('Library Name'));
+    tr.appendChild(renderTableHeaderData('Version'));
+    tr.appendChild(renderTableHeaderData('Stars'));
+    tr.appendChild(renderTableHeaderData('Forks'));
+    tr.appendChild(renderTableHeaderData('Issues'));
+    tr.appendChild(renderTableHeaderData('PRs'));
+    tr.appendChild(renderTableHeaderData('License'));
+    tr.appendChild(renderTableHeaderData('Repo Size'));
+
+    return tr;
+}
+
+function renderTableHeaderData(textData){
+    let th = document.createElement('th');
+    th.setAttribute('class', 'compareTableHeaderData');
+
+    let textNode = document.createTextNode(textData);
+    th.appendChild(textNode);
+    return th;
+}
+
 function renderTableRow(libName, properties){
     let tr = document.createElement('tr');
     tr.setAttribute("class", "compareTableRow");
 
     let td = document.createElement('td');
     td.setAttribute('class', "compareTableData");
+
+    let span = document.createElement('span');
+    span.addEventListener('click', (e)=>{
+        removeLibraryFromTable(e);
+    })
+    let minusIconI = document.createElement('i');
+    minusIconI.setAttribute('class', 'fas fa-minus-circle');
+    span.appendChild(minusIconI);
+    td.appendChild(span);
 
     let a = document.createElement('a');
     a.setAttribute('href', properties.github);
@@ -115,4 +151,17 @@ function renderTableData(alt, src){
     badge.setAttribute("src", src);
     td.appendChild(badge);
     return td;
+}
+
+// this function will remove the current row from the table
+function removeLibraryFromTable(event){
+    let libName = event.target.parentNode.parentNode.childNodes[1].firstChild.nodeValue;
+    let row = event.target.parentNode.parentNode.parentNode;
+    row.remove();
+    map.delete(libName);
+}
+
+// add runtime selected map to session storage
+function addCurrentLibsToSession(){
+    sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(map.entries())));
 }

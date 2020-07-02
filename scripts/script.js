@@ -5,8 +5,8 @@ let nightModeButton     = false;
 let database            = [];                                       // working database
 let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
-let iconMap             = new Map();
-let selectedLibCount    = 0;
+let iconMap             = new Map(JSON.parse(sessionStorage.getItem('compareSelected')));
+let selectedLibCount    = iconMap.size;
 
 /** 
  * called when window is loaded
@@ -22,6 +22,7 @@ window.onload = function(){
         addLocalStorageToRecentSearches();
     }
     addRecentSearchesToDom();
+    updateSelectedCount();
 }
 
 /**
@@ -503,9 +504,10 @@ function addFunctionsToIcons(){
             // toggle
             if(iconMap.has(nodes[1].nodeValue.trim()) 
                 && iconMap.get(nodes[1].nodeValue.trim()).selected ){
-                iconMap.set(nodes[1].nodeValue.trim(), {
-                    selected: false
-                });
+                // iconMap.set(nodes[1].nodeValue.trim(), {
+                //     selected: false
+                // });
+                iconMap.delete(nodes[1].nodeValue.trim());
                 selectedLibCount--;
             }else{
                 iconMap.set(nodes[1].nodeValue.trim(), {
@@ -515,7 +517,8 @@ function addFunctionsToIcons(){
                 selectedLibCount++;
             }
 
-            if(iconMap.get(nodes[1].nodeValue.trim()).selected){
+            if(iconMap.has(nodes[1].nodeValue.trim()) 
+                && iconMap.get(nodes[1].nodeValue.trim()).selected){
                 iconNodes[0].style.display = "none";
                 iconNodes[1].style.display = "inline";
             }else{
@@ -536,7 +539,6 @@ function updateSelectedCount(){
 // add runtime selected map to session storage
 function addSelectedToSession(){
     sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(iconMap.entries())));
-    // console.log(new Map(JSON.parse(sessionStorage.getItem('compareSelected'))))
 }
 
 /**

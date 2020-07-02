@@ -71,18 +71,37 @@ body, input {
 .compareTable {
   border: 1px solid brown;
   overflow: scroll;
-  border-spacing: 0; }
-
-.compareTableRow {
-  border: 1px solid brown; }
+  border-spacing: 0;
+  border-radius: 5px; }
 
 .compareTableData {
   border: 1px solid brown;
-  padding: 10px; }
+  padding: 10px;
+  text-align: center; }
 
 #root {
   overflow: scroll;
-  margin: 15px; }
+  margin: 20px;
+  margin-top: 15%;
+  margin-bottom: 10%; }
+
+.compareTableHeaderData {
+  text-align: center;
+  border: 1px solid brown;
+  padding: 10px;
+  background-color: #ccc;
+  width: 12%; }
+
+.fa-minus-circle {
+  margin: 5px; }
+
+.sectionLowerDiv {
+  padding: 15px;
+  text-align: center; }
+
+.lowerSectionButton {
+  padding: 10px;
+  font-size: 17px; }
 
 /* styling footer */
 footer {
