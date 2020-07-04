@@ -13,8 +13,9 @@
 
 #root{
     overflow: scroll;
-    margin: 20px;
-    margin-top: 15%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 15%;
     margin-bottom: 10%;
 }
 .compareTableHeaderData{
@@ -34,6 +35,10 @@
     text-align: center;
 }
 .lowerSectionButton{
-    padding: 10px;
+    padding: 15px;
     font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ccc;
+    margin: 5px;
 }

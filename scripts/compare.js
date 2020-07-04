@@ -14,7 +14,7 @@ function handleNightMode(event)
         document.getElementById('toggle-day').style.display = "none";
         document.getElementById('toggle-div').style.backgroundColor = "#ccc";
         document.getElementById('toggle-div').style.color = "black";
-        // switchLightMode();
+        switchLightMode();
     }else{
         nightModeButton = true;
         document.getElementById('toggle-night').style.display = "none";
@@ -22,8 +22,78 @@ function handleNightMode(event)
         day.style.display = "block";
         document.getElementById('toggle-div').style.backgroundColor = "rgb(139, 139, 255)";
         document.getElementById('toggle-div').style.color = "white";
-        // switchNightMode();
+        switchNightMode();
     }
+}
+
+function switchLightMode(){
+    // LIGHT HEADER
+    let header = document.getElementsByTagName('header')[0];
+    header.style.backgroundColor = 'initial';
+    header.style.color = 'initial';
+    document.getElementById('header-div').style.backgroundColor = 'brown';
+    document.getElementsByClassName('actionButtons')[0].style.backgroundColor = '#ccc';
+    document.getElementsByClassName('actionButtons')[0].style.color = 'initial';
+
+    let section = document.getElementsByTagName('section')[0];
+    section.style.backgroundColor = 'initial';
+    section.style.color = 'initial';
+    document.getElementsByClassName('lowerSectionButton')[0].style.backgroundColor = '#ccc';
+    document.getElementsByClassName('lowerSectionButton')[0].style.color = 'initial';
+
+    // table
+    document.getElementsByClassName('compareTable')[0].style.borderColor = 'brown';
+    let boxes = document.getElementsByClassName('compareTableData');
+    for(let i=0;i<boxes.length;i++){
+        boxes[i].style.borderColor = 'brown';
+    }
+    let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
+    for(let i=0;i<headerBoxes.length;i++){
+        headerBoxes[i].style.borderColor = 'brown';
+        headerBoxes[i].style.backgroundColor = '#ccc';
+    }
+    let tableLinks = document.getElementsByClassName('tableLinks');
+    for(let i=0;i<tableLinks.length;i++){
+        tableLinks[i].style.color = 'blue';
+    }
+
+    // footer
+    document.getElementsByTagName('footer')[0].style.backgroundColor = 'brown';
+}
+
+function switchNightMode(){
+    // DARK HEADER
+    let header = document.getElementsByTagName('header')[0];
+    header.style.backgroundColor = darkBackground;
+    header.style.color = 'white';
+    document.getElementById('header-div').style.backgroundColor = lightBlack;
+    document.getElementsByClassName('actionButtons')[0].style.backgroundColor = lightBlack;
+    document.getElementsByClassName('actionButtons')[0].style.color = 'cyan';
+
+    let section = document.getElementsByTagName('section')[0];
+    section.style.backgroundColor = darkBackground;
+    section.style.color = 'white';
+    document.getElementsByClassName('lowerSectionButton')[0].style.backgroundColor = lightBlack;
+    document.getElementsByClassName('lowerSectionButton')[0].style.color = 'cyan';
+
+    // table
+    document.getElementsByClassName('compareTable')[0].style.borderColor = 'white';
+    let boxes = document.getElementsByClassName('compareTableData');
+    for(let i=0;i<boxes.length;i++){
+        boxes[i].style.borderColor = 'white';
+    }
+    let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
+    for(let i=0;i<headerBoxes.length;i++){
+        headerBoxes[i].style.borderColor = 'white';
+        headerBoxes[i].style.backgroundColor = lightBlack;
+    }
+    let tableLinks = document.getElementsByClassName('tableLinks');
+    for(let i=0;i<tableLinks.length;i++){
+        tableLinks[i].style.color = 'cyan';
+    }
+
+    // footer
+    document.getElementsByTagName('footer')[0].style.backgroundColor = lightBlack;
 }
 
 window.onload = () => {
@@ -89,6 +159,8 @@ function renderTableRow(libName, properties){
 
     let a = document.createElement('a');
     a.setAttribute('href', properties.github);
+    a.setAttribute('target','_blank');
+    a.setAttribute('class', 'tableLinks');
     td.appendChild(a);
     let text1 = document.createTextNode(libName);
     a.appendChild(text1);
