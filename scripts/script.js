@@ -33,13 +33,13 @@ window.onload = function(){
  **/
 function search(e) 
 {
-    if(e.keyCode>=37 && e.keyCode<=40)                              // when arrow keys are used
+    if((e.keyCode>=37 && e.keyCode<=40) || e.keyCode===32)                              // when arrow keys are used
     {
         return;
     }
 
     syncDatabase();
-    const key = document.getElementById('section-div-input').value;
+    const key = document.getElementById('section-div-input').value.trim();
     let firstValue = key.charAt(0).toUpperCase();
     
     if(!isNaN(parseInt(firstValue)))
@@ -775,10 +775,26 @@ function sectionNightMode()
     headingNightMode();
     
     inputNightMode();
-
+    searchActionsNightMode();
     cardsNightMode();
 
     recentSearchNightMode();
+}
+
+function searchActionsNightMode(){
+    document.getElementsByClassName('actionButtons')[0].style.color = 'white';
+    let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
+    for(let i=0;i<compareLibraryLink.length;i++){
+        compareLibraryLink[i].style.color = 'white';
+    }
+}
+
+function searchActionsLightMode(){
+    document.getElementsByClassName('actionButtons')[0].style.color = 'black';
+    let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
+    for(let i=0;i<compareLibraryLink.length;i++){
+        compareLibraryLink[i].style.color = 'black';
+    }
 }
 
 /**
@@ -897,6 +913,7 @@ function switchLightMode()
     bodyLightMode();
     hrLightMode();
     sectionLightMode();
+    searchActionsLightMode();
     footerLightMode();
 }
 
@@ -969,8 +986,7 @@ function addBadges(element)
 
         element.style.display = "none";
 
-        let libraryName = parent.childNodes[0].firstChild.nodeValue;
-
+        let libraryName = parent.childNodes[0].childNodes[1].nodeValue;
         if(recentSearches.includes(libraryName))
         {
             for(let j = 0; j < recentSearches.length; j++){ 
