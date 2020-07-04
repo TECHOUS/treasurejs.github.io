@@ -93,11 +93,31 @@ function switchNightMode(){
     }
 
     // footer
-    document.getElementsByTagName('footer')[0].style.backgroundColor = lightBlack;
+    document.getElementsByTagName('footer')[0].style.backgroundColor = "#292b2c";
+}
+
+function autoDarkMode(){
+    /**
+     * automatic night mode according to hours
+     * 
+     * 7-18 - light
+     * 0-6 , 19-23 - night
+     **/
+    let currentHours = new Date().getHours();
+    if(currentHours>=7 && currentHours<=18){
+        // automatic light mode
+        nightModeButton = true;
+        handleNightMode();
+    }else{
+        // automatic night mode
+        nightModeButton = false;
+        handleNightMode();
+    }
 }
 
 window.onload = () => {
     renderTable();
+    autoDarkMode();
 }
 
 function renderTable(){
