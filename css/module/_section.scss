@@ -39,6 +39,43 @@
 /******************/
 /* OLDER SEARCHES */
 /******************/
+// recent search text
+#recent-searches{
+    padding: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#recentSearchesHeader{
+    padding: 10px;
+}
+
+// search results list
+#search-results-list{
+    border: 1px solid yellow;
+    background-color: #f89494;
+    border-radius: 5px;
+    text-align: left;
+    list-style-type: none;
+    color: black;
+    margin-top: 10px;
+}
+
+// search result list card
+#search-results-list > li{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.history-checkbox{
+    margin-right: 20px;
+}
+
+#clearHistoryButton{
+    cursor: pointer;
+    padding: 5px;
+    float: right;
+    font-size: 17px;
+}
 
 /******************/
 /* SEARCH CONTENT */
@@ -91,41 +128,6 @@
 
 .searchLabel{
     font-size: 20px;
-}
-
-
-
-
-// search results list
-#search-results-list{
-    border: 1px solid yellow;
-    background-color: #f89494;
-    border-radius: 20px;
-    margin-left: 2%;
-    margin-right: 2%;
-    text-align: left;
-    list-style-type: none;
-}
-
-// search result list card
-#search-results-list > li{
-    padding: 12px;
-}
-
-// recent search text
-#recent-searches{
-    text-align: center;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-#clear-search-history{
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.history-checkbox{
-    margin-right: 20px;
 }
 
 // card data found

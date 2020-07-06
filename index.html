@@ -82,12 +82,14 @@
         
         <!-- OLDER SEARCHES -->
         <div id="recent-searches">
-            <i class="fas fa-history"></i>
-            &nbsp;
-            Recently Search
-            <span id="clear-search-history" onclick="clearSearchHistory()">
-                <i class="fas fa-times"></i>&nbsp;clear
-            </span>
+            <button id="clearHistoryButton" onclick="clearSearchHistory()">
+                <i class="fas fa-trash-alt"></i>&nbsp;clear
+            </button>
+            <div id="recentSearchesHeader">
+                <i class="fas fa-history"></i>
+                &nbsp;
+                Recently Search    
+            </div>
         </div>
         
         <!-- SEARCH CONTENT -->

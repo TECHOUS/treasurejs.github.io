@@ -3,23 +3,18 @@ const darkBackground    = "#121212";
 const lightBlack        = "#292b2c";
 let nightModeButton     = false;
 let database            = [];                                       // working database
-let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
 let iconMap             = new Map(JSON.parse(sessionStorage.getItem('compareSelected')));
 let selectedLibCount    = iconMap.size;
+let recentSearchesMap   = new Map();
 
 /** 
  * called when window is loaded
  **/
 window.onload = function(){
-    let storage = localStorage.getItem('treasureHistory');
-    if(storage == null)
-    {
-        storage = [];
-    }
-    else
-    {
-        addLocalStorageToRecentSearches();
+    recentSearchesMap = new Map(JSON.parse(localStorage.getItem('treasureHistory')));
+    if(recentSearchesMap === null){
+        recentSearchesMap = new Map();
     }
     addRecentSearchesToDom();
     updateSelectedCount();
@@ -96,82 +91,57 @@ function clearLocalStorage()
 function clearDom()
 {
     let search = document.getElementById('recent-searches');
-    if(recentSearches.length == 0)
-    {
+    if(recentSearchesMap.size <= 0){
         return;
     }
-    if(search.hasChildNodes)
-    {
+    if(search.hasChildNodes){
         search.removeChild(search.childNodes[5]);
     }
 }
 
 /**
- * it will add recent searches to dom
+ * it will add recentReachesMap to dom
  **/
 function addRecentSearchesToDom()
 {
     let search = document.getElementById('recent-searches');
-
-    if(recentSearches.length!=0)
+    
+    if(recentSearchesMap.size > 0)
     {
         let ul = document.createElement('ul');
         ul.setAttribute('id','search-results-list');
         search.appendChild(ul);
 
-        for(let i=recentSearches.length-1;i>=0;i--)
-        {
-            if(recentSearches.length - i > 10)
-            {
-                break;
-            }
+        recentSearchesMap.forEach((value, key) => {
             let li = document.createElement('li');
-            let text = document.createTextNode(recentSearches[i]);
+            li.setAttribute("class", "recentSearchItem");
+            let text = document.createTextNode(key);
             
             let label = document.createElement('label');
-            label.setAttribute('for','check'+i);
             let checkbox = document.createElement('input');
             checkbox.setAttribute('type','checkbox');
             checkbox.setAttribute('class','history-checkbox');
-            checkbox.setAttribute('id','check'+i);
 
             checkbox.addEventListener('click',function(event){
                 let check = event.srcElement.checked;
                 let node = event.srcElement.parentNode.parentNode;
                 
-                if(check)
-                {
-                    node.style.backgroundColor = "brown";
-                    node.style.borderRadius = "20px";
-                    node.style.color = "white";
-                }
-                else
-                {
-                    node.style.backgroundColor = "initial";
-                    node.style.color = "initial";
-                }                
+                check ?
+                    nightModeButton ? 
+                        node.style.backgroundColor = darkBackground 
+                            : node.style.backgroundColor = "brown"
+                    : node.style.backgroundColor = "initial";
+                
+                check ? recentSearchesMap.set(key, false) : recentSearchesMap.set(key, true); 
             })
 
             label.appendChild(checkbox);
             label.appendChild(text);
             li.appendChild(label);
             ul.appendChild(li);
-        }
+        })
         
         nightModeButton ? recentSearchNightMode() : recentSearchLightMode();    
-    }
-}
-
-/**
- * add local storage data to recent searches array
- **/
-function addLocalStorageToRecentSearches()
-{
-    let storage = localStorage.getItem('treasureHistory');
-    let arr = JSON.parse(storage);
-    for(let i=0;i<arr.length;i++)
-    {
-        recentSearches.push(arr[i]);
     }
 }
 
@@ -504,9 +474,6 @@ function addFunctionsToIcons(){
             // toggle
             if(iconMap.has(nodes[1].nodeValue.trim()) 
                 && iconMap.get(nodes[1].nodeValue.trim()).selected ){
-                // iconMap.set(nodes[1].nodeValue.trim(), {
-                //     selected: false
-                // });
                 iconMap.delete(nodes[1].nodeValue.trim());
                 selectedLibCount--;
             }else{
@@ -764,6 +731,11 @@ function recentSearchNightMode()
     {
         recent.style.backgroundColor = lightBlack;
         recent.style.border = "0.5px solid white";
+        recent.style.color = "white";
+    }
+    let light = document.getElementsByClassName('recentSearchItem');
+    for(let i=0;i<light.length;i++){
+        light[i].style.color = 'cyan';
     }
 }
 
@@ -845,6 +817,11 @@ function recentSearchLightMode()
     {
         recent.style.backgroundColor = "rgb(248, 148, 148)";
         recent.style.border = "2px solid yellow";
+        recent.style.color = "black";
+    }
+    let dark = document.getElementsByClassName('recentSearchItem');
+    for(let i=0;i<dark.length;i++){
+        dark[i].style.color = 'black';
     }
 }
 
@@ -987,21 +964,13 @@ function addBadges(element)
         element.style.display = "none";
 
         let libraryName = parent.childNodes[0].childNodes[1].nodeValue;
-        if(recentSearches.includes(libraryName))
-        {
-            for(let j = 0; j < recentSearches.length; j++){ 
-                if ( recentSearches[j] === libraryName) {
-                    recentSearches.splice(j, 1); 
-                }
-            }
-            recentSearches.push(libraryName);
-            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
+        if(!recentSearchesMap.has(libraryName)){
+            recentSearchesMap.set(libraryName, true);
         }
-        else
-        {   
-            recentSearches.push(libraryName);
-            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
-        }
+        localStorage.setItem(
+            'treasureHistory', 
+            JSON.stringify(Array.from(recentSearchesMap.entries())) 
+        );
     } 
 
     nightModeButton ? switchNightMode() : switchLightMode();
@@ -1034,39 +1003,23 @@ function hideBadges(element)
  **/
 function clearSearchHistory()
 {
-    // let checkedBoxes = false;
-    // let checkboxes = document.getElementsByClassName('history-checkbox');
-    // let historyList = document.getElementById('search-results-list');
-    // for(let i=0;i<checkboxes.length;i++)
-    // {
-    //     if(checkboxes[i].checked === true)                                  // if node find in the tree
-    //     {
-    //         // let node = checkboxes[i].parentNode.parentNode;
-    //         // console.log(node);
-    //         // historyList.removeChild(node);
-
-    //         let str = node.firstChild.childNodes[1].nodeValue;
-    //         // remove this element from the array
-    //         let index = recentSearches.indexOf(str);
-            
-    //         recentSearches.splice(index,1);
-    //         checkedBoxes = true;
-    //     }
-
-        // console.log(recentSearches);
-        // if(historyList.hasChildNodes() === false || recentSearches.length == 0)
-        // {
-        //     historyList.style.border = "none";   
-        // }
-    // }
+    let count = 0;
+    recentSearchesMap.forEach((value, key) => {
+        if(!value){
+            count++;
+            recentSearchesMap.delete(key);
+        }
+    })
     clearDom();
-    clearLocalStorage();
-
-    // if(checkedBoxes===false)
-    // {
-    //     clearDom();
-    //     // clearLocalStorage();
-    // }
+    if(count==0){
+        clearLocalStorage();
+    }else{
+        localStorage.setItem(
+            'treasureHistory', 
+            JSON.stringify(Array.from(recentSearchesMap.entries())) 
+        );
+        addRecentSearchesToDom();
+    }
 }
 
 /**
