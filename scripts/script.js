@@ -4,20 +4,34 @@ const lightBlack        = "#292b2c";
 let nightModeButton     = false;
 let database            = [];                                       // working database
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
-let iconMap             = new Map(JSON.parse(sessionStorage.getItem('compareSelected')));
+let iconMap             = new Map();
 let selectedLibCount    = iconMap.size;
 let recentSearchesMap   = new Map();
+
+(function () {
+    if(localStorage.getItem('treasureHistory')===null 
+        || localStorage.getItem('treasureHistory') === ''){
+            recentSearchesMap = new Map();            
+    }else{
+        recentSearchesMap = new Map(JSON.parse(localStorage.getItem('treasureHistory')));
+    }
+    if(sessionStorage.getItem('compareSelected')===null 
+        || sessionStorage.getItem('compareSelected')===''){
+            iconMap = new Map();
+    }else{
+        iconMap = new Map(JSON.parse(sessionStorage.getItem('compareSelected')));
+        selectedLibCount = iconMap.size;
+    }
+})();
 
 /** 
  * called when window is loaded
  **/
 window.onload = function(){
-    recentSearchesMap = new Map(JSON.parse(localStorage.getItem('treasureHistory')));
-    if(recentSearchesMap === null){
-        recentSearchesMap = new Map();
-    }
     addRecentSearchesToDom();
+    addRecentlyComparedToDOM();
     updateSelectedCount();
+    autoDarkMode();
 }
 
 /**
@@ -62,7 +76,8 @@ function search(e)
         eraseDataList();
         hideSearchResults();
         showRecentSearches();
-        clearDom();        
+        showRecentlyComparedSection();
+        clearRecentSearchDom();        
         addRecentSearchesToDom();
         database=[];
         return;
@@ -86,9 +101,16 @@ function clearLocalStorage()
 }
 
 /**
+ * it will clear the session storage
+ **/
+function clearSessionStorage(){
+    sessionStorage.setItem('compareSelected','[]');
+}
+
+/**
  * this function will clear the number of elements in the list
  **/
-function clearDom()
+function clearRecentSearchDom()
 {
     let search = document.getElementById('recent-searches');
     if(recentSearchesMap.size <= 0){
@@ -96,6 +118,20 @@ function clearDom()
     }
     if(search.hasChildNodes){
         search.removeChild(search.childNodes[5]);
+    }
+}
+
+/**
+ * this function will clear the number of elements in the 
+ * recently search list
+ **/
+function clearRecentlyComparedDOM(){
+    let recentlyComparedRoot = document.getElementById('recentlyComparedRoot');
+    if(iconMap.size <= 0){
+        return;
+    }
+    if(recentlyComparedRoot.hasChildNodes){
+        recentlyComparedRoot.removeChild(recentlyComparedRoot.childNodes[1])
     }
 }
 
@@ -142,6 +178,70 @@ function addRecentSearchesToDom()
         })
         
         nightModeButton ? recentSearchNightMode() : recentSearchLightMode();    
+    }
+}
+
+function addRecentlyComparedToDOM(){
+    let recentlyComparedRoot = document.getElementById('recentlyComparedRoot');
+    if(iconMap.size > 0){
+        let ul = document.createElement('ul');
+        ul.setAttribute('id', 'recentlyComparedList');
+        recentlyComparedRoot.appendChild(ul);
+
+        iconMap.forEach((value, key) => {
+            let li = document.createElement('li');
+            li.setAttribute("class", "recentlyComparedItem");
+            
+            let text = document.createTextNode(key);
+            let a = document.createElement('a');
+            a.setAttribute('href', value.github);
+            a.setAttribute('class', 'recentlyComparedLink');
+            a.setAttribute('target','_blank');
+
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type','checkbox');
+            checkbox.setAttribute('class','recentlyComparedCheckBox');
+
+            checkbox.addEventListener('click',function(event){
+                let check = event.srcElement.checked;
+                let node = event.srcElement.parentNode;
+                check ?
+                    nightModeButton ? 
+                        node.style.backgroundColor = darkBackground 
+                            : node.style.backgroundColor = "brown"
+                    : node.style.backgroundColor = "initial";
+                
+                value.selected = !value.selected
+                iconMap.set(key, value);
+            })
+
+            a.appendChild(text);
+            li.appendChild(checkbox);
+            li.appendChild(a);
+            ul.appendChild(li);
+        })
+
+        nightModeButton ? recentlyComparedNightMode() : recentlyComparedLightMode();
+    }
+}
+
+function recentlyComparedNightMode(){
+    let recentlyComparedList = document.getElementById('recentlyComparedList');
+    recentlyComparedList.style.backgroundColor = lightBlack;
+    recentlyComparedList.style.border = "1px solid white";
+    let links = document.getElementsByClassName('recentlyComparedLink');
+    for(let i=0;i<links.length;i++){
+        links[i].style.color = "cyan";
+    }
+}
+
+function recentlyComparedLightMode(){
+    let recentlyComparedList = document.getElementById('recentlyComparedList');
+    recentlyComparedList.style.backgroundColor = "#f89494";
+    recentlyComparedList.style.border = "1px solid yellow";
+    let links = document.getElementsByClassName('recentlyComparedLink');
+    for(let i=0;i<links.length;i++){
+        links[i].style.color = "blue";
     }
 }
 
@@ -378,6 +478,7 @@ function filterData(key)
         }
     }
     hideRecentSearches();
+    hideRecentlyComparedSection();
     showSearchResults();
     updateSearchCount(database.length);
 }
@@ -412,6 +513,20 @@ function hideRecentSearches()
 function showRecentSearches()
 {
     document.getElementById('recent-searches').style.display = "block";
+}
+
+/**
+ * Hides the recently compared section
+ */
+function hideRecentlyComparedSection(){
+    document.getElementById('recentlyComparedSection').style.display = "none";
+}
+
+/**
+ * Show the recently compared section
+ */
+function showRecentlyComparedSection(){
+    document.getElementById('recentlyComparedSection').style.display = "block";
 }
 
 /**
@@ -751,6 +866,7 @@ function sectionNightMode()
     cardsNightMode();
 
     recentSearchNightMode();
+    recentlyComparedNightMode();
 }
 
 function searchActionsNightMode(){
@@ -858,6 +974,7 @@ function sectionLightMode()
     }
 
     recentSearchLightMode();
+    recentlyComparedLightMode();
 
     // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -999,10 +1116,13 @@ function hideBadges(element)
 }
 
 /**
- * This function will clear the history
+ * This function will clear the recent search history
  **/
 function clearSearchHistory()
 {
+    if(!confirm('Do you want to clear recent searches ?')){
+        return;
+    }
     let count = 0;
     recentSearchesMap.forEach((value, key) => {
         if(!value){
@@ -1010,7 +1130,7 @@ function clearSearchHistory()
             recentSearchesMap.delete(key);
         }
     })
-    clearDom();
+    clearRecentSearchDom();
     if(count==0){
         clearLocalStorage();
     }else{
@@ -1019,6 +1139,32 @@ function clearSearchHistory()
             JSON.stringify(Array.from(recentSearchesMap.entries())) 
         );
         addRecentSearchesToDom();
+    }
+}
+
+/**
+ * This function will clear the recent compared section
+ **/
+function clearRecentlyComparedLibrary(){
+    if(!confirm('Do you want to clear recently compared library/s ?')){
+        return;
+    }
+    let count = 0;
+    iconMap.forEach((value, key) => {
+        if(!value.selected){
+            count++;
+            iconMap.delete(key);
+        }
+    })
+    clearRecentlyComparedDOM();
+    if(count==0){
+        clearSessionStorage();
+    }else{
+        sessionStorage.setItem(
+            'compareSelected', 
+            JSON.stringify(Array.from(iconMap.entries())) 
+        );
+        addRecentlyComparedToDOM();
     }
 }
 

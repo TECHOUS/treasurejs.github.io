@@ -15,7 +15,7 @@
 </head>
 <body id="root">
     <script src="scripts/script.js"></script>
-    <script src="scripts/automatic.js" defer></script>                          <!--Automatic night mode after dom get parsed fully-->                          
+    <script src="scripts/automatic.js" defer></script>                          
     
     <!-- HEADER -->
     <header>
@@ -82,16 +82,30 @@
         
         <!-- OLDER SEARCHES -->
         <div id="recent-searches">
-            <button id="clearHistoryButton" onclick="clearSearchHistory()">
+            <button class="clearHistoryButton" onclick="clearSearchHistory()">
                 <i class="fas fa-trash-alt"></i>&nbsp;clear
             </button>
-            <div id="recentSearchesHeader">
+            <div class="recentHeader">
                 <i class="fas fa-history"></i>
                 &nbsp;
-                Recently Search    
+                Recently Searched    
             </div>
         </div>
         
+        <!-- RECENTLY COMPARED SECTION -->
+        <div id="recentlyComparedSection">
+            <button class="clearHistoryButton" onclick="clearRecentlyComparedLibrary()">
+                <i class="fas fa-trash-alt"></i>&nbsp;clear
+            </button>
+            <div class="recentHeader">
+                <i class="fas fa-history"></i>
+                &nbsp;
+                Recently Compared
+            </div>
+            <div id="recentlyComparedRoot">
+            </div>
+        </div>
+
         <!-- SEARCH CONTENT -->
         <div id="found-data">
             <!-- JUST FOR MAKING DOM IN JS AND FOR STYLING-->

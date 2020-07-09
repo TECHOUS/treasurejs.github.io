@@ -90,7 +90,7 @@ body, input {
   padding-left: 5%;
   padding-right: 5%; }
 
-#recentSearchesHeader {
+.recentHeader {
   padding: 10px; }
 
 #search-results-list {
@@ -109,7 +109,7 @@ body, input {
 .history-checkbox {
   margin-right: 20px; }
 
-#clearHistoryButton {
+.clearHistoryButton {
   cursor: pointer;
   padding: 5px;
   float: right;
@@ -212,6 +212,35 @@ body, input {
 
 .less-div {
   padding: 5px; }
+
+/*****************************/
+/* RECENTLY COMPARED SECTION */
+/*****************************/
+#recentlyComparedSection {
+  padding: 15px;
+  padding-left: 5%;
+  padding-right: 5%; }
+
+#recentlyComparedList {
+  border: 1px solid yellow;
+  background-color: #f89494;
+  border-radius: 5px;
+  text-align: left;
+  list-style-type: none;
+  color: black;
+  margin-top: 10px; }
+
+.recentlyComparedItem {
+  padding: 12px;
+  border-radius: 5px; }
+
+.recentlyComparedCheckBox {
+  margin-right: 20px; }
+
+.recentlyComparedLink:link,
+.recentlyComparedLink:visited,
+.recentlyComparedLink:active {
+  color: blue; }
 
 /* styling footer */
 footer {
