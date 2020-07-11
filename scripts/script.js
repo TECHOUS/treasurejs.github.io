@@ -1194,11 +1194,13 @@ function clearRecentlyComparedLibrary(){
         if(!value.selected){
             count++;
             iconMap.delete(key);
+            selectedLibCount--;
         }
     })
     clearRecentlyComparedDOM();
     if(count==0){
         clearSessionStorage();
+        selectedLibCount = 0;
     }else{
         sessionStorage.setItem(
             'compareSelected', 
@@ -1206,6 +1208,8 @@ function clearRecentlyComparedLibrary(){
         );
         addRecentlyComparedToDOM();
     }
+    updateSelectedCount();
+    location.reload();
 }
 
 /**

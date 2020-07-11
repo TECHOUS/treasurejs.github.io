@@ -42,20 +42,22 @@ function switchLightMode(){
     section.style.backgroundColor = 'initial';
     section.style.color = 'initial';
 
-    // table
-    document.getElementsByClassName('compareTable')[0].style.borderColor = 'brown';
-    let boxes = document.getElementsByClassName('compareTableData');
-    for(let i=0;i<boxes.length;i++){
-        boxes[i].style.borderColor = 'brown';
-    }
-    let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
-    for(let i=0;i<headerBoxes.length;i++){
-        headerBoxes[i].style.borderColor = 'brown';
-        headerBoxes[i].style.backgroundColor = '#ccc';
-    }
-    let tableLinks = document.getElementsByClassName('tableLinks');
-    for(let i=0;i<tableLinks.length;i++){
-        tableLinks[i].style.color = 'blue';
+    if(map.size > 0){
+        // table
+        document.getElementsByClassName('compareTable')[0].style.borderColor = 'brown';
+        let boxes = document.getElementsByClassName('compareTableData');
+        for(let i=0;i<boxes.length;i++){
+            boxes[i].style.borderColor = 'brown';
+        }
+        let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
+        for(let i=0;i<headerBoxes.length;i++){
+            headerBoxes[i].style.borderColor = 'brown';
+            headerBoxes[i].style.backgroundColor = '#ccc';
+        }
+        let tableLinks = document.getElementsByClassName('tableLinks');
+        for(let i=0;i<tableLinks.length;i++){
+            tableLinks[i].style.color = 'blue';
+        }
     }
 
     // footer
@@ -79,20 +81,22 @@ function switchNightMode(){
     section.style.backgroundColor = darkBackground;
     section.style.color = 'white';
 
-    // table
-    document.getElementsByClassName('compareTable')[0].style.borderColor = 'white';
-    let boxes = document.getElementsByClassName('compareTableData');
-    for(let i=0;i<boxes.length;i++){
-        boxes[i].style.borderColor = 'white';
-    }
-    let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
-    for(let i=0;i<headerBoxes.length;i++){
-        headerBoxes[i].style.borderColor = 'white';
-        headerBoxes[i].style.backgroundColor = lightBlack;
-    }
-    let tableLinks = document.getElementsByClassName('tableLinks');
-    for(let i=0;i<tableLinks.length;i++){
-        tableLinks[i].style.color = 'cyan';
+    if(map.size > 0){
+        // table
+        document.getElementsByClassName('compareTable')[0].style.borderColor = 'white';
+        let boxes = document.getElementsByClassName('compareTableData');
+        for(let i=0;i<boxes.length;i++){
+            boxes[i].style.borderColor = 'white';
+        }
+        let headerBoxes = document.getElementsByClassName('compareTableHeaderData');
+        for(let i=0;i<headerBoxes.length;i++){
+            headerBoxes[i].style.borderColor = 'white';
+            headerBoxes[i].style.backgroundColor = lightBlack;
+        }
+        let tableLinks = document.getElementsByClassName('tableLinks');
+        for(let i=0;i<tableLinks.length;i++){
+            tableLinks[i].style.color = 'cyan';
+        }
     }
 
     // footer
@@ -124,19 +128,38 @@ window.onload = () => {
 }
 
 function renderTable(){
-    let table = document.createElement('table');
-    table.setAttribute("class", "compareTable");
-    document.getElementById('root').appendChild(table);
-    
-    // render table header
-    table.appendChild(renderTableHeader())
+    if(map.size>0){
+        let table = document.createElement('table');
+        table.setAttribute("class", "compareTable");
+        document.getElementById('root').appendChild(table);
+        
+        // render table header
+        table.appendChild(renderTableHeader())
 
-    map.forEach((value, key) => {
-        if(map.get(key).selected){
-            let row = renderTableRow(key, value);
-            table.appendChild(row);
-        }
-    })
+        map.forEach((value, key) => {
+            if(map.get(key).selected){
+                let row = renderTableRow(key, value);
+                table.appendChild(row);
+            }
+        })
+    }else{
+        document.getElementById('root').appendChild(getBlankPage());
+    }
+}
+
+function getBlankPage(){
+    let div = document.createElement('div');
+    div.setAttribute('class', 'nothingDiv');
+    let i = document.createElement('i');
+    i.setAttribute('class', 'fas fa-box-open fa-5x');
+
+    let h2 = document.createElement('h2');
+    let message = document.createTextNode('! No Libraries Found to Compare');
+    h2.appendChild(message);
+        
+    div.appendChild(i);
+    div.appendChild(h2);
+    return div;
 }
 
 function renderTableHeader(){
@@ -254,6 +277,12 @@ function removeLibraryFromTable(event){
     let row = event.target.parentNode.parentNode.parentNode;
     row.remove();
     map.delete(libName);
+
+    if(map.size<=0){
+        let table = document.getElementById('root').childNodes[1];        
+        document.getElementById('root').removeChild(table);
+        document.getElementById('root').appendChild(getBlankPage());
+    }
 }
 
 // add runtime selected map to session storage
