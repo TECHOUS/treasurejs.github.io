@@ -1,6 +1,53 @@
 /**************/
 /* SEARCH BAR */
 /**************/ 
+// div having input
+#section-div{
+    text-align: center;
+}
+// styling section div input
+#section-div-input{
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    border: none;
+    width: 90%;
+    outline: none;
+    border-radius: 20px;
+}
+
+// section input on focus
+#section-div-input:focus{
+    color: brown;
+}
+
+// section input placeholder
+#section-div-input::placeholder{
+    color: gray;
+}
+
+.searchLabel{
+    font-size: 20px;
+}
+
+// search bar
+#search-bar{
+    border: 2px solid brown;
+    border-radius: 23px;
+    margin: auto;
+    width: 90%;
+}
+
+// search bar on hover
+#search-bar:hover{
+    box-shadow: 0px 0px 10px #888888;
+}
+
+// find icon in input field
+#find-icon{
+    color: brown;
+    font-size: 20px;
+}
 
 /******************/
 /* SEARCH ACTIONS */
@@ -14,7 +61,7 @@
 // horizontal line after input
 #horizontal-rule{
     border: 1px solid gray;
-    width: 95%;
+    width: 100%;
     margin: auto;
 }
 .actionButtons{
@@ -66,7 +113,12 @@
     border-radius: 5px;
 }
 
+#search-results-list > li > label {
+    cursor: pointer;
+}
+
 .history-checkbox{
+    cursor: pointer;
     margin-right: 20px;
 }
 
@@ -80,55 +132,6 @@
 /******************/
 /* SEARCH CONTENT */
 /******************/
-
-// div having input
-#section-div{
-    text-align: center;
-}
-
-// search bar
-#search-bar{
-    border: 2px solid brown;
-    border-radius: 23px;
-    margin: auto;
-    width: 90%;
-}
-
-// search bar on hover
-#search-bar:hover{
-    box-shadow: 0px 0px 10px #888888;
-}
-
-// find icon in input field
-#find-icon{
-    color: brown;
-    font-size: 20px;
-}
-
-// styling section div input
-#section-div-input{
-    text-align: center;
-    font-size: 20px;
-    padding: 8px;
-    border: none;
-    width: 90%;
-    outline: none;
-    border-radius: 20px;
-}
-
-// section input on focus
-#section-div-input:focus{
-    color: brown;
-}
-
-// section input placeholder
-#section-div-input::placeholder{
-    color: gray;
-}
-
-.searchLabel{
-    font-size: 20px;
-}
 
 // card data found
 #found-data{
@@ -174,6 +177,12 @@
 .link{
     color: blue;
     text-decoration: none;
+}
+
+.fa-plus-circle,
+.fa-minus-circle{
+    margin: 5px;
+    cursor: pointer;
 }
 
 // styling badges and more button div
@@ -236,6 +245,7 @@
 
 .recentlyComparedCheckBox{
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .recentlyComparedLink:link,

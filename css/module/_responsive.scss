@@ -16,18 +16,9 @@
 /* TABLETS/DESKTOPS */
 @media (min-width: 992px) and (max-width: 1199px){
     #search-bar{
-        width: 60%;
+        width: 75%;
     }
-    #section-div-input{
-        width: 85%;
-    }
-    #horizontal-rule{
-        width: 70%;
-    }
-    .data-card{
-        margin-left: 14%;
-        margin-right: 14%;
-    }
+    
     //adjust footer links
     .footer-links-div{
         padding: 30px;
@@ -38,24 +29,52 @@
     .footer-links-div:nth-child(2){
         margin-left: 8%;
     }
+
+    /**************/
+    /* SEARCH BAR */
+    /**************/
+    #section-div-input{
+        width: 95%;
+    }
+
+    /******************/
+    /* SEARCH ACTIONS */
+    /******************/
+    #search-actions{
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+    }
+
+    /******************/
+    /* OLDER SEARCHES */
+    /******************/
+    #recent-searches{
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+    }
+
+    /*****************************/
+    /* RECENTLY COMPARED SECTION */
+    /*****************************/
+    #recentlyComparedSection{
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+    }
+
+    /******************/
+    /* SEARCH CONTENT */
+    /******************/
+    #found-data{
+        padding: 0px;
+    }
+    .data-card{
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+    }
 }
 
 /* large */
 @media screen and (min-width: 1200px){
-    #search-bar{
-        width: 40%;
-    }
-    #section-div-input{
-        width: 88%;
-    }
-    #horizontal-rule{
-        width: 70%;
-    }
-    .data-card{
-        margin-left: 14%;
-        margin-right: 14%;
-        margin-bottom: 1%;
-    }
     //adjust footer links
     .footer-links-div{
         padding: 40px;
@@ -75,6 +94,97 @@
     .footer-links-list > li > a:hover,
     #footer-techous:hover{
         color: cyan;
+    }
+
+    /**************/
+    /* SEARCH BAR */
+    /**************/
+    #search-bar{
+        width: 85%;
+    }
+    #section-div-input{
+        width: 95%;
+    }
+
+    /******************/
+    /* SEARCH ACTIONS */
+    /******************/
+    #search-actions{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    /******************/
+    /* OLDER SEARCHES */
+    /******************/
+    #recent-searches{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    /*****************************/
+    /* RECENTLY COMPARED SECTION */
+    /*****************************/
+    #recentlyComparedSection{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    /******************/
+    /* SEARCH CONTENT */
+    /******************/
+    #found-data{
+        padding: 0px;
+    }
+    .data-card{
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-bottom: 1%;
+    }
+}
+
+/* extra large laptop*/
+@media screen and (min-width: 1400px){
+    /**************/
+    /* SEARCH BAR */
+    /**************/
+    #search-bar{
+        width: 60%;
+    }
+    /******************/
+    /* SEARCH ACTIONS */
+    /******************/
+    #search-actions{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    /******************/
+    /* OLDER SEARCHES */
+    /******************/
+    #recent-searches{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    /*****************************/
+    /* RECENTLY COMPARED SECTION */
+    /*****************************/
+    #recentlyComparedSection{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    /******************/
+    /* SEARCH CONTENT */
+    /******************/
+    #found-data{
+        padding: 0px;
+    }
+    .data-card{
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 1%;
     }
 }
 
