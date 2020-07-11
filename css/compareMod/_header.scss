@@ -7,6 +7,7 @@
     border-radius: 30px;
     background-color: #ccc;
     color: black;
+    cursor: pointer;
 }
 // handle toggle on day
 #toggle-day{
@@ -38,28 +39,4 @@
     text-decoration: none;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-#treasureSlogan{
-    font-style: italic;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-}
-.headerActions{
-    text-align: center;
-}
-.actionButtons{
-    border: none;
-    background: #ccc;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-}
-#headerHrLine{
-    border: 1px solid #ccc;
-    width: 90%;
-    margin: auto;
-    margin-top: 15px;
 }

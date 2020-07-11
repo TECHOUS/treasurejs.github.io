@@ -32,14 +32,15 @@ function switchLightMode(){
     header.style.backgroundColor = 'initial';
     header.style.color = 'initial';
     document.getElementById('header-div').style.backgroundColor = 'brown';
-    document.getElementsByClassName('actionButtons')[0].style.backgroundColor = '#ccc';
-    document.getElementsByClassName('actionButtons')[0].style.color = 'initial';
+    let actionButtons = document.getElementsByClassName('actionButtons'); 
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.backgroundColor = '#ccc';
+        actionButtons[i].style.color = 'initial';
+    }
 
     let section = document.getElementsByTagName('section')[0];
     section.style.backgroundColor = 'initial';
     section.style.color = 'initial';
-    document.getElementsByClassName('lowerSectionButton')[0].style.backgroundColor = '#ccc';
-    document.getElementsByClassName('lowerSectionButton')[0].style.color = 'initial';
 
     // table
     document.getElementsByClassName('compareTable')[0].style.borderColor = 'brown';
@@ -67,14 +68,16 @@ function switchNightMode(){
     header.style.backgroundColor = darkBackground;
     header.style.color = 'white';
     document.getElementById('header-div').style.backgroundColor = lightBlack;
-    document.getElementsByClassName('actionButtons')[0].style.backgroundColor = lightBlack;
-    document.getElementsByClassName('actionButtons')[0].style.color = 'cyan';
+    let actionButtons = document.getElementsByClassName('actionButtons'); 
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.backgroundColor = lightBlack;
+        actionButtons[i].style.color = 'cyan';
+        actionButtons[i].style.border = '1px solid cyan';
+    }
 
     let section = document.getElementsByTagName('section')[0];
     section.style.backgroundColor = darkBackground;
     section.style.color = 'white';
-    document.getElementsByClassName('lowerSectionButton')[0].style.backgroundColor = lightBlack;
-    document.getElementsByClassName('lowerSectionButton')[0].style.color = 'cyan';
 
     // table
     document.getElementsByClassName('compareTable')[0].style.borderColor = 'white';

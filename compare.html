@@ -14,8 +14,6 @@
     <script src="scripts/compare.js"></script>
 </head>
 <body>
-    
-
     <!-- HEADER -->
     <header>
         <div id="toggle-div" onclick="handleNightMode()">
@@ -36,24 +34,23 @@
                 </a>
             </h1>
         </div>
+    </header>
+
+    <!-- SECTION -->
+    <section>
         <div class="headerActions">
             <p id="treasureSlogan">A JavaScript WikiPedia for GitHub</p>
             <button class="actionButtons" onclick="printResults()">
                 <i class="far fa-file-pdf"></i> Download Comparisons 
             </button>
-            <hr id="headerHrLine"/>
         </div>
-    </header>
-
-    <!-- SECTION -->
-    <section>
         <div id="root">
         </div>
         <div class="sectionLowerDiv">
             <h2>Missed Something !</h2>
             <div>
                 <a href="index.html" onclick="addCurrentLibsToSession()">
-                    <button class="lowerSectionButton">
+                    <button class="actionButtons">
                         Add to your Compare List
                     </button>
                 </a>

@@ -1,0 +1,84 @@
+@media screen and (max-width: 405px){
+    .headerLink{
+        font-size: 1.7em;
+    }
+}
+
+/**/
+@media (min-width: 601px) and (max-width: 991px){
+    //adjust footer links
+    .footer-links-div{
+        padding: 30px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 6%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 6%;
+    }
+    .actionButtons{
+        width: 50%;
+    }
+}
+
+/* TABLETS/DESKTOPS */
+@media (min-width: 992px) and (max-width: 1199px){
+    //adjust footer links
+    .footer-links-div{
+        padding: 30px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 8%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 8%;
+    }
+    .actionButtons{
+        width: 50%;
+    }
+    #root{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* large */
+@media screen and (min-width: 1200px){
+    //adjust footer links
+    .footer-links-div{
+        padding: 40px;
+    }
+    .footer-links-list{
+        padding: 10px;
+    }
+    .footer-links-list > li{
+        padding: 3px;
+    }
+    .footer-links-div:nth-child(1){
+        margin-right: 9%;
+    }
+    .footer-links-div:nth-child(2){
+        margin-left: 9%;
+    }
+    .footer-links-list > li > a:hover,
+    #footer-techous:hover{
+        color: cyan;
+    }
+    .actionButtons{
+        width: 40%;
+    }
+    #root{
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+/* extra large laptop*/
+@media screen and (min-width: 1400px){
+    .actionButtons{
+        width: 30%;
+    }
+    #root{
+        overflow: hidden;
+    }
+}
