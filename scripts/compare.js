@@ -195,6 +195,7 @@ function renderTableRow(libName, properties){
     td.setAttribute('class', "compareTableData");
 
     let span = document.createElement('span');
+    span.setAttribute('class', 'minusIconSpan')
     span.addEventListener('click', (e)=>{
         removeLibraryFromTable(e);
     })
@@ -288,4 +289,14 @@ function removeLibraryFromTable(event){
 // add runtime selected map to session storage
 function addCurrentLibsToSession(){
     sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(map.entries())));
+}
+
+// prints the content on the page
+function printResults(){
+    let earlierReverseNightMode = !nightModeButton;
+    nightModeButton = true;
+    handleNightMode();
+    print();
+    nightModeButton=earlierReverseNightMode;
+    handleNightMode();
 }

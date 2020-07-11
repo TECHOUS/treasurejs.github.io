@@ -64,3 +64,13 @@
 .nothingDiv{
     text-align: center;
 }
+
+@media print{
+    header,
+    footer,
+    .headerActions,
+    .sectionLowerDiv,
+    .minusIconSpan{
+        display: none;
+    }
+}

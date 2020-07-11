@@ -634,6 +634,10 @@ function updateSelectedCount(){
 
 // add runtime selected map to session storage
 function addSelectedToSession(){
+    // reset the selected to true if user just select, search and compare
+    iconMap.forEach((value,key) => {
+        iconMap.set(key, {...value,selected: true});
+    })
     sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(iconMap.entries())));
 }
 
@@ -1183,7 +1187,7 @@ function clearSearchHistory()
 }
 
 /**
- * This function will clear the recent compared section
+ * This function will clear the recent compared section items
  **/
 function clearRecentlyComparedLibrary(){
     if(!confirm('Do you want to clear recently compared library/s ?')){
@@ -1209,7 +1213,6 @@ function clearRecentlyComparedLibrary(){
         addRecentlyComparedToDOM();
     }
     updateSelectedCount();
-    location.reload();
 }
 
 /**
