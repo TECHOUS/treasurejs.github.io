@@ -240,7 +240,7 @@ body, input {
 .recentlyComparedLink:link,
 .recentlyComparedLink:visited,
 .recentlyComparedLink:active {
-  color: blue; }
+  color: black; }
 
 /* styling footer */
 footer {

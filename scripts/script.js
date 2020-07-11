@@ -168,6 +168,9 @@ function addRecentSearchesToDom()
                             : node.style.backgroundColor = "brown"
                     : node.style.backgroundColor = "initial";
                 
+                nightModeButton ? 
+                    node.style.color = "cyan" : 
+                    node.style.color = check ? "white" : "black";
                 check ? recentSearchesMap.set(key, false) : recentSearchesMap.set(key, true); 
             })
 
@@ -211,6 +214,9 @@ function addRecentlyComparedToDOM(){
                             : node.style.backgroundColor = "brown"
                     : node.style.backgroundColor = "initial";
                 
+                node.childNodes[1].style.color = 
+                    nightModeButton ? 'cyan' : check ? 'white' : 'black'; 
+
                 value.selected = !value.selected
                 iconMap.set(key, value);
             })
@@ -231,6 +237,8 @@ function recentlyComparedNightMode(){
     recentlyComparedList.style.border = "1px solid white";
     let links = document.getElementsByClassName('recentlyComparedLink');
     for(let i=0;i<links.length;i++){
+        let check = links[i].parentNode.childNodes[0].checked;
+        links[i].parentNode.style.backgroundColor = check ? darkBackground : lightBlack;
         links[i].style.color = "cyan";
     }
 }
@@ -241,7 +249,9 @@ function recentlyComparedLightMode(){
     recentlyComparedList.style.border = "1px solid yellow";
     let links = document.getElementsByClassName('recentlyComparedLink');
     for(let i=0;i<links.length;i++){
-        links[i].style.color = "blue";
+        let check = links[i].parentNode.childNodes[0].checked;
+        links[i].parentNode.style.backgroundColor = check ? "brown" : "#f89494";
+        links[i].style.color = check ? 'white' : 'black';
     }
 }
 
@@ -850,6 +860,8 @@ function recentSearchNightMode()
     }
     let light = document.getElementsByClassName('recentSearchItem');
     for(let i=0;i<light.length;i++){
+        let check = light[i].firstChild.firstChild.checked;
+        light[i].style.backgroundColor = check ? darkBackground : lightBlack;
         light[i].style.color = 'cyan';
     }
 }
@@ -937,7 +949,9 @@ function recentSearchLightMode()
     }
     let dark = document.getElementsByClassName('recentSearchItem');
     for(let i=0;i<dark.length;i++){
-        dark[i].style.color = 'black';
+        let check = dark[i].firstChild.firstChild.checked;
+        dark[i].style.backgroundColor = check ? "brown" : "rgb(248, 148, 148)";
+        dark[i].style.color = check ? 'white' : 'black';
     }
 }
 
