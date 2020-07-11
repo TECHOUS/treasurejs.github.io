@@ -233,25 +233,29 @@ function addRecentlyComparedToDOM(){
 
 function recentlyComparedNightMode(){
     let recentlyComparedList = document.getElementById('recentlyComparedList');
-    recentlyComparedList.style.backgroundColor = lightBlack;
-    recentlyComparedList.style.border = "1px solid white";
-    let links = document.getElementsByClassName('recentlyComparedLink');
-    for(let i=0;i<links.length;i++){
-        let check = links[i].parentNode.childNodes[0].checked;
-        links[i].parentNode.style.backgroundColor = check ? darkBackground : lightBlack;
-        links[i].style.color = "cyan";
+    if(recentlyComparedList!==null){
+        recentlyComparedList.style.backgroundColor = lightBlack;
+        recentlyComparedList.style.border = "1px solid white";
+        let links = document.getElementsByClassName('recentlyComparedLink');
+        for(let i=0;i<links.length;i++){
+            let check = links[i].parentNode.childNodes[0].checked;
+            links[i].parentNode.style.backgroundColor = check ? darkBackground : lightBlack;
+            links[i].style.color = "cyan";
+        }
     }
 }
 
 function recentlyComparedLightMode(){
     let recentlyComparedList = document.getElementById('recentlyComparedList');
-    recentlyComparedList.style.backgroundColor = "#f89494";
-    recentlyComparedList.style.border = "1px solid yellow";
-    let links = document.getElementsByClassName('recentlyComparedLink');
-    for(let i=0;i<links.length;i++){
-        let check = links[i].parentNode.childNodes[0].checked;
-        links[i].parentNode.style.backgroundColor = check ? "brown" : "#f89494";
-        links[i].style.color = check ? 'white' : 'black';
+    if(recentlyComparedList!==null){
+        recentlyComparedList.style.backgroundColor = "#f89494";
+        recentlyComparedList.style.border = "1px solid yellow";
+        let links = document.getElementsByClassName('recentlyComparedLink');
+        for(let i=0;i<links.length;i++){
+            let check = links[i].parentNode.childNodes[0].checked;
+            links[i].parentNode.style.backgroundColor = check ? "brown" : "#f89494";
+            links[i].style.color = check ? 'white' : 'black';
+        }
     }
 }
 
@@ -662,7 +666,7 @@ function addToDOM()
             {
                 var img1 = document.createElement('img');
                 img1.setAttribute("alt","GitHub Release");
-                img1.setAttribute("class","badge-img");
+                img1.setAttribute("class","badge-img rightBadge");
                 let img1src = "https://img.shields.io/github/tag/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
                 img1.setAttribute("src",img1src);
                 h2.appendChild(img1);
@@ -820,14 +824,14 @@ function cardsNightMode()
     {
         cards[i].style.color = "white";
         cards[i].style.backgroundColor = lightBlack;
-        cards[i].style.border = "none";
+        cards[i].style.border = "1px solid cyan";
     }
 
     // card links dark mode
     let links = document.getElementsByClassName('link');
     for(let i=0;i<links.length;i++)
     {
-        links[i].style.color = "rgb(139, 139, 255)";
+        links[i].style.color = "cyan";
     }
 
     // card footer dark mode
@@ -864,6 +868,12 @@ function recentSearchNightMode()
         light[i].style.backgroundColor = check ? darkBackground : lightBlack;
         light[i].style.color = 'cyan';
     }
+    let clearHistoryButton = document.getElementsByClassName('clearHistoryButton');
+    for(let i=0;i<clearHistoryButton.length;i++){
+        clearHistoryButton[i].style.color = 'white';
+        clearHistoryButton[i].style.backgroundColor = lightBlack;
+        clearHistoryButton[i].style.border = '1px solid white';
+    }
 }
 
 /**
@@ -882,7 +892,12 @@ function sectionNightMode()
 }
 
 function searchActionsNightMode(){
-    document.getElementsByClassName('actionButtons')[0].style.color = 'white';
+    let actionButtons = document.getElementsByClassName('actionButtons');
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.color = 'white';
+        actionButtons[i].style.backgroundColor = lightBlack;
+        actionButtons[i].style.border = '0.1px solid white';
+    } 
     let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
     for(let i=0;i<compareLibraryLink.length;i++){
         compareLibraryLink[i].style.color = 'white';
@@ -890,7 +905,12 @@ function searchActionsNightMode(){
 }
 
 function searchActionsLightMode(){
-    document.getElementsByClassName('actionButtons')[0].style.color = 'black';
+    let actionButtons = document.getElementsByClassName('actionButtons');
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.color = 'black';
+        actionButtons[i].style.backgroundColor = "#ccc";
+        actionButtons[i].style.border = 'none';
+    } 
     let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
     for(let i=0;i<compareLibraryLink.length;i++){
         compareLibraryLink[i].style.color = 'black';
@@ -952,6 +972,12 @@ function recentSearchLightMode()
         let check = dark[i].firstChild.firstChild.checked;
         dark[i].style.backgroundColor = check ? "brown" : "rgb(248, 148, 148)";
         dark[i].style.color = check ? 'white' : 'black';
+    }
+    let clearHistoryButton = document.getElementsByClassName('clearHistoryButton');
+    for(let i=0;i<clearHistoryButton.length;i++){
+        clearHistoryButton[i].style.color = 'black';
+        clearHistoryButton[i].style.backgroundColor = '#ccc';
+        clearHistoryButton[i].style.border = 'none';
     }
 }
 
@@ -1195,5 +1221,5 @@ function printResults(){
 
     document.getElementById('search-actions').style.display = "block";
     nightModeButton=earlierReverseNightMode;
-    handleNightMode()
+    handleNightMode();
 }

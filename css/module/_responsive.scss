@@ -1,4 +1,18 @@
 /* RESPONSIVENESS */
+
+/* EXTRA SMALL SCREENS */
+@media screen and (max-width: 406px){
+    #downloadButton{
+        width: 100%;
+    }
+
+    .actionButtons:nth-child(2){
+        float: none;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
 /**/
 @media (min-width: 601px) and (max-width: 991px){
     //adjust footer links
@@ -189,7 +203,9 @@
 }
 
 @media print{
-    header,
+    #toggle-div,
+    #githubHeaderTag,
+    .addLibraryIcon,
     footer,
     #section-div,
     #search-results,
