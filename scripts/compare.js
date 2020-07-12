@@ -167,9 +167,12 @@ function renderTableHeader(){
     tr.setAttribute("class", "compareTableRow");
 
     tr.appendChild(renderTableHeaderData('Library Name'));
-    tr.appendChild(renderTableHeaderData('Version'));
+    tr.appendChild(renderTableHeaderData('Release'))
+    tr.appendChild(renderTableHeaderData('Tag'));
+    tr.appendChild(renderTableHeaderData('Commit Activity'))
     tr.appendChild(renderTableHeaderData('Stars'));
     tr.appendChild(renderTableHeaderData('Forks'));
+    tr.appendChild(renderTableHeaderData('Watchers'));
     tr.appendChild(renderTableHeaderData('Issues'));
     tr.appendChild(renderTableHeaderData('PRs'));
     tr.appendChild(renderTableHeaderData('License'));
@@ -219,10 +222,22 @@ function renderTableRow(libName, properties){
     tr.appendChild(td);
     tr.appendChild(
         renderTableData(
+            "GitHub release (latest by date)",
+            "https://img.shields.io/github/v/release/"+username+"/"+reponame
+        )
+    )
+    tr.appendChild(
+        renderTableData(
             "GitHub Release",
-            "https://img.shields.io/github/tag/" + username + "/" + reponame +".svg"
+            "https://img.shields.io/github/tag/" + username + "/" + reponame +"?style=flat-square"
         )
     );
+    tr.appendChild(
+        renderTableData(
+            "GitHub commit activity",
+            "https://img.shields.io/github/commit-activity/w/"+username+"/"+reponame+"?style=flat-square"
+        )
+    )
     tr.appendChild(
         renderTableData(
             "GitHub stars",
@@ -235,6 +250,12 @@ function renderTableRow(libName, properties){
             "https://img.shields.io/github/forks/" + username + "/" + reponame +".svg?style=social"
         )
     );
+    tr.appendChild(
+        renderTableData(
+            "GitHub watchers",
+            "https://img.shields.io/github/watchers/"+username+"/"+reponame+"?style=flat-square"
+        )
+    )
     tr.appendChild(
         renderTableData(
             "GitHub issues",
@@ -250,13 +271,13 @@ function renderTableRow(libName, properties){
     tr.appendChild(
         renderTableData(
             "GitHub license",
-            "https://img.shields.io/github/license/" + username + "/" + reponame +".svg"
+            "https://img.shields.io/github/license/" + username + "/" + reponame +"?style=flat-square"
         )
     )
     tr.appendChild(
         renderTableData(
             "GitHub repo size",
-            "https://img.shields.io/github/repo-size/" + username + "/" + reponame +".svg"
+            "https://img.shields.io/github/repo-size/" + username + "/" + reponame +"?style=flat-square"
         )
     )
     return tr;
@@ -278,7 +299,7 @@ function removeLibraryFromTable(event){
     let row = event.target.parentNode.parentNode.parentNode;
     row.remove();
     map.delete(libName);
-
+    addCurrentLibsToSession();
     if(map.size<=0){
         let table = document.getElementById('root').childNodes[1];        
         document.getElementById('root').removeChild(table);

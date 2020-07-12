@@ -116,7 +116,7 @@ function clearRecentSearchDom()
     if(recentSearchesMap.size <= 0){
         return;
     }
-    if(search.hasChildNodes){
+    if(search.hasChildNodes && search.childNodes.length>5){
         search.removeChild(search.childNodes[5]);
     }
 }
@@ -1184,13 +1184,16 @@ function clearSearchHistory()
         );
         addRecentSearchesToDom();
     }
+    if(recentSearchesMap.size<=0){
+        location.reload();
+    }
 }
 
 /**
  * This function will clear the recent compared section items
  **/
 function clearRecentlyComparedLibrary(){
-    if(!confirm('Do you want to clear recently compared library/s ?')){
+    if(!confirm('Do you want to clear the selected libraries ?')){
         return;
     }
     let count = 0;
@@ -1213,6 +1216,9 @@ function clearRecentlyComparedLibrary(){
         addRecentlyComparedToDOM();
     }
     updateSelectedCount();
+    if(iconMap.size<=0){
+        location.reload();
+    }
 }
 
 /**
