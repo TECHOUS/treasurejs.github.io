@@ -1180,6 +1180,7 @@ function clearSearchHistory()
     clearRecentSearchDom();
     if(count==0){
         clearLocalStorage();
+        recentSearchesMap = new Map();
     }else{
         localStorage.setItem(
             'treasureHistory', 
@@ -1211,6 +1212,7 @@ function clearRecentlyComparedLibrary(){
     if(count==0){
         clearSessionStorage();
         selectedLibCount = 0;
+        iconMap = new Map();
     }else{
         sessionStorage.setItem(
             'compareSelected', 
