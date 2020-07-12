@@ -32,6 +32,9 @@ window.onload = function(){
     addRecentlyComparedToDOM();
     updateSelectedCount();
     autoDarkMode();
+    document.getElementById('section-div-input').addEventListener('search', (event)=>{
+        search(event);
+    })
 }
 
 /**
@@ -83,7 +86,7 @@ function search(e)
         return;
     }
 
-    if(key==="")                                                    // if user press enter with no search content
+    if(key==="")     // if user press enter with no search content
     {
         return;
     }
@@ -249,7 +252,7 @@ function recentlyComparedLightMode(){
     let recentlyComparedList = document.getElementById('recentlyComparedList');
     if(recentlyComparedList!==null){
         recentlyComparedList.style.backgroundColor = "#f89494";
-        recentlyComparedList.style.border = "1px solid yellow";
+        recentlyComparedList.style.border = "1px solid cyan";
         let links = document.getElementsByClassName('recentlyComparedLink');
         for(let i=0;i<links.length;i++){
             let check = links[i].parentNode.childNodes[0].checked;
@@ -968,7 +971,7 @@ function recentSearchLightMode()
     if(recent !== null)
     {
         recent.style.backgroundColor = "rgb(248, 148, 148)";
-        recent.style.border = "2px solid yellow";
+        recent.style.border = "1px solid cyan";
         recent.style.color = "black";
     }
     let dark = document.getElementsByClassName('recentSearchItem');
@@ -1007,7 +1010,7 @@ function sectionLightMode()
     {
         cards[i].style.color = "black";
         cards[i].style.backgroundColor = "rgb(248, 148, 148)";
-        cards[i].style.border = "2px solid yellow";
+        cards[i].style.border = "2px solid cyan";
     }
 
     // card links light mode
