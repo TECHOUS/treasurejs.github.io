@@ -30,13 +30,17 @@ Keep Supporting!
 
 ## New Features
 
-### Automatic Darkmode at night
+### New UI for the libraries
 
-![automatic dark mode at night](/images/readme/autoDarkMode.png)
+![New User Interface](images/readme/newUI.png)
 
-### PDF Downloading Feature for Personal use
+### New Comparisons section (compare any library)
 
-![PDF Downloading](/images/readme/pdfDownload.png)
+![New Comparison section](images/readme/newCompareSection.png)
+
+### Ability to Download Comparsions
+
+![Comparisons](images/readme/downloadComparisons.png)
 
 ## LICENSE
 
