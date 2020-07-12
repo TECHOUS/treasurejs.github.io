@@ -56,6 +56,14 @@ var Idata = [
 		others : []
 	},
 	{
+		name : "INDENT TEXTAREA",
+		description : "Add editor-like tab-to-indent functionality to textarea, in a few bytes",
+		github : "https://github.com/bfred-it/indent-textarea",
+		website : "https://www.npmjs.com/package/indent-textarea",
+		docs : "",
+		others : []
+	},
+	{
 		name : "INFERNO JS",
 		description : "Inferno is an insanely fast, React-like library for building high-performance user interfaces on both the client and server.",
 		github : "https://github.com/infernojs/inferno",

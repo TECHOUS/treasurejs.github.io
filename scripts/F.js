@@ -24,6 +24,14 @@ var Fdata = [
 		others : []
 	},
 	{
+		name : "FASTER JS",
+		description : "faster.js is a Babel plugin that compiles idiomatic Javascript to faster, micro-optimized Javascript.",
+		github : "https://github.com/vzhou842/faster.js",
+		website : "https://www.npmjs.com/package/faster.js",
+		docs : "",
+		others : []
+	},
+	{
 		name : "FASTEST-VALIDATOR",
 		description : "The fastest JS validator library for NodeJS",
 		github : "https://github.com/icebob/fastest-validator",
@@ -112,6 +120,14 @@ var Fdata = [
 		others : []
 	},
 	{
+		name : "FLIGHTPLAN",
+		description : "Run sequences of shell commands against local and remote hosts.",
+		github : "https://github.com/pstadler/flightplan",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "FLIP JS",
 		description : "A helper library for doing FLIP animations.",
 		github : "https://github.com/googlearchive/flipjs",
@@ -152,11 +168,35 @@ var Fdata = [
 		others : []
 	},
 	{
+		name : "FORMAL",
+		description : "Elegant form management primitives for the react hooks era.",
+		github : "https://github.com/kevinwolfcr/formal",
+		website : "https://react-formal.netlify.com/?path=/story/examples--basic",
+		docs : "",
+		others : []
+	},
+	{
+		name : "FORMIK",
+		description : "Build forms in React, without the tears",
+		github : "https://github.com/jaredpalmer/formik",
+		website : "https://jaredpalmer.com/formik/",
+		docs : "https://jaredpalmer.com/formik/docs/overview",
+		others : []
+	},
+	{
 		name : "FRINT JS",
 		description : "Modular JavaScript framework for building scalable and reactive applications",
 		github : "https://github.com/frintjs/frint",
 		website : "https://frint.js.org/",
 		docs : "https://frint.js.org/docs",
+		others : []
+	},
+	{
+		name : "FULLCALENDAR",
+		description : "Full-sized drag & drop event calendar",
+		github : "https://github.com/fullcalendar/fullcalendar",
+		website : "https://fullcalendar.io/",
+		docs : "https://fullcalendar.io/docs",
 		others : []
 	},
 	{

@@ -74,11 +74,35 @@ var Bdata = [
 		others : []
 	},
 	{
+		name : "BASE WEB",
+		description : "A React Component library implementing the Base design language",
+		github : "https://github.com/uber-web/baseui",
+		website : "https://baseweb.design/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "BCRYPT",
+		description : "A library to help you hash passwords.",
+		github : "https://github.com/kelektiv/node.bcrypt.js",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "BENTO STARTER",
 		description : "Full-Stack solution to quickly build PWA applications",
 		github : "https://github.com/kefranabg/bento-starter",
 		website : "https://bento-starter.firebaseapp.com/home",
 		docs : "https://bento-starter.netlify.com/",
+		others : []
+	},
+	{
+		name : "BEST RESUME EVER",
+		description : "Build fast rocket and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.",
+		github : "https://github.com/salomonelli/best-resume-ever",
+		website : "https://salomonelli.github.io/best-resume-ever/#/",
+		docs : "",
 		others : []
 	},
 	{
@@ -95,6 +119,14 @@ var Bdata = [
 		github : "https://github.com/LeaVerou/bliss",
 		website : "https://blissfuljs.com/",
 		docs : "https://blissfuljs.com/docs.html",
+		others : []
+	},
+	{
+		name : "BLOCKS",
+		description : "A JSX-based page builder for creating beautiful websites without writing code",
+		github : "https://github.com/blocks/blocks",
+		website : "https://blocks-ui.com/",
+		docs : "https://blocks-ui.com/docs",
 		others : []
 	},
 	{
@@ -168,6 +200,22 @@ var Bdata = [
 		github : "https://github.com/BrainJS/brain.js",
 		website : "https://brain.js.org/",
 		docs : "",
+		others : []
+	},
+	{
+		name : "BROWSERIFY",
+		description : "browser-side require() the node.js way",
+		github : "https://github.com/browserify/browserify",
+		website : "http://browserify.org/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "BROWSER FS",
+		description : "BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.",
+		github : "https://github.com/jvilk/BrowserFS",
+		website : "",
+		docs : "https://jvilk.com/browserfs/2.0.0-beta/index.html",
 		others : []
 	},
 	{

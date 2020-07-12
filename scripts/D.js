@@ -1,5 +1,13 @@
 var Ddata = [
 	{
+		name : "D3 FUNNEL",
+		description : "A JavaScript library for rendering funnel charts using the D3.js framework.",
+		github : "https://github.com/jakezatecky/d3-funnel",
+		website : "https://jakezatecky.github.io/d3-funnel/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "D3 JS",
 		description : "D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.",
 		github : "https://github.com/d3/d3",
@@ -109,6 +117,14 @@ var Ddata = [
 		others : []
 	},
 	{
+		name : "DESKGAP",
+		description : "A cross-platform desktop app framework based on Node.js and the system webview",
+		github : "https://github.com/patr0nus/DeskGap",
+		website : "https://deskgap.com/",
+		docs : "https://deskgap.com/#documentation",
+		others : []
+	},
+	{
 		name : "DISCORD JS",
 		description : "A powerful JavaScript library for interacting with the Discord API",
 		github : "https://github.com/discordjs/discord.js",
@@ -150,6 +166,14 @@ var Ddata = [
 		description : ".dom is a tiny (511 byte) template engine that uses virtual DOM and some of react principles",
 		github : "https://github.com/wavesoft/dot-dom",
 		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "DOTENV-SAFE",
+		description : "Load environment variables from .env and ensure they are all present",
+		github : "https://github.com/rolodato/dotenv-safe",
+		website : "https://www.npmjs.com/package/dotenv-safe",
 		docs : "",
 		others : []
 	},

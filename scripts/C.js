@@ -117,6 +117,14 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "CLONE",
+		description : "A library to perfectly deep clone JavaScript values.",
+		github : "https://github.com/gactjs/clone",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "CLOUDBOOST",
 		description : "Realtime JavaScript Backend.",
 		github : "Realtime JavaScript Backend.",
@@ -133,6 +141,14 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "COMLINK",
+		description : "Comlink makes WebWorkers enjoyable.",
+		github : "https://github.com/GoogleChromeLabs/comlink",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "COMMANDER JS",
 		description : "Commander is a light-weight, expressive, and powerful command-line framework",
 		github : "https://github.com/tj/commander.js",
@@ -141,11 +157,27 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "COMPONENT",
+		description : "Component infrastructure and Material Design components for Angular",
+		github : "https://github.com/angular/components",
+		website : "https://material.angular.io/",
+		docs : "https://material.angular.io/guides",
+		others : []
+	},
+	{
 		name : "COMPONENTS",
 		description : "An easier way to build and share serverless applications w/ the Serverless Framework",
 		github : "https://github.com/serverless/components",
 		website : "https://serverless.com",
 		docs : "https://serverless.com/framework/docs/",
+		others : []
+	},
+	{
+		name : "CONSTATE",
+		description : "Scalable state manager using React Hooks & Context",
+		github : "https://github.com/diegohaz/constate",
+		website : "https://codesandbox.io/s/github/diegohaz/constate/tree/master/examples/counter",
+		docs : "",
 		others : []
 	},
 	{
@@ -165,6 +197,14 @@ var Cdata = [
 		others : []
 	},
 	{
+		name : "COSMIC NODE",
+		description : "The official JavaScript client for Cosmic JS. Use it to power content server-side, in the browser and in native apps",
+		github : "https://github.com/cosmicjs/cosmicjs-node",
+		website : "https://www.npmjs.com/package/cosmicjs",
+		docs : "",
+		others : []
+	},
+	{
 		name : "COSMIC JS",
 		description : "The leading content management solution for modern digital teams",
 		github : "https://github.com/cosmicjs/gatsby-source-cosmicjs",
@@ -176,6 +216,22 @@ var Cdata = [
 				link: "#cosmic-node"
 			}
 		]
+	},
+	{
+		name : "CUSTOMIZE CRA",
+		description : "Override webpack configurations for create-react-app 2.0",
+		github : "https://github.com/arackaf/customize-cra",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "CREATE REACT LIBRARY",
+		description : "React NPM library starter kit based on Facebook's create react app",
+		github : "https://github.com/DimiMikadze/create-react-library",
+		website : "",
+		docs : "",
+		others : []
 	},
 	{
 		name : "CSSCOMB JS",
@@ -191,6 +247,14 @@ var Cdata = [
 		github : "https://github.com/ccxt/ccxt",
 		website : "https://github.com/ccxt/ccxt/wiki",
 		docs : "",
+		others : []
+	},
+	{
+		name : "CYPRESS",
+		description : "Fast, easy and reliable testing for anything that runs in a browser.",
+		github : "https://github.com/cypress-io/cypress",
+		website : "https://www.cypress.io/",
+		docs : "https://docs.cypress.io/guides/overview/why-cypress.html",
 		others : []
 	}
 ]

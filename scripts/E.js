@@ -61,6 +61,30 @@ var Edata = [
 		]
 	},
 	{
+		name : "ELEMENT",
+		description : "A Vue.js 2.0 UI Toolkit for Web",
+		github : "https://github.com/ElemeFE/element",
+		website : "https://element.eleme.io/#/en-US",
+		docs : "https://element.eleme.io/#/en-US/guide/design",
+		others : []
+	},
+	{
+		name : "ELEMENT REACT",
+		description : "Element UI",
+		github : "https://github.com/ElemeFE/element-react",
+		website : "https://elemefe.github.io/element-react/index#/zh-CN/quick-start",
+		docs : "",
+		others : []
+	},
+	{
+		name : "EMAIL PROMPT",
+		description : "CLI email prompt with autocompletion and built-in validation",
+		github : "https://github.com/zeit/email-prompt",
+		website : "https://www.npmjs.com/package/email-prompt",
+		docs : "",
+		others : []
+	},
+	{
 		name : "EMBER JS",
 		description : "Ember is a JavaScript front-end framework designed to help you build websites with rich and complex user interactions. It does so by providing developers both with many features that are essential to manage complexity in modern web applications, as well as an integrated development toolkit that enables rapid iteration.",
 		github : "https://github.com/emberjs/ember.js",
@@ -118,11 +142,35 @@ var Edata = [
 		others : []
 	},
 	{
+		name : "ENZYME",
+		description : "JavaScript Testing utilities for React",
+		github : "https://github.com/airbnb/enzyme",
+		website : "",
+		docs : "https://airbnb.io/enzyme/",
+		others : []
+	},
+	{
 		name : "EOS JS",
 		description : "Javascript API for integration with EOSIO-based blockchains using EOSIO RPC API.",
 		github : "https://github.com/EOSIO/eosjs",
 		website : "",
 		docs : "https://eosio.github.io/eosjs/",
+		others : []
+	},
+	{
+		name : "ESDOC",
+		description : "ESDoc - Good Documentation for JavaScript",
+		github : "https://github.com/esdoc/esdoc",
+		website : "https://esdoc.org/",
+		docs : "https://esdoc.org/manual/usage.html",
+		others : []
+	},
+	{
+		name : "ESLINT PLUGIN REACT",
+		description : "React specific linting rules for ESLint",
+		github : "https://github.com/yannickcr/eslint-plugin-react",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{
@@ -142,9 +190,33 @@ var Edata = [
 		others : []
 	},
 	{
+		name : "EVERGREEN",
+		description : "Evergreen React UI Framework by Segment",
+		github : "https://github.com/segmentio/evergreen",
+		website : "https://evergreen.segment.com/",
+		docs : "https://evergreen.segment.com/components/",
+		others : []
+	},
+	{
+		name : "EXECA",
+		description : "A better child_process",
+		github : "https://github.com/sindresorhus/execa",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "EXIF JS",
 		description : "JavaScript library for reading EXIF image metadata",
 		github : "https://github.com/exif-js/exif-js",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "EXPRESS-JWT",
+		description : "connect/express middleware that validates a JsonWebToken (JWT) and set the req.user with the attributes",
+		github : "https://github.com/auth0/express-jwt",
 		website : "",
 		docs : "",
 		others : []

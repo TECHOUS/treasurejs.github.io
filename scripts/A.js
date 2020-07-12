@@ -24,6 +24,14 @@ var Adata = [
 		others : []
 	},
 	{
+		name : "AIRFRAME REACT",
+		description : "High Quality Dashboard / Admin / Analytics template that works great on any smartphone, tablet or desktop.",
+		github : "https://github.com/0wczar/airframe-react",
+		website : "http://dashboards.webkom.co/react/airframe/dashboards/projects",
+		docs : "https://webkom.gitbook.io/spin/v/airframe/airframe-react/documentation-react",
+		others : []
+	},
+	{
 		name : "AJV JS",
 		description : "The fastest JSON Schema Validator.",
 		github : "https://github.com/epoberezkin/ajv",
@@ -65,8 +73,81 @@ var Adata = [
 	},
 	{
 		name : "ANGULAR JS",
-		description : "See [Angular JS](angularJS.md)",
-		github : "",
+		description : "One framework. Mobile & desktop.",
+		github : "https://github.com/angular/angular",
+		website : "https://angular.io/",
+		docs : "https://angular.io/docs",
+		others : [
+			{
+				name: "Angular",
+				link: "https://devdocs.io/angular/"
+			},
+			{
+				name: "Angular 4",
+				link: "https://devdocs.io/angular~4/"
+			},
+			{
+				name: "Angular 5",
+				link: "https://devdocs.io/angular~5/"
+			},
+			{
+				name: "Angular JS 1.2",
+				link: "https://devdocs.io/angularjs~1.2/"
+			},
+			{
+				name: "Angular JS 1.3",
+				link: "https://devdocs.io/angularjs~1.3/"
+			},
+			{
+				name: "Angular JS 1.4",
+				link: "https://devdocs.io/angularjs~1.4/"
+			},
+			{
+				name: "Angular JS 1.5",
+				link: "https://devdocs.io/angularjs~1.5/"
+			},
+			{
+				name: "Angular JS 1.6",
+				link: "https://devdocs.io/angularjs~1.6/"
+			},
+			{
+				name: "W3 SCHOOLS",
+				link: "https://www.w3schools.com/angular/default.asp"
+			},
+			{
+				name: "Angular Fundamentals",
+				link: "https://www.edx.org/course/angular-fundamentals-1"
+			},
+			{
+				name: "Angularjs Framework Fundamentals",
+				link: "https://www.edx.org/course/angularjs-framework-fundamentals"
+			},
+			{
+				name: "Developing Dynamic Web Applications",
+				link: "https://www.edx.org/course/developing-dynamic-web-applications-1"
+			},
+			{
+				name: "Angularjs-Advanced Framework Techniques",
+				link: "https://www.edx.org/course/angularjs-advanced-framework-techniques"
+			},
+			{
+				name: "Angular JS",
+				link: "https://www.javatpoint.com/angularjs-tutorial"
+			}
+		]
+	},
+	{
+		name : "ANGULAR LOADING BAR",
+		description : "A fully automatic loading / progress bar for your angular apps.",
+		github : "https://github.com/chieffancypants/angular-loading-bar",
+		website : "https://chieffancypants.github.io/angular-loading-bar/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "ANGOOSE",
+		description : "Connecting Mongoose and Angular and More",
+		github : "https://github.com/tjworks/angoose",
 		website : "",
 		docs : "",
 		others : []
@@ -83,14 +164,6 @@ var Adata = [
 				link: "https://www.youtube.com/watch?v=g7WnZ9hxUak"
 			}
 		]
-	},
-	{
-		name : "ANGOOSE",
-		description : "Connecting Mongoose and Angular and More",
-		github : "https://github.com/tjworks/angoose",
-		website : "",
-		docs : "",
-		others : []
 	},
 	{
 		name : "AOS",
@@ -117,11 +190,27 @@ var Adata = [
 		others : []
 	},
 	{
+		name : "ASYNC RETRY",
+		description : "Retrying made simple, easy, and async.",
+		github : "https://github.com/zeit/async-retry",
+		website : "https://www.npmjs.com/package/async-retry",
+		docs : "",
+		others : []
+	},
+	{
 		name : "AURELIA JS",
 		description : "The aurelia framework brings together all the required core aurelia libraries into a ready-to-go application-building platform.",
 		github : "https://github.com/aurelia/framework",
 		website : "https://aurelia.io/",
 		docs : "https://aurelia.io/docs",
+		others : []
+	},
+	{
+		name : "AUTOCANNON",
+		description : "fast HTTP/1.1 benchmarking tool written in Node.js",
+		github : "https://github.com/mcollina/autocannon",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{
@@ -144,5 +233,13 @@ var Adata = [
 				link: "https://blog.grossman.io/how-to-write-async-await-without-try-catch-blocks-in-javascript/"
 			}
 		]
+	},
+	{
+		name : "AXE CORE",
+		description : "Accessibility engine for automated Web UI testing",
+		github : "https://github.com/dequelabs/axe-core",
+		website : "https://www.deque.com/axe/",
+		docs : "",
+		others : []
 	}
 ]

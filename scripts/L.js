@@ -61,11 +61,51 @@ var Ldata = [
 		]
 	},
 	{
+		name : "LIGHTNING",
+		description : "The Super component library",
+		github : "https://github.com/vitormalencar/lightning",
+		website : "https://vitormalencar.github.io/lightning",
+		docs : "",
+		others : []
+	},
+	{
 		name : "LINARIA",
 		description : "Write CSS in JS and get real CSS files during build. Use dynamic prop based styles with the React bindings and have them transpiled to CSS variables automatically. Great productivity with source maps and linting support.",
 		github : "https://github.com/callstack/linaria",
 		website : "https://linaria.now.sh/",
 		docs : "https://github.com/callstack/linaria/tree/master/docs",
+		others : []
+	},
+	{
+		name : "LINKSTATE",
+		description : "Bind events to state. Works with Preact and React.",
+		github : "https://github.com/developit/linkstate",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "LISTR",
+		description : "Terminal task list",
+		github : "https://github.com/SamVerschueren/listr",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "LOADABLE COMPONENTS",
+		description : "React code splitting made easy",
+		github : "https://github.com/smooth-code/loadable-components",
+		website : "https://www.smooth-code.com/open-source/loadable-components/",
+		docs : "https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/",
+		others : []
+	},
+	{
+		name : "LOCAL STORAGE",
+		description : "React hook which syncs localStorage key with the comp.",
+		github : "https://github.com/rehooks/local-storage",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{

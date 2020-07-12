@@ -61,6 +61,14 @@ var Gdata = [
 		others : []
 	},
 	{
+		name : "GOOGLE MAP REACT",
+		description : "Google map library for react that allows rendering components as markers",
+		github : "https://github.com/google-map-react/google-map-react",
+		website : "http://google-map-react.github.io/google-map-react/map/main/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "GOT",
 		description : "Got is a human-friendly and powerful HTTP request library.",
 		github : "https://github.com/sindresorhus/got",
@@ -122,6 +130,22 @@ var Gdata = [
 		github : "https://github.com/gridsome/gridsome",
 		website : "https://gridsome.org/",
 		docs : "https://gridsome.org/docs",
+		others : []
+	},
+	{
+		name : "GROMMET",
+		description : "a react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package",
+		github : "https://github.com/grommet/grommet",
+		website : "https://v2.grommet.io/",
+		docs : "https://v2.grommet.io/components",
+		others : []
+	},
+	{
+		name : "GRPC NODE",
+		description : "A high performance, open-source universal RPC framework",
+		github : "https://github.com/grpc/grpc-node",
+		website : "https://grpc.io/",
+		docs : "https://grpc.io/docs/",
 		others : []
 	},
 	{

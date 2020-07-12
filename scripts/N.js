@@ -1,5 +1,13 @@
 var Ndata = [
 	{
+		name : "NATIVE BASE",
+		description : "Essential cross-platform UI components for React Native",
+		github : "https://github.com/GeekyAnts/NativeBase",
+		website : "https://nativebase.io/",
+		docs : "https://docs.nativebase.io/",
+		others : []
+	},
+	{
 		name : "NATIVESCRIPT",
 		description : "NativeScript is an open source framework for building truly native mobile apps with JavaScript. Use web skills, like Angular and Vue.js, FlexBox and CSS, and get native UI and performance on iOS and Android.",
 		github : "https://github.com/NativeScript/NativeScript",
@@ -91,8 +99,149 @@ var Ndata = [
 	},
 	{
 		name : "NODE JS",
-		description : "See [nodejs](node.md)",
-		github : "",
+		description : "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+		github : "https://github.com/nodejs/node",
+		website : "https://nodejs.org/en/",
+		docs : "https://devdocs.io/node~4_lts/",
+		others : [
+			{
+				name: "async",
+				link: "https://devdocs.io/async/"
+			},
+			{
+				name: "Nodejs - W3 SCHOOLS",
+				link: "https://www.w3schools.com/nodejs/default.asp"
+			},
+			{
+				name: "Building Functional Prototypes",
+				link: "https://www.edx.org/course/building-functional-prototypes-using-nodejs-1"
+			},
+			{
+				name: "Web App Development",
+				link: "https://www.edx.org/course/web-app-development-with-the-power-of-nodejs"
+			},
+			{
+				name: "Nodejs",
+				link: "https://www.javatpoint.com/nodejs-tutorial"
+			},
+			{
+				name: "netlify-cli",
+				link: "https://github.com/netlify/cli"
+			},
+			{
+				name: "Ghost",
+				link: "https://github.com/TryGhost/Ghost"
+			},
+			{
+				name: "intro to nodejs",
+				link: "https://github.com/FrontendMasters/intro-node-js"
+			},
+			{
+				name: "* ANT DESIGN [github",
+				link: "https://github.com/ant-design/ant-design-pro"
+			},
+			{
+				name: "MONGOOSASTIC",
+				link: "https://github.com/mongoosastic/mongoosastic"
+			},
+			{
+				name: "FLOOD",
+				link: "https://github.com/jfurrow/flood"
+			},
+			{
+				name: "NEL",
+				link: "https://github.com/n-riesco/nel"
+			},
+			{
+				name: "HTTP request logger middleware",
+				link: "https://github.com/expressjs/morgan"
+			},
+			{
+				name: "Node.js based forum software built for the modern web",
+				link: "https://github.com/NodeBB/NodeBB"
+			},
+			{
+				name: "Web rendering surface for Node applications",
+				link: "https://github.com/GoogleChromeLabs/carlo"
+			},
+			{
+				name: "CLI tool to check if a word is trademarked",
+				link: "https://github.com/egoist/is-trademarked-cli"
+			},
+			{
+				name: "Node.js based forum software built for the modern web",
+				link: "https://github.com/NodeBB/NodeBB"
+			},
+			{
+				name: "SQUOOSH",
+				link: "https://github.com/GoogleChromeLabs/squoosh"
+			},
+			{
+				name: "SOAP driver for Node.js ",
+				link: "A complete rewrite of node-soap"
+			},
+			{
+				name: "esm",
+				link: "https://github.com/standard-things/esm"
+			},
+			{
+				name: "Web rendering surface for Node applications",
+				link: "https://github.com/GoogleChromeLabs/carlo"
+			},
+			{
+				name: "A cross-platform nodejs driver for Neurosky Mindwave headsets",
+				link: "https://github.com/brainbang/mindwave"
+			},
+			{
+				name: "The command-line interface for Now",
+				link: "https://github.com/zeit/now-cli"
+			},
+			{
+				name: "In-browser code editor",
+				link: "https://github.com/codemirror/CodeMirror"
+			},
+			{
+				name: "Prometheus client for node.js",
+				link: "https://github.com/siimon/prom-client"
+			},
+			{
+				name: "Serve static files",
+				link: "https://github.com/expressjs/serve-static"
+			},
+			{
+				name: "Source for the Linode Developers Site ",
+				link: "API v4 Docs"
+			},
+			{
+				name: "How to create a RESTful CRUD API using Nodejs?",
+				link: "https://github.com/adnanrahic/nodejs-restful-api"
+			},
+			{
+				name: "A boilerplate for Node.js web applications",
+				link: "https://github.com/sahat/hackathon-starter"
+			},
+			{
+				name: "glob functionality for node.js",
+				link: "https://github.com/isaacs/node-glob"
+			},
+			{
+				name: "Instagram NODE.JS private API",
+				link: "https://github.com/dilame/instagram-private-api"
+			},
+			{
+				name: "Node.js on ChakraCore",
+				link: "https://github.com/nodejs/node-chakracore"
+			},
+			{
+				name: "Squidwarc is a high fidelity, user scriptable, archival crawler that uses Chrome or Chromium with or without a head",
+				link: "https://github.com/N0taN3rd/Squidwarc"
+			}
+		]
+	},
+	{
+		name : "NODE AUTH0",
+		description : "Node.js client library for the Auth0 platform.",
+		github : "https://github.com/auth0/node-auth0",
 		website : "",
 		docs : "",
 		others : []
@@ -102,6 +251,62 @@ var Ndata = [
 		description : "CQL client for Cassandra written in Node.js",
 		github : "https://github.com/racker/node-cassandra-client",
 		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE CRON",
+		description : "A simple cron-like job scheduler for Node.js",
+		github : "https://github.com/node-cron/node-cron",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE HTTP MITM PROXY",
+		description : "HTTP Man In The Middle (MITM) Proxy",
+		github : "https://github.com/joeferner/node-http-mitm-proxy",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE HTTPS PROXY AGENT",
+		description : "An HTTP(s) proxy http.Agent implementation for HTTPS endpoints",
+		github : "https://github.com/TooTallNate/node-https-proxy-agent",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE JSON WEB TOKEN",
+		description : "JsonWebToken implementation for node.js",
+		github : "https://github.com/auth0/node-jsonwebtoken",
+		website : "http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE LIBPQ",
+		description : "Simple, low level native bindings to PostgreSQL's libpq from node.js",
+		github : "https://github.com/brianc/node-libpq",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE REDIS JS",
+		description : "redis client for node",
+		github : "https://github.com/NodeRedis/node_redis",
+		website : "http://redis.js.org/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "NODE TAP",
+		description : "A TAP test framework for Node.js.",
+		github : "https://github.com/tapjs/node-tap",
+		website : "https://www.node-tap.org/",
 		docs : "",
 		others : []
 	},
@@ -157,6 +362,14 @@ var Ndata = [
 				link: "https://github.com/alexfernandez/loadtest"
 			}
 		]
+	},
+	{
+		name : "NWB",
+		description : "A toolkit for React, Preact, Inferno & vanilla JS apps, React libraries and other npm modules for the web, with no configuration (until you need it)",
+		github : "https://github.com/insin/nwb",
+		website : "",
+		docs : "",
+		others : []
 	},
 	{
 		name : "NUXT JS",

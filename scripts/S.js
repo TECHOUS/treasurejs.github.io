@@ -1,5 +1,13 @@
 var Sdata = [
 	{
+		name : "SADE",
+		description : "Sade is a small but powerful tool for building command-line interface (CLI) applications for Node.js that are fast, responsive, and helpful!",
+		github : "https://github.com/lukeed/sade",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "SCALE",
 		description : "Color scale generator",
 		github : "https://github.com/hihayk/scale",
@@ -48,6 +56,14 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "SHARP",
+		description : "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP and TIFF images",
+		github : "https://github.com/lovell/sharp",
+		website : "https://sharp.pixelplumbing.com/en/stable/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "SHAVE",
 		description : "Shave is a 0 dep JS plugin that truncates text to fit within an element based on a set max-height",
 		github : "https://github.com/dollarshaveclub/shave",
@@ -75,6 +91,14 @@ var Sdata = [
 				link: "https://devdocs.io/sinon~7/"
 			}
 		]
+	},
+	{
+		name : "SISTER",
+		description : "Foundation for your emitter implementation. 202 reasons to not write your own implementation of event emitter.",
+		github : "https://github.com/gajus/sister",
+		website : "",
+		docs : "",
+		others : []
 	},
 	{
 		name : "SLATE JS",
@@ -182,6 +206,14 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "STATSD",
+		description : "Daemon for easy but powerful stats aggregation",
+		github : "https://github.com/etsy/statsd",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "STATUSFY",
 		description : "A Marvelous Open Source Status Page System",
 		github : "https://github.com/bazzite/statusfy",
@@ -230,10 +262,26 @@ var Sdata = [
 		others : []
 	},
 	{
+		name : "STYLED COMPONENTS",
+		description : "Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress",
+		github : "https://github.com/styled-components/styled-components",
+		website : "https://www.styled-components.com/",
+		docs : "https://www.styled-components.com/docs",
+		others : []
+	},
+	{
 		name : "STYLED SPINKIT",
 		description : "",
 		github : "https://github.com/akameco/styled-spinkit",
 		website : "https://akameco.github.io/styled-spinkit/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "STYLIS JS",
+		description : "light – weight css preprocessor",
+		github : "https://github.com/thysultan/stylis.js",
+		website : "https://stylis.js.org/",
 		docs : "",
 		others : []
 	},
@@ -264,6 +312,22 @@ var Sdata = [
 		github : "https://github.com/testing-library/svelte-testing-library",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "SVGO",
+		description : "Node.js tool for optimizing SVG files",
+		github : "https://github.com/svg/svgo",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "SWAGGER UI EXPRESS",
+		description : "Adds middleware to your express app to serve the Swagger UI bound to your Swagger document. This acts as living documentation for your API hosted from within your app.",
+		github : "https://github.com/scottie1984/swagger-ui-express",
+		website : "https://swagger.io/tools/swagger-ui/",
+		docs : "https://swagger.io/solutions/api-documentation/",
 		others : []
 	},
 	{
