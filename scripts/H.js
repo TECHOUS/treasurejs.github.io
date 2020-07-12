@@ -110,6 +110,14 @@ var Hdata = [
 		others : []
 	},
 	{
+		name : "HYBRIDS JS",
+		description : "Web Components with a strong declarative and functional approach based on plain objects and pure functions",
+		github : "https://github.com/hybridsjs/hybrids",
+		website : "https://hybrids.js.org/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "HYGEN",
 		description : "The simple, fast, and scalable code generator that lives in your project.",
 		github : "https://github.com/jondot/hygen",
@@ -131,6 +139,14 @@ var Hdata = [
 		github : "https://github.com/zeit/hyper",
 		website : "",
 		docs : "https://hyper.is/",
+		others : []
+	},
+	{
+		name : "HYPERSWITCH",
+		description : "HyperSwitch is a framework for creating REST web services",
+		github : "https://github.com/wikimedia/hyperswitch",
+		website : "https://www.mediawiki.org/wiki/HyperSwitch",
+		docs : "",
 		others : []
 	}
 ]

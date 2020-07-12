@@ -8,6 +8,14 @@ var Tdata = [
 		others : []
 	},
 	{
+		name : "TAPE",
+		description : "tap-producing test harness for node and browsers",
+		github : "https://github.com/substack/tape",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "TARO JS",
 		description : "A multi-end unified development framework that supports writing code once in React's development method, and generates applications that can run on WeChat/Baidu/Alibaba/Byte Beat applet, H5, React Native, etc.",
 		github : "https://github.com/NervJS/taro",
@@ -133,6 +141,22 @@ var Tdata = [
 		name : "TOOL",
 		description : "Development efficiency improvement: Mac productivity tool chain recommendation",
 		github : "https://github.com/Louiszhai/tool",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "TOSIN",
+		description : "Initialize a npm package with everything included, from CI to documentation website",
+		github : "https://github.com/FullHuman/tosin",
+		website : "https://fullhuman.github.io/tosin/",
+		docs : "https://fullhuman.github.io/tosin/Guide.html",
+		others : []
+	},
+	{
+		name : "TOUGH COOKIE",
+		description : "RFC6265 Cookies and CookieJar for Node.js",
+		github : "https://github.com/salesforce/tough-cookie",
 		website : "",
 		docs : "",
 		others : []

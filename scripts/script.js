@@ -3,23 +3,38 @@ const darkBackground    = "#121212";
 const lightBlack        = "#292b2c";
 let nightModeButton     = false;
 let database            = [];                                       // working database
-let recentSearches      = [];                                       // array for storing recent searches
 let linkedObjectData    = [];                                       // data array that comes after linking the js files
+let iconMap             = new Map();
+let selectedLibCount    = iconMap.size;
+let recentSearchesMap   = new Map();
+
+(function () {
+    if(localStorage.getItem('treasureHistory')===null 
+        || localStorage.getItem('treasureHistory') === ''){
+            recentSearchesMap = new Map();            
+    }else{
+        recentSearchesMap = new Map(JSON.parse(localStorage.getItem('treasureHistory')));
+    }
+    if(sessionStorage.getItem('compareSelected')===null 
+        || sessionStorage.getItem('compareSelected')===''){
+            iconMap = new Map();
+    }else{
+        iconMap = new Map(JSON.parse(sessionStorage.getItem('compareSelected')));
+        selectedLibCount = iconMap.size;
+    }
+})();
 
 /** 
  * called when window is loaded
  **/
 window.onload = function(){
-    let storage = localStorage.getItem('treasureHistory');
-    if(storage == null)
-    {
-        storage = [];
-    }
-    else
-    {
-        addLocalStorageToRecentSearches();
-    }
     addRecentSearchesToDom();
+    addRecentlyComparedToDOM();
+    updateSelectedCount();
+    autoDarkMode();
+    document.getElementById('section-div-input').addEventListener('search', (event)=>{
+        search(event);
+    })
 }
 
 /**
@@ -30,14 +45,14 @@ window.onload = function(){
  **/
 function search(e) 
 {
-    if(e.keyCode>=37 && e.keyCode<=40)                              // when arrow keys are used
+    if((e.keyCode>=37 && e.keyCode<=40) || e.keyCode===32)                              // when arrow keys are used
     {
         return;
     }
 
     syncDatabase();
-    const key = document.getElementById('section-div-input').value;
-    var firstValue = key.charAt(0).toUpperCase();
+    const key = document.getElementById('section-div-input').value.trim();
+    let firstValue = key.charAt(0).toUpperCase();
     
     if(!isNaN(parseInt(firstValue)))
     {
@@ -45,7 +60,7 @@ function search(e)
         return;
     } 
 
-    if (key.length == 1 && !flag)                                   // add script node when one digit is entered
+    if ((key.length == 1 || key.length == 2) && !flag)                                   // add script node when one digit is entered
     {
         flag=true;    
         addScriptToDom(firstValue);
@@ -64,13 +79,14 @@ function search(e)
         eraseDataList();
         hideSearchResults();
         showRecentSearches();
-        clearDom();        
+        showRecentlyComparedSection();
+        clearRecentSearchDom();        
         addRecentSearchesToDom();
         database=[];
         return;
     }
 
-    if(key==="")                                                    // if user press enter with no search content
+    if(key==="")     // if user press enter with no search content
     {
         return;
     }
@@ -88,87 +104,161 @@ function clearLocalStorage()
 }
 
 /**
+ * it will clear the session storage
+ **/
+function clearSessionStorage(){
+    sessionStorage.setItem('compareSelected','[]');
+}
+
+/**
  * this function will clear the number of elements in the list
  **/
-function clearDom()
+function clearRecentSearchDom()
 {
     let search = document.getElementById('recent-searches');
-    if(recentSearches.length == 0)
-    {
+    if(recentSearchesMap.size <= 0){
         return;
     }
-    if(search.hasChildNodes)
-    {
+    if(search.hasChildNodes && search.childNodes.length>5){
         search.removeChild(search.childNodes[5]);
     }
 }
 
 /**
- * it will add recent searches to dom
+ * this function will clear the number of elements in the 
+ * recently search list
+ **/
+function clearRecentlyComparedDOM(){
+    let recentlyComparedRoot = document.getElementById('recentlyComparedRoot');
+    if(iconMap.size <= 0){
+        return;
+    }
+    if(recentlyComparedRoot.hasChildNodes){
+        recentlyComparedRoot.removeChild(recentlyComparedRoot.childNodes[1])
+    }
+}
+
+/**
+ * it will add recentReachesMap to dom
  **/
 function addRecentSearchesToDom()
 {
     let search = document.getElementById('recent-searches');
-
-    if(recentSearches.length!=0)
+    
+    if(recentSearchesMap.size > 0)
     {
         let ul = document.createElement('ul');
         ul.setAttribute('id','search-results-list');
         search.appendChild(ul);
 
-        for(let i=recentSearches.length-1;i>=0;i--)
-        {
-            if(recentSearches.length - i > 10)
-            {
-                break;
-            }
+        recentSearchesMap.forEach((value, key) => {
             let li = document.createElement('li');
-            let text = document.createTextNode(recentSearches[i]);
+            li.setAttribute("class", "recentSearchItem");
+            let text = document.createTextNode(key);
             
             let label = document.createElement('label');
-            label.setAttribute('for','check'+i);
             let checkbox = document.createElement('input');
             checkbox.setAttribute('type','checkbox');
             checkbox.setAttribute('class','history-checkbox');
-            checkbox.setAttribute('id','check'+i);
 
             checkbox.addEventListener('click',function(event){
                 let check = event.srcElement.checked;
                 let node = event.srcElement.parentNode.parentNode;
                 
-                if(check)
-                {
-                    node.style.backgroundColor = "brown";
-                    node.style.borderRadius = "20px";
-                    node.style.color = "white";
-                }
-                else
-                {
-                    node.style.backgroundColor = "initial";
-                    node.style.color = "initial";
-                }                
+                check ?
+                    nightModeButton ? 
+                        node.style.backgroundColor = darkBackground 
+                            : node.style.backgroundColor = "brown"
+                    : node.style.backgroundColor = "initial";
+                
+                nightModeButton ? 
+                    node.style.color = "cyan" : 
+                    node.style.color = check ? "white" : "black";
+                check ? recentSearchesMap.set(key, false) : recentSearchesMap.set(key, true); 
             })
 
             label.appendChild(checkbox);
             label.appendChild(text);
             li.appendChild(label);
             ul.appendChild(li);
-        }
+        })
         
         nightModeButton ? recentSearchNightMode() : recentSearchLightMode();    
     }
 }
 
-/**
- * add local storage data to recent searches array
- **/
-function addLocalStorageToRecentSearches()
-{
-    let storage = localStorage.getItem('treasureHistory');
-    let arr = JSON.parse(storage);
-    for(let i=0;i<arr.length;i++)
-    {
-        recentSearches.push(arr[i]);
+function addRecentlyComparedToDOM(){
+    let recentlyComparedRoot = document.getElementById('recentlyComparedRoot');
+    if(iconMap.size > 0){
+        let ul = document.createElement('ul');
+        ul.setAttribute('id', 'recentlyComparedList');
+        recentlyComparedRoot.appendChild(ul);
+
+        iconMap.forEach((value, key) => {
+            let li = document.createElement('li');
+            li.setAttribute("class", "recentlyComparedItem");
+            
+            let text = document.createTextNode(key);
+            let a = document.createElement('a');
+            a.setAttribute('href', value.github);
+            a.setAttribute('class', 'recentlyComparedLink');
+            a.setAttribute('target','_blank');
+
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type','checkbox');
+            checkbox.setAttribute('class','recentlyComparedCheckBox');
+
+            checkbox.addEventListener('click',function(event){
+                let check = event.srcElement.checked;
+                let node = event.srcElement.parentNode;
+                check ?
+                    nightModeButton ? 
+                        node.style.backgroundColor = darkBackground 
+                            : node.style.backgroundColor = "brown"
+                    : node.style.backgroundColor = "initial";
+                
+                node.childNodes[1].style.color = 
+                    nightModeButton ? 'cyan' : check ? 'white' : 'black'; 
+
+                value.selected = !value.selected
+                iconMap.set(key, value);
+            })
+
+            a.appendChild(text);
+            li.appendChild(checkbox);
+            li.appendChild(a);
+            ul.appendChild(li);
+        })
+
+        nightModeButton ? recentlyComparedNightMode() : recentlyComparedLightMode();
+    }
+}
+
+function recentlyComparedNightMode(){
+    let recentlyComparedList = document.getElementById('recentlyComparedList');
+    if(recentlyComparedList!==null){
+        recentlyComparedList.style.backgroundColor = lightBlack;
+        recentlyComparedList.style.border = "1px solid white";
+        let links = document.getElementsByClassName('recentlyComparedLink');
+        for(let i=0;i<links.length;i++){
+            let check = links[i].parentNode.childNodes[0].checked;
+            links[i].parentNode.style.backgroundColor = check ? darkBackground : lightBlack;
+            links[i].style.color = "cyan";
+        }
+    }
+}
+
+function recentlyComparedLightMode(){
+    let recentlyComparedList = document.getElementById('recentlyComparedList');
+    if(recentlyComparedList!==null){
+        recentlyComparedList.style.backgroundColor = "#f89494";
+        recentlyComparedList.style.border = "1px solid cyan";
+        let links = document.getElementsByClassName('recentlyComparedLink');
+        for(let i=0;i<links.length;i++){
+            let check = links[i].parentNode.childNodes[0].checked;
+            links[i].parentNode.style.backgroundColor = check ? "brown" : "#f89494";
+            links[i].style.color = check ? 'white' : 'black';
+        }
     }
 }
 
@@ -405,6 +495,7 @@ function filterData(key)
         }
     }
     hideRecentSearches();
+    hideRecentlyComparedSection();
     showSearchResults();
     updateSearchCount(database.length);
 }
@@ -414,7 +505,7 @@ function filterData(key)
  **/
 function showSearchResults()
 {
-    document.getElementById('search-results').style.display = "block";
+    document.getElementById('search-actions').style.display = "block";
 }
 
 /**
@@ -422,7 +513,7 @@ function showSearchResults()
  **/
 function hideSearchResults()
 {
-    document.getElementById('search-results').style.display = "none";
+    document.getElementById('search-actions').style.display = "none";
 }
 
 /**
@@ -442,6 +533,20 @@ function showRecentSearches()
 }
 
 /**
+ * Hides the recently compared section
+ */
+function hideRecentlyComparedSection(){
+    document.getElementById('recentlyComparedSection').style.display = "none";
+}
+
+/**
+ * Show the recently compared section
+ */
+function showRecentlyComparedSection(){
+    document.getElementById('recentlyComparedSection').style.display = "block";
+}
+
+/**
  * it will update the search count when a key is searched
  * 
  * @param count for rotating the exact count
@@ -457,6 +562,86 @@ function updateSearchCount(count)
             clearInterval(x);
         }
     },10);
+}
+
+const createDOMIcons = (libraryName) => {
+    let addLibraryIconSpan = document.createElement('span');
+    addLibraryIconSpan.setAttribute("class","addLibraryIcon");
+    
+    let plusIconSpan = document.createElement('span');
+    plusIconSpan.setAttribute("class", "plusIcon");
+
+    let plusIconI = document.createElement('i');
+    plusIconI.setAttribute('class', 'fas fa-plus-circle');
+    plusIconSpan.appendChild(plusIconI);
+    addLibraryIconSpan.appendChild(plusIconSpan);
+
+    let minusIconSpan = document.createElement('span');
+    minusIconSpan.setAttribute("class", "minusIcon");
+
+    let minusIconI = document.createElement('i');
+    minusIconI.setAttribute('class', 'fas fa-minus-circle');
+    minusIconSpan.appendChild(minusIconI);
+
+    addLibraryIconSpan.appendChild(minusIconSpan);
+
+    if(iconMap.has(libraryName) && iconMap.get(libraryName).selected){
+        plusIconSpan.style.display = "none";
+        minusIconSpan.style.display = "inline";
+    }else{
+        plusIconSpan.style.display = "inline";
+        minusIconSpan.style.display = "none";
+    }
+
+    return addLibraryIconSpan;
+}
+
+function addFunctionsToIcons(){
+    let addLibraryIcons = document.getElementsByClassName('addLibraryIcon');
+    for(let i=0;i<addLibraryIcons.length;i++){
+        addLibraryIcons[i].addEventListener('click', (event)=>{
+            let nodes = event.target.parentNode.parentNode.parentNode.childNodes;
+            let iconNodes = event.target.parentNode.parentNode.childNodes;
+            
+            // toggle
+            if(iconMap.has(nodes[1].nodeValue.trim()) 
+                && iconMap.get(nodes[1].nodeValue.trim()).selected ){
+                iconMap.delete(nodes[1].nodeValue.trim());
+                selectedLibCount--;
+            }else{
+                iconMap.set(nodes[1].nodeValue.trim(), {
+                    selected: true,
+                    github: event.target.parentNode.parentNode.parentNode.parentNode.childNodes[2].childNodes[0].firstChild.href
+                });
+                selectedLibCount++;
+            }
+
+            if(iconMap.has(nodes[1].nodeValue.trim()) 
+                && iconMap.get(nodes[1].nodeValue.trim()).selected){
+                iconNodes[0].style.display = "none";
+                iconNodes[1].style.display = "inline";
+            }else{
+                iconNodes[0].style.display = "inline";
+                iconNodes[1].style.display = "none";
+            }
+            updateSelectedCount()
+        })
+    };
+}
+
+// this function will update the selected lib count
+function updateSelectedCount(){
+    let selectedLib = document.getElementById('selectedLib');
+    selectedLib.innerHTML = selectedLibCount;
+}
+
+// add runtime selected map to session storage
+function addSelectedToSession(){
+    // reset the selected to true if user just select, search and compare
+    iconMap.forEach((value,key) => {
+        iconMap.set(key, {...value,selected: true});
+    })
+    sessionStorage.setItem('compareSelected', JSON.stringify(Array.from(iconMap.entries())));
 }
 
 /**
@@ -479,15 +664,16 @@ function addToDOM()
             
             var div = document.createElement('div');
             div.setAttribute("class","data-card");
-            
-            var h2 = document.createElement('h2');           
+
+            var h2 = document.createElement('h2');
+            h2.appendChild(createDOMIcons(database[i].name));
             var heading = document.createTextNode(database[i].name);
             h2.appendChild(heading);
             if(parseUrl!=="")
             {
                 var img1 = document.createElement('img');
                 img1.setAttribute("alt","GitHub Release");
-                img1.setAttribute("class","badge-img");
+                img1.setAttribute("class","badge-img rightBadge");
                 let img1src = "https://img.shields.io/github/tag/" + parseUrl[1] + "/" + parseUrl[2] +".svg";
                 img1.setAttribute("src",img1src);
                 h2.appendChild(img1);
@@ -567,6 +753,7 @@ function addToDOM()
             }
             root.appendChild(div);
         }
+        addFunctionsToIcons()
         nightModeButton ? switchNightMode() : switchLightMode();
     }
 }
@@ -644,14 +831,14 @@ function cardsNightMode()
     {
         cards[i].style.color = "white";
         cards[i].style.backgroundColor = lightBlack;
-        cards[i].style.border = "none";
+        cards[i].style.border = "1px solid cyan";
     }
 
     // card links dark mode
     let links = document.getElementsByClassName('link');
     for(let i=0;i<links.length;i++)
     {
-        links[i].style.color = "rgb(139, 139, 255)";
+        links[i].style.color = "cyan";
     }
 
     // card footer dark mode
@@ -680,6 +867,19 @@ function recentSearchNightMode()
     {
         recent.style.backgroundColor = lightBlack;
         recent.style.border = "0.5px solid white";
+        recent.style.color = "white";
+    }
+    let light = document.getElementsByClassName('recentSearchItem');
+    for(let i=0;i<light.length;i++){
+        let check = light[i].firstChild.firstChild.checked;
+        light[i].style.backgroundColor = check ? darkBackground : lightBlack;
+        light[i].style.color = 'cyan';
+    }
+    let clearHistoryButton = document.getElementsByClassName('clearHistoryButton');
+    for(let i=0;i<clearHistoryButton.length;i++){
+        clearHistoryButton[i].style.color = 'white';
+        clearHistoryButton[i].style.backgroundColor = lightBlack;
+        clearHistoryButton[i].style.border = '1px solid white';
     }
 }
 
@@ -691,10 +891,37 @@ function sectionNightMode()
     headingNightMode();
     
     inputNightMode();
-
+    searchActionsNightMode();
     cardsNightMode();
 
     recentSearchNightMode();
+    recentlyComparedNightMode();
+}
+
+function searchActionsNightMode(){
+    let actionButtons = document.getElementsByClassName('actionButtons');
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.color = 'white';
+        actionButtons[i].style.backgroundColor = lightBlack;
+        actionButtons[i].style.border = '0.1px solid white';
+    } 
+    let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
+    for(let i=0;i<compareLibraryLink.length;i++){
+        compareLibraryLink[i].style.color = 'white';
+    }
+}
+
+function searchActionsLightMode(){
+    let actionButtons = document.getElementsByClassName('actionButtons');
+    for(let i=0;i<actionButtons.length;i++){
+        actionButtons[i].style.color = 'black';
+        actionButtons[i].style.backgroundColor = "#ccc";
+        actionButtons[i].style.border = 'none';
+    } 
+    let compareLibraryLink = document.getElementsByClassName('compareLibraryLink');
+    for(let i=0;i<compareLibraryLink.length;i++){
+        compareLibraryLink[i].style.color = 'black';
+    }
 }
 
 /**
@@ -744,7 +971,20 @@ function recentSearchLightMode()
     if(recent !== null)
     {
         recent.style.backgroundColor = "rgb(248, 148, 148)";
-        recent.style.border = "2px solid yellow";
+        recent.style.border = "1px solid cyan";
+        recent.style.color = "black";
+    }
+    let dark = document.getElementsByClassName('recentSearchItem');
+    for(let i=0;i<dark.length;i++){
+        let check = dark[i].firstChild.firstChild.checked;
+        dark[i].style.backgroundColor = check ? "brown" : "rgb(248, 148, 148)";
+        dark[i].style.color = check ? 'white' : 'black';
+    }
+    let clearHistoryButton = document.getElementsByClassName('clearHistoryButton');
+    for(let i=0;i<clearHistoryButton.length;i++){
+        clearHistoryButton[i].style.color = 'black';
+        clearHistoryButton[i].style.backgroundColor = '#ccc';
+        clearHistoryButton[i].style.border = 'none';
     }
 }
 
@@ -770,7 +1010,7 @@ function sectionLightMode()
     {
         cards[i].style.color = "black";
         cards[i].style.backgroundColor = "rgb(248, 148, 148)";
-        cards[i].style.border = "2px solid yellow";
+        cards[i].style.border = "2px solid cyan";
     }
 
     // card links light mode
@@ -781,6 +1021,7 @@ function sectionLightMode()
     }
 
     recentSearchLightMode();
+    recentlyComparedLightMode();
 
     // card footer light mode
     let badgeArray = document.getElementsByClassName('badge-class');
@@ -813,6 +1054,7 @@ function switchLightMode()
     bodyLightMode();
     hrLightMode();
     sectionLightMode();
+    searchActionsLightMode();
     footerLightMode();
 }
 
@@ -826,7 +1068,7 @@ function addBadges(element)
     let parent = element.parentNode;
 
     let parseUrl = parent.childNodes[2].firstChild.firstChild.href.substring(18).split("/");
-
+    
     if(parseUrl!=="")
     {
         let badgesDiv = document.createElement('div');
@@ -885,23 +1127,14 @@ function addBadges(element)
 
         element.style.display = "none";
 
-        let libraryName = parent.childNodes[0].firstChild.nodeValue;
-
-        if(recentSearches.includes(libraryName))
-        {
-            for(let j = 0; j < recentSearches.length; j++){ 
-                if ( recentSearches[j] === libraryName) {
-                    recentSearches.splice(j, 1); 
-                }
-            }
-            recentSearches.push(libraryName);
-            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
+        let libraryName = parent.childNodes[0].childNodes[1].nodeValue;
+        if(!recentSearchesMap.has(libraryName)){
+            recentSearchesMap.set(libraryName, true);
         }
-        else
-        {   
-            recentSearches.push(libraryName);
-            localStorage.setItem('treasureHistory',JSON.stringify(recentSearches));
-        }
+        localStorage.setItem(
+            'treasureHistory', 
+            JSON.stringify(Array.from(recentSearchesMap.entries())) 
+        );
     } 
 
     nightModeButton ? switchNightMode() : switchLightMode();
@@ -930,43 +1163,67 @@ function hideBadges(element)
 }
 
 /**
- * This function will clear the history
+ * This function will clear the recent search history
  **/
 function clearSearchHistory()
 {
-    // let checkedBoxes = false;
-    // let checkboxes = document.getElementsByClassName('history-checkbox');
-    // let historyList = document.getElementById('search-results-list');
-    // for(let i=0;i<checkboxes.length;i++)
-    // {
-    //     if(checkboxes[i].checked === true)                                  // if node find in the tree
-    //     {
-    //         // let node = checkboxes[i].parentNode.parentNode;
-    //         // console.log(node);
-    //         // historyList.removeChild(node);
+    if(!confirm('Do you want to clear recent searches ?')){
+        return;
+    }
+    let count = 0;
+    recentSearchesMap.forEach((value, key) => {
+        if(!value){
+            count++;
+            recentSearchesMap.delete(key);
+        }
+    })
+    clearRecentSearchDom();
+    if(count==0){
+        clearLocalStorage();
+        recentSearchesMap = new Map();
+    }else{
+        localStorage.setItem(
+            'treasureHistory', 
+            JSON.stringify(Array.from(recentSearchesMap.entries())) 
+        );
+        addRecentSearchesToDom();
+    }
+    if(recentSearchesMap.size<=0){
+        location.reload();
+    }
+}
 
-    //         let str = node.firstChild.childNodes[1].nodeValue;
-    //         // remove this element from the array
-    //         let index = recentSearches.indexOf(str);
-            
-    //         recentSearches.splice(index,1);
-    //         checkedBoxes = true;
-    //     }
-
-        // console.log(recentSearches);
-        // if(historyList.hasChildNodes() === false || recentSearches.length == 0)
-        // {
-        //     historyList.style.border = "none";   
-        // }
-    // }
-    clearDom();
-    clearLocalStorage();
-
-    // if(checkedBoxes===false)
-    // {
-    //     clearDom();
-    //     // clearLocalStorage();
-    // }
+/**
+ * This function will clear the recent compared section items
+ **/
+function clearRecentlyComparedLibrary(){
+    if(!confirm('Do you want to clear the selected libraries ?')){
+        return;
+    }
+    let count = 0;
+    iconMap.forEach((value, key) => {
+        if(!value.selected){
+            count++;
+            iconMap.delete(key);
+            selectedLibCount--;
+        }
+    })
+    clearRecentlyComparedDOM();
+    if(count==0){
+        clearSessionStorage();
+        selectedLibCount = 0;
+        iconMap = new Map();
+    }else{
+        sessionStorage.setItem(
+            'compareSelected', 
+            JSON.stringify(Array.from(iconMap.entries())) 
+        );
+        addRecentlyComparedToDOM();
+    }
+    updateSelectedCount();
+    if(iconMap.size<=0){
+        location.reload();
+    }
 }
 
 /**
@@ -975,12 +1232,12 @@ function clearSearchHistory()
 function printResults(){
     let earlierReverseNightMode = !nightModeButton;
 
-    document.getElementById('search-results').style.display = "none";
+    document.getElementById('search-actions').style.display = "none";
     nightModeButton = true;
-    handleNightMode()
+    handleNightMode();
     print();
 
-    document.getElementById('search-results').style.display = "block";
+    document.getElementById('search-actions').style.display = "block";
     nightModeButton=earlierReverseNightMode;
-    handleNightMode()
+    handleNightMode();
 }

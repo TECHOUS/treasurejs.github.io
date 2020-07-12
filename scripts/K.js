@@ -1,5 +1,13 @@
 var Kdata = [
 	{
+		name : "KAFKA NODE",
+		description : "Node.js client for Apache Kafka 0.8 and later.",
+		github : "https://github.com/SOHU-Co/kafka-node",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "KEPLER GL",
 		description : "Kepler.gl is a powerful open source geospatial analysis tool for large-scale data sets.",
 		github : "https://github.com/uber/kepler.gl",

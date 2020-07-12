@@ -56,6 +56,30 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MATERIAL TABLE",
+		description : "Datatable for React based on material-ui's table with additional features",
+		github : "https://github.com/mbrn/material-table",
+		website : "https://material-table.com/#/",
+		docs : "https://material-table.com/#/docs/get-started",
+		others : []
+	},
+	{
+		name : "MATERIAL UI",
+		description : "React components for faster and easier web development. Build your own design system, or start with Material Design.",
+		github : "https://github.com/mui-org/material-ui",
+		website : "https://material-ui.com/",
+		docs : "https://material-ui.com/getting-started/usage/",
+		others : []
+	},
+	{
+		name : "MATERIAL UI DATATABLES",
+		description : "An another React Data tables component.",
+		github : "https://github.com/hyojin/material-ui-datatables",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "MATERIALIZE",
 		description : "Materialize, a CSS Framework based on Material Design",
 		github : "https://github.com/Dogfalo/materialize",
@@ -120,6 +144,14 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MESSAGING APIS",
+		description : "Messaging APIs for multi-platform",
+		github : "https://github.com/Yoctol/messaging-apis",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "METALSMITH",
 		description : "An extremely simple, pluggable static site generator.",
 		github : "https://github.com/segmentio/metalsmith",
@@ -168,6 +200,14 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MIKRO ORM",
+		description : "Simple typescript ORM for node.js based on data-mapper, unit-of-work and identity-map patterns. Supports MongoDB, MySQL, PostgreSQL and SQLite databases.",
+		github : "https://github.com/B4nan/mikro-orm",
+		website : "https://b4nan.github.io/mikro-orm/",
+		docs : "https://b4nan.github.io/mikro-orm/installation/",
+		others : []
+	},
+	{
 		name : "MILSYMBOL JS",
 		description : "Milsymbol is a small library in pure javascript that creates military unit symbols according to MIL-STD-2525 and STANAG APP-6.",
 		github : "https://github.com/spatialillusions/milsymbol",
@@ -213,6 +253,22 @@ var Mdata = [
 		]
 	},
 	{
+		name : "MOBX REACT",
+		description : "React bindings for MobX",
+		github : "https://github.com/mobxjs/mobx-react",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "MOBX REACT LITE",
+		description : "Lightweight React bindings for MobX based on React 16.8 and Hooks",
+		github : "https://github.com/mobxjs/mobx-react-lite",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "MOCHA JS",
 		description : "simple, flexible, fun javascript test framework for node.js & the browser",
 		github : "https://github.com/mochajs/mocha",
@@ -237,6 +293,14 @@ var Mdata = [
 		others : []
 	},
 	{
+		name : "MOLECULAR JS",
+		description : "Progressive microservices framework for Node.js",
+		github : "https://github.com/moleculerjs/moleculer",
+		website : "https://moleculer.services/",
+		docs : "https://moleculer.services/docs/0.13/",
+		others : []
+	},
+	{
 		name : "MOMENT JS",
 		description : "Parse, validate, manipulate, and display dates in javascript",
 		github : "https://github.com/moment/moment/",
@@ -250,6 +314,22 @@ var Mdata = [
 		github : "https://github.com/Automattic/mongoose/",
 		website : "https://mongoosejs.com/",
 		docs : "https://devdocs.io/mongoose/",
+		others : []
+	},
+	{
+		name : "MUI DATATABLES",
+		description : "Datatables for React using Material-UI",
+		github : "https://github.com/gregnb/mui-datatables",
+		website : "https://www.material-ui-datatables.com/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "MURPHY JS",
+		description : "A simple way to implement scroll based reveal animations in your site.",
+		github : "https://github.com/cesarolvr/murphyjs",
+		website : "https://cesarolvr.github.io/murphyjs/index.html",
+		docs : "https://github.com/cesarolvr/murphyjs#documentation",
 		others : []
 	}
 ]

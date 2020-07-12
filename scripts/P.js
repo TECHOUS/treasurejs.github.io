@@ -24,6 +24,14 @@ var Pdata = [
 		others : []
 	},
 	{
+		name : "PACK",
+		description : "npm package building, reimagined.",
+		github : "https://github.com/pikapkg/pack",
+		website : "https://www.pikapkg.com/blog/introducing-pika-pack/",
+		docs : "",
+		others : []
+	},
+	{
 		name : "PACKEM",
 		description : "A precompiled JavaScript module bundler",
 		github : "https://github.com/packem/packem",
@@ -65,9 +73,33 @@ var Pdata = [
 	},
 	{
 		name : "PERFLINK",
+		description : "Low friction JavaScript benchmarks that you can share via URL",
+		github : "https://github.com/lukejacksonn/perflink",
+		website : "https://perf.link/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "PHOTON JS",
+		description : "Type-safe database client for TypeScript & Node.js (ORM replacement)",
+		github : "https://github.com/prisma/photonjs",
+		website : "https://photonjs.prisma.io/",
+		docs : "https://github.com/prisma/prisma2/tree/master/docs",
+		others : []
+	},
+	{
+		name : "PICKR",
+		description : "Flat, simple, multi-themed, responsive and hackable Color-Picker library. No dependencies, no jQuery. Compatible with all CSS Frameworks e.g. Bootstrap, Materialize. Supports alpha channel, rgba, hsla, hsva and more!",
+		github : "https://github.com/Simonwep/pickr",
+		website : "https://simonwep.github.io/pickr/",
+		docs : "",
+		others : []
+	},
+	{
+		name : "PINO JS",
 		description : ":evergreen_tree: super fast, all natural json logger :evergreen_tree:",
 		github : "https://github.com/pinojs/pino",
-		website : "https://perf.link/",
+		website : "",
 		docs : "http://getpino.io/#/",
 		others : [
 			{
@@ -125,6 +157,22 @@ var Pdata = [
 		others : []
 	},
 	{
+		name : "PM",
+		description : "A graceful node library to contribute a permanent 'master-worker' server.",
+		github : "https://github.com/aleafs/pm",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "PM2",
+		description : "Node.js Production Process Manager with a built-in Load Balancer.",
+		github : "https://github.com/Unitech/pm2",
+		website : "https://pm2.io/",
+		docs : "https://pm2.io/doc/",
+		others : []
+	},
+	{
 		name : "PNPM",
 		description : "Fast, disk space efficient package manager",
 		github : "https://github.com/pnpm/pnpm",
@@ -138,6 +186,14 @@ var Pdata = [
 		github : "https://github.com/styled-components/polished",
 		website : "https://polished.js.org/",
 		docs : "https://polished.js.org/docs/",
+		others : []
+	},
+	{
+		name : "PRETTY QUICK",
+		description : "Get Pretty Quick",
+		github : "https://github.com/azz/pretty-quick",
+		website : "",
+		docs : "",
 		others : []
 	},
 	{
@@ -162,6 +218,14 @@ var Pdata = [
 		others : []
 	},
 	{
+		name : "POLARIS REACT",
+		description : "Shopify’s product component library",
+		github : "https://github.com/Shopify/polaris-react",
+		website : "https://polaris.shopify.com/",
+		docs : "https://polaris.shopify.com/components/get-started",
+		others : []
+	},
+	{
 		name : "POPPER JS",
 		description : "A KICKASS LIBRARY USED TO MANAGE POPPERS IN WEB APPLICATIONS",
 		github : "https://github.com/FezVrasta/popper.js",
@@ -178,11 +242,32 @@ var Pdata = [
 		others : []
 	},
 	{
+		name : "PREACT",
+		description : "Fast 3kB React alternative with the same modern API. Components & Virtual DOM.",
+		github : "https://github.com/preactjs/preact",
+		website : "https://preactjs.com/",
+		docs : "https://preactjs.com/guide/v10/getting-started",
+		others : [
+			{
+				name: "Preact Compat",
+				link: "https://github.com/developit/preact-compat"
+			}
+		]
+	},
+	{
 		name : "PRETENDER",
 		description : "A mock server library with a nice routing DSL",
 		github : "https://github.com/pretenderjs/pretender",
 		website : "",
 		docs : "",
+		others : []
+	},
+	{
+		name : "PRIMEREACT",
+		description : "PrimeReact is a collection of rich UI components for React",
+		github : "https://github.com/primefaces/primereact",
+		website : "https://www.primefaces.org/primereact/#/",
+		docs : "https://www.primefaces.org/primereact/#/setup",
 		others : []
 	},
 	{

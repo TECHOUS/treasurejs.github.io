@@ -27,3 +27,17 @@ A **Wikipedia for JavaScript** where to can get JavaScript:
 We need some support so please do *star, watch* and [**contribute**](.github/CONTRIBUTING.md) to our repo
 
 Keep Supporting!
+
+## New Features
+
+### Automatic Darkmode at night
+
+![automatic dark mode at night](/images/readme/autoDarkMode.png)
+
+### PDF Downloading Feature for Personal use
+
+![PDF Downloading](/images/readme/pdfDownload.png)
+
+## LICENSE
+
+[MIT LICENSE](LICENSE)

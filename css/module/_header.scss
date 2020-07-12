@@ -8,10 +8,20 @@
     background-color: #ccc;
     color: black;
 }
+#githubHeaderTag{
+    position: absolute;
+    padding: 10px;
+    margin: 20px;
+}
 
 // handle toggle on day
 #toggle-day{
     display: none;
+}
+
+#toggle-night,
+#toggle-day{
+    cursor: pointer;
 }
 
 // main header content
@@ -38,11 +48,11 @@
 
 //header version
 #header-div-version{
-    height: 15px;
+    height: 20px;
 }
 
 // header paragraph
 #header-div-p{
     font-weight: bold;
-    font-style: italic;
+    font-size: 18px;
 }

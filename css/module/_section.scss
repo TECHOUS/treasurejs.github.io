@@ -1,6 +1,33 @@
+/**************/
+/* SEARCH BAR */
+/**************/ 
 // div having input
 #section-div{
     text-align: center;
+}
+// styling section div input
+#section-div-input{
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    border: none;
+    width: 90%;
+    outline: none;
+    border-radius: 20px;
+}
+
+// section input on focus
+#section-div-input:focus{
+    color: brown;
+}
+
+// section input placeholder
+#section-div-input::placeholder{
+    color: gray;
+}
+
+.searchLabel{
+    font-size: 18px;
 }
 
 // search bar
@@ -22,71 +49,100 @@
     font-size: 20px;
 }
 
-// styling section div input
-#section-div-input{
-    text-align: center;
-    font-size: 20px;
-    padding: 8px;
-    border: none;
-    width: 80%;
-    outline: none;
-    border-radius: 20px;
+/******************/
+/* SEARCH ACTIONS */
+/******************/
+// search results after typing
+#search-actions{
+    display: none;
+    padding-left: 5%;
+    padding-right: 5%;
 }
-
-// section input on focus
-#section-div-input:focus{
-    color: brown;
+#search-actions>div{
+    padding: 10px;
 }
-
-// section input placeholder
-#section-div-input::placeholder{
-    color: gray;
-}
-
 // horizontal line after input
 #horizontal-rule{
     border: 1px solid gray;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
+.actionButtons{
+    border: none;
+    border-radius: 10px;
+    background-color: #ccc;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}
+.actionButtons>a{
+    text-decoration: none;
+    color: black;
+}
+.displayActions{
+    padding: 10px;
+    font-size: 18px;
+}
+.buttonRight{
+    float: right;
+}
 
-// search results after typing
-#search-results{
-    text-align: center;
-    display: none;
+/******************/
+/* OLDER SEARCHES */
+/******************/
+// recent search text
+#recent-searches{
+    padding: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.recentHeader{
+    padding: 10px;
 }
 
 // search results list
 #search-results-list{
-    border: 2px solid yellow;
-    background-color: rgb(248, 148, 148);
-    border-radius: 20px;
-    margin-left: 2%;
-    margin-right: 2%;
+    border: 1px solid yellow;
+    background-color: #f89494;
+    border-radius: 5px;
     text-align: left;
     list-style-type: none;
+    color: black;
+    margin-top: 10px;
 }
 
 // search result list card
 #search-results-list > li{
     padding: 12px;
+    border-radius: 5px;
 }
 
-// recent search text
-#recent-searches{
-    text-align: center;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-#clear-search-history{
-    margin-left: 20px;
+#search-results-list > li > label {
     cursor: pointer;
 }
 
 .history-checkbox{
+    cursor: pointer;
     margin-right: 20px;
 }
+.fa-trash-alt{
+    margin-right: 5px;
+}
+.clearHistoryButton{
+    cursor: pointer;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+/******************/
+/* SEARCH CONTENT */
+/******************/
 
 // card data found
 #found-data{
@@ -100,15 +156,18 @@
     background-color: rgb(248, 148, 148);
     margin-left: 2%;
     margin-right: 2%;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
-    border: 2px solid yellow;
-    margin-bottom: 2%;
+    border: 1px solid yellow;
+    margin-bottom: 5%;
 }
 .data-card > p{
     padding: 0.5%;
 }
-
+.rightBadge{
+    float: right;
+    padding-top: 6px;
+}
 // horizontal list
 #basicList{
     list-style-type: none;
@@ -134,6 +193,12 @@
     text-decoration: none;
 }
 
+.fa-plus-circle,
+.fa-minus-circle{
+    margin: 5px;
+    cursor: pointer;
+}
+
 // styling badges and more button div
 .badge-class,
 .more-div{
@@ -143,8 +208,8 @@
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: -10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     margin-top: 10px;
     border: none;
 }
@@ -168,7 +233,37 @@
     padding: 5px;
 }
 
-#printResultsAction{
-    font-size: 24px;
+/*****************************/
+/* RECENTLY COMPARED SECTION */
+/*****************************/
+
+#recentlyComparedSection{
+    padding: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#recentlyComparedList{
+    border: 1px solid yellow;
+    background-color: #f89494;
+    border-radius: 5px;
+    text-align: left;
+    list-style-type: none;
+    color: black;
+    margin-top: 10px;
+}
+
+.recentlyComparedItem{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.recentlyComparedCheckBox{
+    margin-right: 20px;
     cursor: pointer;
+}
+
+.recentlyComparedLink:link,
+.recentlyComparedLink:visited,
+.recentlyComparedLink:active{
+    color: black;
 }

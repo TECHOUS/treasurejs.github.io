@@ -1,0 +1,42 @@
+// handling the right button
+#toggle-div{
+    right: 0;
+    position: absolute;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
+// handle toggle on day
+#toggle-day{
+    display: none;
+}
+
+// STYLING HEADER
+#header-div{
+    background-color: brown;
+    text-align: center;
+}
+.headerLink > img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    margin: 10px;
+}
+// header heading link
+#header-div-a:link,
+#header-div-a:active,
+#header-div-a:visited{
+    color: white;
+    font-family: Samarkan;
+    font-size: 1.5em;
+}
+.headerLink{
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

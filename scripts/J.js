@@ -24,9 +24,25 @@ var Jdata = [
 		others : []
 	},
 	{
+		name : "JEST REACT PROFILER",
+		description : "Jest helpers for working with the React Profiler API.",
+		github : "https://github.com/bvaughn/jest-react-profiler",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
 		name : "JEST RUNNER ESLINT",
 		description : "An ESLint runner for Jest",
 		github : "https://github.com/jest-community/jest-runner-eslint",
+		website : "",
+		docs : "",
+		others : []
+	},
+	{
+		name : "JEX",
+		description : "Jex is a Node.js module for building dynamic and static websites. It draws inspiration from Jekyll, a Ruby tool for creating static websites. Jekyll meets Express!",
+		github : "https://github.com/jex/jex",
 		website : "",
 		docs : "",
 		others : []
