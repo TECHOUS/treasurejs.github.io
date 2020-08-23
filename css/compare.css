@@ -205,7 +205,7 @@ footer > p > a {
     margin-left: 7%;
     margin-right: 7%; } }
 /* extra large laptop*/
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1700px) {
   .actionButtons {
     width: 30%; }
 
