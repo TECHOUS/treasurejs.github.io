@@ -6,7 +6,9 @@
   font-family: "Samarkan";
   src: url(SAMARN__.TTF); }
 body, input {
-  font-family: 'Source Sans Pro', sans-serif; }
+  transition: 1s;
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 #toggle-div {
   right: 0;
@@ -15,7 +17,7 @@ body, input {
   margin: 20px;
   border-radius: 30px;
   background-color: #ccc;
-  color: black; }
+  color: black !important; }
 
 #githubHeaderTag {
   position: absolute;
@@ -27,6 +29,7 @@ body, input {
 
 #toggle-night,
 #toggle-day {
+  transition: 1s;
   cursor: pointer; }
 
 #header-div {
@@ -74,11 +77,15 @@ body, input {
   color: gray; }
 
 .searchLabel {
-  font-size: 18px; }
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important; 
+}
 
 #search-bar {
   border: 2px solid brown;
-  border-radius: 23px;
+  border-radius: 20px;
   margin: auto;
   width: 90%; }
 
@@ -173,13 +180,11 @@ body, input {
 /* SEARCH CONTENT */
 /******************/
 #found-data {
-  padding-bottom: 50px;
-  min-height: 50vh;
   padding: 10px; }
 
 /* styling data cards */
 .data-card {
-  background-color: #f89494;
+  background-color: #FFEBCD;
   margin-left: 2%;
   margin-right: 2%;
   border-radius: 10px;
