@@ -17,28 +17,34 @@ body, input {
   margin: 20px;
   border-radius: 30px;
   background-color: #ccc;
-  color: black !important; }
+  color: black !important; 
+}
 
 #githubHeaderTag {
   position: absolute;
   padding: 10px;
-  margin: 20px; }
+  margin: 20px; 
+}
 
 #toggle-day {
-  display: none; }
+  display: none; 
+}
 
 #toggle-night,
 #toggle-day {
   transition: 1s;
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 #header-div {
   text-align: center;
-  padding: 20px; }
+  padding: 20px; 
+}
 
 #header-div > a > img {
   height: 150px;
-  width: 150px; }
+  width: 150px; 
+}
 
 #header-div-a:link,
 #header-div-a:active,
@@ -46,20 +52,24 @@ body, input {
   text-decoration: none;
   color: black;
   font-family: Samarkan;
-  font-size: 1.25em; }
+  font-size: 1.25em; 
+}
 
 #header-div-version {
-  height: 20px; }
+  height: 20px; 
+}
 
 #header-div-p {
   font-weight: bold;
-  font-size: 18px; }
+  font-size: 18px; 
+}
 
 /**************/
 /* SEARCH BAR */
 /**************/
 #section-div {
-  text-align: center; }
+  text-align: center; 
+}
 
 #section-div-input {
   text-align: center;
@@ -68,13 +78,16 @@ body, input {
   border: none;
   width: 90%;
   outline: none;
-  border-radius: 20px; }
+  border-radius: 20px; 
+}
 
 #section-div-input:focus {
-  color: brown; }
+  color: brown; 
+}
 
 #section-div-input::placeholder {
-  color: gray; }
+  color: gray; 
+}
 
 .searchLabel {
   font-size: 20px;
@@ -87,14 +100,17 @@ body, input {
   border: 2px solid brown;
   border-radius: 20px;
   margin: auto;
-  width: 90%; }
+  width: 90%; 
+}
 
 #search-bar:hover {
-  box-shadow: 0px 0px 10px #888888; }
+  box-shadow: 0px 0px 10px #888888; 
+}
 
 #find-icon {
   color: brown;
-  font-size: 20px; }
+  font-size: 20px; 
+}
 
 /******************/
 /* SEARCH ACTIONS */
@@ -102,15 +118,18 @@ body, input {
 #search-actions {
   display: none;
   padding-left: 5%;
-  padding-right: 5%; }
+  padding-right: 5%; 
+}
 
 #search-actions > div {
-  padding: 10px; }
+  padding: 10px; 
+}
 
 #horizontal-rule {
   border: 1px solid gray;
   width: 100%;
-  margin: auto; }
+  margin: auto; 
+}
 
 .actionButtons {
   border: none;
@@ -118,18 +137,22 @@ body, input {
   background-color: #ccc;
   cursor: pointer;
   font-size: 20px;
-  padding: 10px; }
+  padding: 10px; 
+}
 
 .actionButtons > a {
   text-decoration: none;
-  color: black; }
+  color: black; 
+}
 
 .displayActions {
   padding: 10px;
-  font-size: 18px; }
+  font-size: 18px; 
+}
 
 .buttonRight {
-  float: right; }
+  float: right; 
+}
 
 /******************/
 /* OLDER SEARCHES */
@@ -137,33 +160,39 @@ body, input {
 #recent-searches {
   padding: 15px;
   padding-left: 5%;
-  padding-right: 5%; }
+  padding-right: 5%; 
+}
 
 .recentHeader {
-  padding: 10px; }
+  padding: 10px; 
+}
 
 #search-results-list {
-  border: 1px solid yellow;
   background-color: #f89494;
   border-radius: 5px;
   text-align: left;
   list-style-type: none;
   color: black;
-  margin-top: 10px; }
+  margin-top: 10px; 
+}
 
 #search-results-list > li {
   padding: 12px;
-  border-radius: 5px; }
+  border-radius: 5px; 
+}
 
 #search-results-list > li > label {
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 .history-checkbox {
   cursor: pointer;
-  margin-right: 20px; }
+  margin-right: 20px; 
+}
 
 .fa-trash-alt {
-  margin-right: 5px; }
+  margin-right: 5px; 
+}
 
 .clearHistoryButton {
   cursor: pointer;
@@ -174,13 +203,15 @@ body, input {
   font-size: 17px;
   border: none;
   border-radius: 10px;
-  background-color: #ccc; }
+  background-color: #ccc; 
+}
 
 /******************/
 /* SEARCH CONTENT */
 /******************/
 #found-data {
-  padding: 10px; }
+  padding: 10px;
+}
 
 /* styling data cards */
 .data-card {
@@ -190,36 +221,44 @@ body, input {
   border-radius: 10px;
   padding: 10px;
   border: 1px solid yellow;
-  margin-bottom: 5%; }
+  margin-bottom: 5%; 
+}
 
 .data-card > p {
-  padding: 0.5%; }
+  padding: 0.5%; 
+}
 
 .rightBadge {
   float: right;
-  padding-top: 6px; }
+  padding-top: 6px; 
+}
 
 #basicList {
   list-style-type: none;
-  margin-top: 0.5%; }
+  margin-top: 0.5%; 
+}
 
 #basicList > li {
   display: inline;
-  padding: 5px; }
+  padding: 5px; 
+}
 
 #advList {
   list-style-type: square;
   margin-top: 0.5%;
-  margin-left: 50px; }
+  margin-left: 50px; 
+}
 
 .link {
   color: blue;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .fa-plus-circle,
 .fa-minus-circle {
   margin: 5px;
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 .badge-class,
 .more-div {
@@ -232,20 +271,24 @@ body, input {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-top: 10px;
-  border: none; }
+  border: none; 
+}
 
 .badge-img {
   margin-left: 5px;
-  margin-right: 5px; }
+  margin-right: 5px; 
+}
 
 .more-div,
 .less-div {
   color: white;
   font-weight: bold;
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 .less-div {
-  padding: 5px; }
+  padding: 5px; 
+}
 
 /*****************************/
 /* RECENTLY COMPARED SECTION */
@@ -253,7 +296,8 @@ body, input {
 #recentlyComparedSection {
   padding: 15px;
   padding-left: 5%;
-  padding-right: 5%; }
+  padding-right: 5%; 
+}
 
 #recentlyComparedList {
   border: 1px solid yellow;
@@ -262,20 +306,24 @@ body, input {
   text-align: left;
   list-style-type: none;
   color: black;
-  margin-top: 10px; }
+  margin-top: 10px; 
+}
 
 .recentlyComparedItem {
   padding: 12px;
-  border-radius: 5px; }
+  border-radius: 5px; 
+}
 
 .recentlyComparedCheckBox {
   margin-right: 20px;
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 .recentlyComparedLink:link,
 .recentlyComparedLink:visited,
 .recentlyComparedLink:active {
-  color: black; }
+  color: black; 
+}
 
 /* styling footer */
 footer {
@@ -283,203 +331,250 @@ footer {
   background-color: brown;
   font-weight: bold;
   padding: 10px;
-  text-align: center; }
+  text-align: center; 
+}
 
 footer > p > a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .footer-links-div {
   display: inline-block;
-  padding: 14px; }
+  padding: 14px; 
+}
 
 .footer-links-list {
   list-style-type: none;
-  padding: 5px; }
+  padding: 5px; 
+}
 
 .footer-links-list > li {
-  padding: 1px; }
+  padding: 1px; 
+}
 
 .footer-links-list > li > a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .footer-links-div:nth-child(1) {
-  margin-right: 1%; }
+  margin-right: 1%; 
+}
 
 .footer-links-div:nth-child(2) {
-  margin-left: 1%; }
+  margin-left: 1%; 
+}
 
 /* RESPONSIVENESS */
 /* EXTRA SMALL SCREENS */
 @media screen and (max-width: 406px) {
   #downloadButton {
-    width: 100%; }
+    width: 100%; 
+  }
 
   .actionButtons:nth-child(2) {
     float: none;
     margin-top: 10px;
-    width: 100%; } }
+    width: 100%; 
+  } 
+}
 /**/
 @media (min-width: 601px) and (max-width: 991px) {
   .footer-links-div {
-    padding: 30px; }
+    padding: 30px; 
+  }
 
   .footer-links-div:nth-child(1) {
-    margin-right: 6%; }
+    margin-right: 6%; 
+  }
 
   .footer-links-div:nth-child(2) {
-    margin-left: 6%; } }
+    margin-left: 6%; 
+  } 
+}
 /* TABLETS/DESKTOPS */
 @media (min-width: 992px) and (max-width: 1199px) {
   #search-bar {
-    width: 75%; }
+    width: 75%; 
+  }
 
   .footer-links-div {
-    padding: 30px; }
+    padding: 30px; 
+  }
 
   .footer-links-div:nth-child(1) {
-    margin-right: 8%; }
+    margin-right: 8%; 
+  }
 
   .footer-links-div:nth-child(2) {
-    margin-left: 8%; }
+    margin-left: 8%; 
+  }
 
   /**************/
   /* SEARCH BAR */
   /**************/
   #section-div-input {
-    width: 95%; }
+    width: 95%; 
+  }
 
   /******************/
   /* SEARCH ACTIONS */
   /******************/
   #search-actions {
     padding-left: 12.5%;
-    padding-right: 12.5%; }
+    padding-right: 12.5%; 
+  }
 
   /******************/
   /* OLDER SEARCHES */
   /******************/
   #recent-searches {
     padding-left: 12.5%;
-    padding-right: 12.5%; }
+    padding-right: 12.5%; 
+  }
 
   /*****************************/
   /* RECENTLY COMPARED SECTION */
   /*****************************/
   #recentlyComparedSection {
     padding-left: 12.5%;
-    padding-right: 12.5%; }
+    padding-right: 12.5%; 
+  }
 
   /******************/
   /* SEARCH CONTENT */
   /******************/
   #found-data {
-    padding: 0px; }
+    padding: 0px; 
+  }
 
   .data-card {
     margin-left: 12.5%;
-    margin-right: 12.5%; } }
+    margin-right: 12.5%; 
+  } 
+}
 /* large */
 @media screen and (min-width: 1200px) {
   .footer-links-div {
-    padding: 40px; }
+    padding: 40px; 
+  }
 
   .footer-links-list {
-    padding: 10px; }
+    padding: 10px; 
+  }
 
   .footer-links-list > li {
-    padding: 3px; }
+    padding: 3px; 
+  }
 
   .footer-links-div:nth-child(1) {
-    margin-right: 9%; }
+    margin-right: 9%; 
+  }
 
   .footer-links-div:nth-child(2) {
-    margin-left: 9%; }
+    margin-left: 9%; 
+  }
 
   .footer-links-list > li > a:hover,
   #footer-techous:hover {
-    color: cyan; }
+    color: cyan; 
+  }
 
   /**************/
   /* SEARCH BAR */
   /**************/
   #search-bar {
-    width: 85%; }
+    width: 85%; 
+  }
 
   #section-div-input {
-    width: 95%; }
+    width: 95%; 
+  }
 
   /******************/
   /* SEARCH ACTIONS */
   /******************/
   #search-actions {
     padding-left: 7%;
-    padding-right: 7%; }
+    padding-right: 7%; 
+  }
 
   /******************/
   /* OLDER SEARCHES */
   /******************/
   #recent-searches {
     padding-left: 7%;
-    padding-right: 7%; }
+    padding-right: 7%; 
+  }
 
   /*****************************/
   /* RECENTLY COMPARED SECTION */
   /*****************************/
   #recentlyComparedSection {
     padding-left: 7%;
-    padding-right: 7%; }
+    padding-right: 7%; 
+  }
 
   /******************/
   /* SEARCH CONTENT */
   /******************/
   #found-data {
-    padding: 0px; }
+    padding: 0px; 
+  }
 
   .data-card {
     margin-left: 7%;
     margin-right: 7%;
-    margin-bottom: 1%; } }
+    margin-bottom: 1%; 
+  } 
+}
 /* extra large laptop*/
 @media screen and (min-width: 1400px) {
   /**************/
   /* SEARCH BAR */
   /**************/
   #search-bar {
-    width: 60%; }
+    width: 60%; 
+  }
 
   /******************/
   /* SEARCH ACTIONS */
   /******************/
   #search-actions {
     padding-left: 20%;
-    padding-right: 20%; }
+    padding-right: 20%; 
+  }
 
   /******************/
   /* OLDER SEARCHES */
   /******************/
   #recent-searches {
     padding-left: 20%;
-    padding-right: 20%; }
+    padding-right: 20%; 
+  }
 
   /*****************************/
   /* RECENTLY COMPARED SECTION */
   /*****************************/
   #recentlyComparedSection {
     padding-left: 20%;
-    padding-right: 20%; }
+    padding-right: 20%; 
+  }
 
   /******************/
   /* SEARCH CONTENT */
   /******************/
   #found-data {
-    padding: 0px; }
+    padding: 0px; 
+  }
 
   .data-card {
     margin-left: 20%;
     margin-right: 20%;
-    margin-bottom: 1%; } }
+    margin-bottom: 1%; 
+  } 
+}
 @media print {
   #toggle-div,
   #githubHeaderTag,
@@ -491,6 +586,8 @@ footer > p > a {
   #horizontal-rule,
   .more-div,
   .less-div {
-    display: none; } }
+    display: none; 
+  } 
+}
 
 /*# sourceMappingURL=style.css.map */
