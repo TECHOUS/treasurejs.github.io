@@ -17,7 +17,11 @@ body, input {
   margin: 20px;
   border-radius: 30px;
   background-color: #ccc;
-  color: black !important; 
+  color: black; 
+}
+
+#toggle-div#toggle-div {
+  color: black;
 }
 
 #githubHeaderTag {
