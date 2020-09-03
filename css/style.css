@@ -96,8 +96,8 @@ body, input {
 .searchLabel {
   font-size: 20px;
   font-weight: 400;
-  margin-top: 10px !important;
-  margin-bottom: 10px !important; 
+  margin-top: 10px;
+  margin-bottom: 10px; 
 }
 
 #search-bar {
