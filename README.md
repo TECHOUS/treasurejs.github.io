@@ -28,19 +28,14 @@ We need some support so please do *star, watch* and [**contribute**](.github/CON
 
 Keep Supporting!
 
-## New Features
+## Features
 
-### New UI for the libraries
+1. New UI for the libraries
+2. New Comparisons section (compare any library)
+3. Ability to Download Comparsions
+4. Auto dark mode at night
 
-![New User Interface](images/readme/newUI.png)
-
-### New Comparisons section (compare any library)
-
-![New Comparison section](images/readme/newCompareSection.png)
-
-### Ability to Download Comparsions
-
-![Comparisons](images/readme/downloadComparisons.png)
+For detailed features please refer [here](Features.md)
 
 ## LICENSE
 
